@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+    <html class="html">
+      <head>
+        {{ content_for_header }}
+      </head>
+    
+      <body class="body">
+        {% section 'header' %}
+        {{ content_for_layout }}
+      </body>
+     </html>
+    
+{% style %}
+
+.html {
+}
+
+.body {
+    background-color: #fdf1b8;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+{% endstyle %}
