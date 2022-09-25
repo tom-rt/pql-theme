@@ -1,0 +1,80 @@
+<div class="cc-main">
+
+    <div class="cc-left-container">
+        <div class="cc-title">
+            Le concept
+        </div>
+        <div class="cc-text">
+            Lorem ipsum dolor sit amet,s consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet,s consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint omapaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+    </div>
+
+    <div class="cc-right-container">
+        <div class="cc-video-wrapper">
+            <div class="cc-video">
+                VIDEO
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{%- style -%}
+
+.cc-main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .cc-main {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cc-left-container {
+    display: flex;
+    padding: 1rem 1rem 1rem 1rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cc-title {
+    font-size:2rem;
+    margin-bottom: 1rem;
+}
+
+.cc-text {
+    font-size:1.5rem;
+}
+
+.cc-right-container {
+    display: flex;
+    padding: 1rem 0rem 1rem 0rem;
+    align-items:center;
+}
+
+.cc-video-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.cc-video {
+    display: flex;
+    height: 25rem;
+    width: 40rem;
+    font-size: 3rem;
+    background-color: #06aa17;
+}
+
+
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Concept"
+}
+{% endschema %}

@@ -1,14 +1,45 @@
-<div class="main">
-    Header section
+<div class="h-main">
+
+  <div class="h-left-container">
+    <div>
+      {{ settings.test }}
+      LOGO
+    </div>
+  </div>
+  
+  <div class="h-right-container">
+    <div class="h-box">
+      Mon panier
+    </div>
+    <div class="h-box">
+      S'inscrire
+    </div>
+    <div class="h-box">
+      S'identifier
+    </div>
+  </div>
+
 </div>
 
-{% stylesheet %}
+{% style %}
 
-.main {
-    background-color: red
+.h-main {
+  background-color: {{ settings.test }};
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
 }
 
-{% endstylesheet %}
+.h-right-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.h-box {
+  margin-left: 1rem;
+}
+
+{% endstyle %}
 
 {% schema %}
 {
