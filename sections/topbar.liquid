@@ -1,14 +1,14 @@
 <div class="tb-main">
-      <div class="tb-box">
+      <div class="tb-box border-right">
         Accueil
       </div>
-      <div class="tb-box">
+      <div class="tb-box border-right">
         Nos produits
       </div>
-      <div class="tb-box">
+      <div class="tb-box border-right">
         Les producteurs
       </div>
-      <div class="tb-box">
+      <div class="tb-box border-right">
         On parle de nous
       </div>
       <div class="tb-box">
@@ -19,12 +19,31 @@
   {% style %}
   
 .tb-main {
+    text-align: center;
     color: white;
     background-color: #28241B;
     display: flex;
-    padding: 1rem 3rem 1rem 3rem;
+    padding: 1rem 0rem 1rem 0rem;
     justify-content: space-between;
-}
+    font-family: "whimsy";
+    font-size: 2em;
+  }
+
+  .tb-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+  }
+
+  .border-right {
+    border-right-style: solid;
+    border-right-color: "#FFFFF";
+    border-width: 1px;
+  }
   
   {% endstyle %}
 

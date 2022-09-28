@@ -8,12 +8,24 @@
         </div>
     </div>
     <div class="map-right-container grid-item">
-        <div class="map-title">
-            Où nous trouver ?
+        <div class="title-wrapper">
+            <div class="map-title whimsy orange-underline">
+                Où nous trouver ?
+            </div>
         </div>
-        <div class="map-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint omapaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            Lorem ipsum dolor sit samet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint omapaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <div class="map-text">
+            Le camion épicerie “Pierre Qui Roule” fait une tournée hebdomadaire composée de
+            <ul>
+                <li>marchés</li>
+                <li>arrêts itinérants en commune</li>
+                <li>livraisons à domicile des particuliers</li>
+                <li>livraisons aux clubs des aînés</li>
+              </ul>
+            La tournée s'effectue du Lundi au Vendredi sur nos belles routes de la région.
+            <br>
+            La carte interactive vous permet de repérer les arrêts du camion !
+            
+                        
         </div>
     </div>
 
@@ -43,10 +55,9 @@
 }
 
 .map-title {
-    font-size:2rem;
-    justify-content: center;
-    display: flex;
+    font-size: 3rem;
     margin-bottom: 1rem;
+
 }
 
 .map-text {
@@ -75,6 +86,11 @@
     font-size: 3rem;
 }
 
+.title-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 {% endstyle %}
 

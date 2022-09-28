@@ -3,3 +3,23 @@
     --orange: #FF8C1A;
     --black: #28241B;
 }
+
+.whimsy {
+    font-family: "whimsy";
+}
+
+.orange-underline {
+    border-bottom-style: solid;
+    border-bottom-color: var(--orange);
+}
+
+.html {}
+
+.body {
+    font-family: "avgb";
+    background-color: "#FFFFF";
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}

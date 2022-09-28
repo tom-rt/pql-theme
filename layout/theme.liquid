@@ -2,6 +2,9 @@
     <html class="html">
       <head>
         {{ content_for_header }}
+        {{ 'custom-fonts.css' | asset_url | stylesheet_tag }}
+        {{ 'base.css' | asset_url | stylesheet_tag }}
+
       </head>
     
       <body class="body">
@@ -14,18 +17,3 @@
         {{ content_for_layout }}
       </body>
      </html>
-    
-{% style %}
-
-.html {
-}
-
-.body {
-    background-color: #FFFFF;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
-{% endstyle %}
