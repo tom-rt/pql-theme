@@ -11,9 +11,13 @@
         {% section 'header' %}
         {% section 'topbar' %}
         {% section 'picture' %}
-        {% section 'concept' %}
-        {% section 'map' %}
-        {% section 'timetable' %}
-        {{ content_for_layout }}
+        <div class="main-wrapper">
+          <div class="main-column">
+          {% section 'concept' %}
+          {% section 'map' %}
+          {% section 'timetable' %}
+          {{ content_for_layout }}
+        </div>
+        <div>
       </body>
      </html>
