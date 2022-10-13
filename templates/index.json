@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "picture": {
+      "type": "picture"
+    },
+    "concept": {
+      "type": "concept"
+    },
+    "map": {
+      "type": "map"
+    },
+    "timetable": {
+      "type": "timetable"
+    }
+  },
+  "order": [
+    "picture",
+    "concept",
+    "map",
+    "timetable"
+  ]
+}

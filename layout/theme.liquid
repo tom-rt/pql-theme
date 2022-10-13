@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-    <html class="html">
-      <head>
-        {{ content_for_header }}
-        {{ 'custom-fonts.css' | asset_url | stylesheet_tag }}
-        {{ 'base.css' | asset_url | stylesheet_tag }}
+<html class="html">
+  <head>
+    {{ content_for_header }}
+    {{ 'custom-fonts.css' | asset_url | stylesheet_tag }}
+    {{ 'base.css' | asset_url | stylesheet_tag }}
 
-      </head>
-    
-      <body class="body">
-        {% section 'header' %}
-        {% section 'topbar' %}
-        {% section 'picture' %}
-        <div class="main-wrapper">
-          <div class="main-column">
-          {% section 'concept' %}
-          {% section 'map' %}
-          {% section 'timetable' %}
-          {{ content_for_layout }}
-        </div>
-        <div>
-      </body>
-     </html>
+  </head>
+
+  <body class="body">
+    {% section 'topbar' %}
+    {%- comment -%}
+      <div class="main-mt">
+      {% section 'picture' %}
+      <div class="main-wrapper">
+      <div class="main-column">
+      {% section 'concept' %}
+      {% section 'map' %}
+      {% section 'timetable' %}
+      </div>
+      <div class="tt-column">
+      {% section 'timetable' %}
+      </div>
+      </div>
+      </div>
+    {%- endcomment -%}
+    <div class="main-mt">
+      {{ content_for_layout }}
+    </div>
+  </body>
+</html>

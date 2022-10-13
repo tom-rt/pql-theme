@@ -1,0 +1,10 @@
+{
+    "sections": {
+        "picture": {
+            "type": "picture"
+        }
+    },
+    "order": [
+        "picture"
+    ]
+}

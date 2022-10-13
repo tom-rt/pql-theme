@@ -1,101 +1,108 @@
-<div class="map-main">
+<div class="main-wrapper">
+  <div class="main-column">
 
-    <div class="map-left-container grid-item">
+    <div class="map-main">
+      <div class="map-left-container grid-item">
         <div class="map-map-wrapper">
-            <div class="map-map">
-                CARTE
-            </div>
+          <div class="map-map">
+            CARTE
+          </div>
         </div>
-    </div>
-    <div class="map-right-container grid-item">
+      </div>
+      <div class="map-right-container grid-item">
         <div class="title-wrapper">
-            <div class="map-title whimsy orange-underline">
-                Où nous trouver ?
-            </div>
+          <div class="map-title whimsy orange-underline">
+            Où nous trouver ?
+          </div>
         </div>
-    <div class="map-text">
-            Le camion épicerie “Pierre Qui Roule” fait une tournée hebdomadaire composée de
-            <ul>
-                <li>marchés</li>
-                <li>arrêts itinérants en commune</li>
-                <li>livraisons à domicile des particuliers</li>
-                <li>livraisons aux clubs des aînés</li>
-              </ul>
-            La tournée s'effectue du Lundi au Vendredi sur nos belles routes de la région.
-            <br>
-            La carte interactive vous permet de repérer les arrêts du camion !
-            
-                        
+        <div class="map-text">
+          Le camion épicerie “Pierre Qui Roule” fait une tournée hebdomadaire composée de
+          <ul>
+            <li>marchés</li>
+            <li>arrêts itinérants en commune</li>
+            <li>livraisons à domicile des particuliers</li>
+            <li>livraisons aux clubs des aînés</li>
+          </ul>
+          La tournée s'effectue du Lundi au Vendredi sur nos belles routes de la région.
+          <br>
+          La carte interactive vous permet de repérer les arrêts du camion !
+
+
         </div>
+      </div>
     </div>
+  </div>
 
 </div>
 
 {% style %}
 
-.map-main {
+  .map-main {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    padding: 1rem 1rem 1rem 1rem;
-}
+    padding: 1rem;
+  }
 
-@media screen and (max-width: 1200px) {
-    .grid-item:nth-child(1) { order: 2; }
-    .grid-item:nth-child(2) { order: 1; }
+  @media screen and (max-width: 1200px) {
+    .grid-item:nth-child(1) {
+      order: 2;
+    }
+    .grid-item:nth-child(2) {
+      order: 1;
+    }
 
     .map-main {
-        grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
     }
-}
+  }
 
-.map-right-container {
-    padding: 1rem 1rem 1rem 1rem;
+  .map-right-container {
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-}
+  }
 
-.map-title {
+  .map-title {
     font-size: 3rem;
     margin-bottom: 1rem;
 
-}
+  }
 
-.map-text {
-    font-size:1.5rem;
-}
+  .map-text {
+    font-size: 1.5rem;
+  }
 
-.map-left-container {
-    padding: 1rem 0rem 1rem 0rem;
+  .map-left-container {
+    padding: 1rem 0;
     display: flex;
-}
+  }
 
-.map-map-wrapper {
+  .map-map-wrapper {
     display: flex;
-    height:100%;
-    width:100%;
+    height: 100%;
+    width: 100%;
     justify-content: center;
     align-items: center;
-}
+  }
 
-.map-map {
+  .map-map {
     display: flex;
     height: 25rem;
     width: 40rem;
     font-size: 3rem;
     background-color: #9CC0F9;
     font-size: 3rem;
-}
+  }
 
-.title-wrapper {
+  .title-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
+  }
 {% endstyle %}
 
 {% schema %}
-{
-  "name": "Map"
-}
+  {
+    "name": "Map"
+  }
 {% endschema %}

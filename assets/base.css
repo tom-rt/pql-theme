@@ -30,7 +30,18 @@
     max-width: 100rem;
 }
 
+.tt-column {
+    width: 100%;
+}
+
+.main-mt {
+    padding-top: 6rem;
+}
+
 .main-wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 1rem;
 }
