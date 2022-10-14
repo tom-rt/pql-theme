@@ -1,0 +1,87 @@
+<div class="main-wrapper">
+  <div class="main-column">
+
+    <div class="rv-main">
+      <div class="rv-title-wrapper">
+        <div class="rv-title whimsy orange-underline">Vos avis</div>
+      </div>
+      <div class="rv-wrapper">
+        <div class="rv-review">
+          <div class="rv-text" ">"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Co"</div>
+          <div class="rv-author">Béatrice, cliente depuis 2022</div>
+        </div>
+
+        <div class="rv-review">
+          <div class="rv-text" ">"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Co"</div>
+          <div class="rv-author">Béatrice, cliente depuis 2022</div>
+        </div>
+
+        <div class="rv-review">
+          <div class="rv-text" ">"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Co"</div>
+          <div class="rv-author">Béatrice, cliente depuis 2022</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{%- style -%}
+
+  .rv-main {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .rv-wrapper {
+    display: flex;
+    width: 100%;
+  }
+
+  .rv-title-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .rv-title {
+    display: flex;
+    font-size: 3rem;
+    justify-content: center;
+    display: flex;
+  }
+
+  .rv-review {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 1rem;
+    padding: 1rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--duck-blue);
+    border-radius: 10px;
+  }
+
+  .rv-text {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .rv-author {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+  }
+{% endstyle %} 

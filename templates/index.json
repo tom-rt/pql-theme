@@ -11,12 +11,16 @@
     },
     "timetable": {
       "type": "timetable"
+    },
+    "reviews": {
+      "type": "reviews"
     }
   },
   "order": [
     "picture",
+    "timetable",
+    "reviews",
     "concept",
-    "map",
-    "timetable"
+    "map"
   ]
 }
