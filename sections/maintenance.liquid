@@ -6,10 +6,7 @@
         Le site de Pierre qui roule est actuellement en développement, à bientôt !
       </div>
       <div>
-        {%- comment -%}
-          <img loading='lazy' width="inherit" height="150" class="mt-logo-pql" src='../assets/Logo_petit.PNG'/>
-        {%- endcomment -%}
-        <img loading='lazy' width="inherit" height="150" class="mt-logo-pql" src={{ 'Logo_petit.PNG' | asset_img_url }}/>
+        <img loading='lazy' width="inherit" height="150" class="mt-logo-pql" src={{ 'logo.png' | file_img_url: 'large' }}/>
       </div>
       <div class="mt-contact whimsy">
         06 46 71 14 32
