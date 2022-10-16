@@ -8,21 +8,8 @@
   </head>
 
   <body class="body">
-    {% section 'topbar' %}
     {%- comment -%}
-      <div class="main-mt">
-      {% section 'picture' %}
-      <div class="main-wrapper">
-      <div class="main-column">
-      {% section 'concept' %}
-      {% section 'map' %}
-      {% section 'timetable' %}
-      </div>
-      <div class="tt-column">
-      {% section 'timetable' %}
-      </div>
-      </div>
-      </div>
+      {% section 'topbar' %}
     {%- endcomment -%}
     <div class="main-mt">
       {{ content_for_layout }}
