@@ -8,11 +8,10 @@
   </head>
 
   <body class="body">
-    {%- comment -%}
-      {% section 'topbar' %}
-    {%- endcomment -%}
-    <div class="main-mt">
+    {% section 'header' %}
+    <div class="main">
       {{ content_for_layout }}
     </div>
+    {% section 'footer' %}
   </body>
 </html>

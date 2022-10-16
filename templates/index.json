@@ -1,12 +1,30 @@
 {
   "sections": {
-    "maintenance": {
-      "type": "maintenance",
-      "settings": {
-      }
+    "picture": {
+      "type": "picture"
+    },
+    "concept": {
+      "type": "concept"
+    },
+    "map": {
+      "type": "map"
+    },
+    "timetable": {
+      "type": "timetable"
+    },
+    "reviews": {
+      "type": "reviews"
+    },
+    "kpis": {
+      "type": "kpis"
     }
   },
   "order": [
-    "maintenance"
+    "picture",
+    "kpis",
+    "reviews",
+    "concept",
+    "map",
+    "timetable"
   ]
 }

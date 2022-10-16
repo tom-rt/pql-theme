@@ -1,0 +1,11 @@
+{
+    "name": "contact",
+    "sections": {
+        "contact": {
+            "type": "contact"
+        }
+    },
+    "order": [
+        "contact"
+    ]
+}

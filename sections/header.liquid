@@ -1,31 +1,152 @@
-<div class="tb-main">
-  <div class="logo-box">
-    <img loading='lazy' width="inherit" height="50" class="img" src='../assets/Logo_petit.PNG'/>
-  </div>
-  <div class="tb-menu">
-    <div class="tb-box border-right">
-      Accueil
-    </div>
-    <a href="{{ routes.collections_url }}">
-      <div class="tb-box border-right">
-        Commander
+<div class="hd-main">
+  <div class="header-column">
+    <div class="header-wrapper">
+      <div class="header">
+        <div class="title">
+          <div class="logo-box">
+            <img loading='lazy' width="inherit" height="30" class="img" src={{ 'caddie.png' | file_img_url }}/>
+          </div>
+          <div class="pql">Pierre</div>
+          <div class="pql">qui</div>
+          <div class="pql orange">roule</div>
+        </div>
       </div>
-    </a>
-    <div class="tb-box">
-      Contact
+
+      <div class="socials">
+        <div class="fb-wrapper">
+          <img loading='lazy' width="inherit" height="35" class="img fb" src={{ 'fb.png' | file_img_url }}/>
+        </div>
+        <div class="insta">
+          <img loading='lazy' width="inherit" height="35" class="img" src={{ 'insta.png' | file_img_url }}/>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="hd-menu">
+
+    {% for link in linklists.main-menu.links %}
+      <a class="link hd-box border-right" href="{{ link.url }}">
+        {{link.title}}
+        {%- comment -%}
+          <div class="hd-box border-right">
+          {{link.title}}
+          </div>
+        {%- endcomment -%}
+      </a>
+    {% endfor %}
+
+    {%- comment -%}
+      <div class="hd-box border-right">
+      Accueil
+      </div>
+      <div class="hd-box border-right">
+      Commander
+      </div>
+      <div class="hd-box">
+      Contact
+      </div>
+    {%- endcomment -%}
+
+    {%- comment -%}
+      {% for link in linklists.main-menu.links %}
+      <!-- menu content -->
+      <li class="menu-link">
+      <a href="{{ link.url }}">{{link.title}}
+      </a>
+      </li>
+      {% endfor %}
+    {%- endcomment -%}
   </div>
 </div>
 
+{% schema %}
+  {
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Menu"
+      }
+    ]
+  }
+{% endschema %}
+
 {% style %}
 
-  .tb-main {
+  .link {
+    all: unset
+  }
+
+  .header-column {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: white;
+  }
+
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100rem;
+    width: 100%;
+  }
+
+  .header {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    justify-content: space-between;
+    /*padding-left: 2rem;
+    padding-right: 2rem;*/
+  }
+
+  .socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2rem;
+  }
+
+  .fb {
+    border-radius: 10px;
+  }
+
+  .fb-wrapper {
+    margin-right: 1rem;
+  }
+
+  .title {
+    display: flex;
+  }
+
+  .pql {
+    font-family: whimsy;
+    font-size: 2rem;
+    color: var(--duck-blue);
+    margin-right: 0.5rem;
+  }
+
+  .slogan {
+    display: flex;
+    align-items: center;
+  }
+
+  .orange {
+    color: var(--orange)
+  }
+
+  .hd-main {
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     position: fixed;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-bottom-color: blue;
+    border-bottom-color: var(--black);
   }
 
   img {
@@ -33,11 +154,12 @@
     height: "auto";
   }
 
-  .tb-menu {
+  .hd-menu {
+    height: 3rem;
     width: 100%;
     text-align: center;
     color: white;
-    background-color: blue;
+    background-color: #28241B;
     display: flex;
     justify-content: space-between;
     font-family: "whimsy";
@@ -47,13 +169,13 @@
   .logo-box {
     background-color: white;
     display: flex;
-    width: 10rem;
-    max-width: 10rem;
+    width: 4rem;
+    max-width: 4rem;
     justify-content: center;
     align-items: center;
   }
 
-  .tb-box {
+  .hd-box {
     padding: 1rem 0;
     display: flex;
     justify-content: center;
@@ -62,7 +184,7 @@
     cursor: pointer;
   }
 
-  .tb-box:hover {
+  .hd-box:hover {
     text-shadow: 1px 1px 2px white;
   }
 
@@ -72,9 +194,3 @@
     border-width: 1px;
   }
 {% endstyle %}
-
-{% schema %}
-  {
-    "name": "Header"
-  }
-{% endschema %}

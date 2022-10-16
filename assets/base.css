@@ -13,7 +13,10 @@
     border-bottom-color: var(--orange);
 }
 
-.html {}
+.html {
+    height: 100%;
+    background-color: var(--black);
+}
 
 .body {
     font-family: "avgb";
@@ -22,6 +25,12 @@
     margin-bottom: 0px;
     margin-left: 0px;
     margin-right: 0px;
+    height: 100%;
+}
+
+#shopify-section-footer {
+    max-height: 6rem;
+    height: 100%;
 }
 
 .main-column {
@@ -35,8 +44,12 @@
     width: 100%;
 }
 
-.main-mt {
+.main {
     padding-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding-bottom: 2rem;
 }
 
 .main-wrapper {

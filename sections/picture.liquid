@@ -1,20 +1,21 @@
 <div class="pic-main">
-      
-    {% comment %} <div class="pic-box">
-        PHOTO
-      </div> {% endcomment %}
-      <div class="pic-box">
-        Camion epicerie itinerant
-      </div>
-      <div class="pic-box">
-        Produits locaux, de saison, spécialités régionales, zéro déchet
-      </div>
-    
+
+  {% comment %}
+    <div class="pic-box">
+    PHOTO
+    </div>{% endcomment %}
+  <div class="pic-box">
+    Camion epicerie itinerant
+  </div>
+  <div class="pic-box">
+    Produits locaux, de saison, spécialités régionales, zéro déchet
+  </div>
+
 </div>
 
 {% style %}
 
-.pic-main {
+  .pic-main {
     color: white;
     background-color: #FF8C1A;
     display: flex;
@@ -26,18 +27,14 @@
     font-size: 3rem;
     font-weight: bolder;
 
-    /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
-    /* background-image: url('../assets/veggies.avif'); */
-    /* background-image: url('../assets/patates.jpg'); */
-    background-image: url('../assets/carrottes.jpg');
+    background-image: url('{{ 'carottes.jpg' | asset_url }}');
     background-size: cover;
-}
-
-
+  }
 {% endstyle %}
 
+
 {% schema %}
-{
-  "name": "Picture"
-}
+  {
+    "name": "Picture"
+  }
 {% endschema %}

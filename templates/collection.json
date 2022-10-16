@@ -1,10 +1,10 @@
 {
     "sections": {
-        "picture": {
-            "type": "picture"
+        "timetable": {
+            "type": "timetable"
         }
     },
     "order": [
-        "picture"
+        "timetable"
     ]
 }

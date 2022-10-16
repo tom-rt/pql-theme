@@ -1,0 +1,80 @@
+<div class="main-wrapper">
+  <div class="main-column pt">
+
+    <div class="kpi-main">
+      <div class="kpi-wrapper">
+
+        <div class="kpi-logo-wrapper">
+          <img loading='lazy' width="inherit" height="150" class="mt-logo-pql" src={{ 'logo.png' | file_img_url: 'large' }}/>
+        </div>
+
+        <div class="kpi-kpi">
+          <div class="kpi-number" ">44</div>
+          <div class="kpi-title">Producteurs et artisans</div>
+        </div>
+
+        <div class="kpi-kpi">
+          <div class="kpi-number" ">150</div>
+          <div class="kpi-title">Produits locaux</div>
+        </div>
+
+        <div class="kpi-kpi">
+          <div class="kpi-number" ">3</div>
+          <div class="kpi-title">Territoires couverts: Audomarois, Dunkerquois, Boulonnais</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{%- style -%}
+
+  .kpi-logo-wrapper {
+    margin-left: 1rem;
+  }
+
+  .pt {
+    padding-top: 1rem;
+  }
+
+  .kpi-main {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .kpi-wrapper {
+    display: flex;
+    width: 100%;
+  }
+
+  .kpi-kpi {
+    display: flex;
+    width: 100%;
+    margin: 0 1rem;
+    padding: 1rem;
+    /*border-width: 1px;
+    border-style: solid;
+    border-color: var(--duck-blue);
+    border-radius: 10px;*/
+  }
+
+  .kpi-number {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+
+  .kpi-title {
+    display: flex;
+    width: 100%;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+  }
+{% endstyle %} 
