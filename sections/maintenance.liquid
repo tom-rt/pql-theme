@@ -6,7 +6,16 @@
         Le site de Pierre qui roule est actuellement en développement, à bientôt !
       </div>
       <div>
-        <img loading='lazy' width="inherit" height="100" class="img" src='../assets/Logo_petit.PNG'/>
+        {%- comment -%}
+          <img loading='lazy' width="inherit" height="150" class="mt-logo-pql" src='../assets/Logo_petit.PNG'/>
+        {%- endcomment -%}
+        <img loading='lazy' width="inherit" height="150" class="mt-logo-pql" src={{ 'Logo_petit.PNG' | asset_img_url }}/>
+      </div>
+      <div class="mt-contact whimsy">
+        06 46 71 14 32
+      </div>
+      <div class="mt-contact whimsy">
+        epicerie.pierrequiroule@gmail.com
       </div>
 
     </div>
@@ -25,9 +34,18 @@
     flex-direction: column;
   }
 
+  .mt-logo-pql {
+    margin-bottom: 2rem;
+  }
+
   .mt-title {
     font-size: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .mt-contact {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
   }
 
   .mt-text {
