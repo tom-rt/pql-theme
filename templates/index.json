@@ -1,7 +1,9 @@
 {
   "sections": {
     "maintenance": {
-      "type": "maintenance"
+      "type": "maintenance",
+      "settings": {
+      }
     }
   },
   "order": [
