@@ -1,0 +1,64 @@
+<div class="main-wrapper">
+  <div class="main-column">
+    <div class="cs-main">
+      <div class="cs-row">
+        <div class="cs-digit">
+          1
+        </div>
+        <div class="">
+          logo
+        </div>
+      </div>
+      <div class="cs-col">
+        <div class="cs-row-title whimsy">Secteur de livraison : je vérifie que j'habite dans une des communes couvertes par la livraison !</div>
+        <div class="cs-row-paragraph">Pierre qui roule vient jusqu'à votre porte ! Tous les samedis matin, de 9H00 à 12H00 vous avez la possibilité de vous faire livrer vos courses à votre domicile.</div>
+        <div class="cs-row-paragraph">La livraison à domicile est offerte dès 15 € d'achat dans un rayon de 8 km autour de Saint-Omer (Pour les habitants de Bomy, vous pouvez être livré à domicile tous les mardis de 18H30 à 20H00). Vérifiez dans le tableau ci-dessus si votre commune est desservie. Si votre panier est à moins de 15€, pas de panique ! Nous vous livrons pour la somme de 5€.</div>
+        <div class="cs-row-paragraph">Si votre panier est à moins de 15€, pas de panique ! Nous vous livrons pour la somme de 5€.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- style -%}
+
+  .cs-main {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 4rem;
+  }
+
+  .cs-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .cs-row-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--duck-blue);
+    margin-bottom: 1rem;
+  }
+
+  .cs-row-paragraph {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .cs-digit {
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    background-color: var(--duck-blue);
+    color: var(--orange);
+    width: 4rem;
+    font-size: 3rem;
+    border-radius: 50%;
+  }
+{% endstyle %} 

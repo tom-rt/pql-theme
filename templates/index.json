@@ -21,10 +21,10 @@
   },
   "order": [
     "picture",
-    "kpis",
-    "reviews",
     "concept",
+    "kpis",
     "map",
-    "timetable"
+    "timetable",
+    "reviews"
   ]
 }

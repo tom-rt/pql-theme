@@ -4,11 +4,15 @@
       <div class="header">
         <div class="title">
           <div class="logo-box">
-            <img loading='lazy' width="inherit" height="30" class="img" src={{ 'caddie.png' | file_img_url }}/>
+            <a class="link hd-box" href="/">
+              <img loading='lazy' width="inherit" height="30" class="img" src={{ 'caddie.png' | file_img_url }}/>
+            </a>
           </div>
-          <div class="pql">Pierre</div>
-          <div class="pql">qui</div>
-          <div class="pql orange">roule</div>
+          <a class="link hd-box " href="/">
+            <div class="pql">Pierre</div>
+            <div class="pql">qui</div>
+            <div class="pql orange">roule</div>
+          </a>
         </div>
       </div>
 
@@ -27,35 +31,9 @@
     {% for link in linklists.main-menu.links %}
       <a class="link hd-box border-right" href="{{ link.url }}">
         {{link.title}}
-        {%- comment -%}
-          <div class="hd-box border-right">
-          {{link.title}}
-          </div>
-        {%- endcomment -%}
       </a>
     {% endfor %}
 
-    {%- comment -%}
-      <div class="hd-box border-right">
-      Accueil
-      </div>
-      <div class="hd-box border-right">
-      Commander
-      </div>
-      <div class="hd-box">
-      Contact
-      </div>
-    {%- endcomment -%}
-
-    {%- comment -%}
-      {% for link in linklists.main-menu.links %}
-      <!-- menu content -->
-      <li class="menu-link">
-      <a href="{{ link.url }}">{{link.title}}
-      </a>
-      </li>
-      {% endfor %}
-    {%- endcomment -%}
   </div>
 </div>
 

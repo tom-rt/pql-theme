@@ -1,10 +1,30 @@
 {
     "sections": {
-        "timetable": {
-            "type": "timetable"
+        "command-title": {
+            "type": "command-title"
+        },
+        "command-step-1": {
+            "type": "command-step-1"
+        },
+        "command-step-2": {
+            "type": "command-step-2"
+        },
+        "command-places": {
+            "type": "command-places"
+        },
+        "command-step-3": {
+            "type": "command-step-3"
+        },
+        "command-step-4": {
+            "type": "command-step-4"
         }
     },
     "order": [
-        "timetable"
+        "command-title",
+        "command-step-1",
+        "command-places",
+        "command-step-2",
+        "command-step-3",
+        "command-step-4"
     ]
 }
