@@ -12,9 +12,6 @@
     "timetable": {
       "type": "timetable"
     },
-    "reviews": {
-      "type": "reviews"
-    },
     "kpis": {
       "type": "kpis"
     }
@@ -24,7 +21,6 @@
     "concept",
     "kpis",
     "map",
-    "timetable",
-    "reviews"
+    "timetable"
   ]
 }

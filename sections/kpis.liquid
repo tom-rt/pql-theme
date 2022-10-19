@@ -5,16 +5,16 @@
       <div class="kpi-wrapper">
 
         <div class="kpi-logo-wrapper">
-          <img loading='lazy' width="inherit" height="150" class="mt-logo-pql" src={{ 'logo-png.png' | file_img_url: 'large' }}/>
+          <img loading='lazy' width="inherit" height="150" class="mt-logo-pql" src={{ 'logo-png.png' | asset_url }}/>
         </div>
 
         <div class="kpi-kpi">
-          <div class="kpi-number" ">44</div>
+          <div class="kpi-number" ">32</div>
           <div class="kpi-title">Producteurs et artisans</div>
         </div>
 
         <div class="kpi-kpi">
-          <div class="kpi-number" ">150</div>
+          <div class="kpi-number" ">129</div>
           <div class="kpi-title">Produits locaux</div>
         </div>
 
@@ -33,6 +33,14 @@
   .kpi-logo-wrapper {
     margin-left: 1rem;
   }
+
+  @media screen and (max-width: 1200px) {
+    .kpi-logo-wrapper {
+      display: none;
+    }
+  }
+
+
 
   .pt {
     padding-top: 1rem;
@@ -65,7 +73,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 3.5rem;
   }
 
   .kpi-title {

@@ -29,15 +29,15 @@
 }
 
 #shopify-section-footer {
-    max-height: 6rem;
+    max-height: 15rem;
     height: 100%;
 }
 
 .main-column {
     display: flex;
     width: 100%;
-    /* flex-direction: column; */
     max-width: 100rem;
+    justify-content: center;
 }
 
 .tt-column {
@@ -49,7 +49,12 @@
     display: flex;
     flex-direction: column;
     background-color: white;
-    padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .main {
+        padding-top: 14rem;
+    }
 }
 
 .main-wrapper {
@@ -65,4 +70,12 @@
     padding-bottom: 1rem;
     align-items: center;
     width: 100%;
+}
+
+.link {
+    all: unset
+}
+
+.pointer {
+    cursor: pointer;
 }

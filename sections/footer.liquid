@@ -1,70 +1,107 @@
 <div class="ft-main">
-  <div class="ft-block">
-    <div class="ft-block-title">
+  <div class="footer-row">
+    <div class="ft-block">
+      <img loading='lazy' width="inherit" height="100" class="mt-logo-pql" src={{ 'logo-png.png' | asset_url }}/>
+    </div>
+    {%- comment -%}
+      <div class="ft-block">
+      <div class="ft-block-title">
       En savoir plus
-    </div>
-    <div class="ft-block-elem">
+      </div>
+      <div class="ft-block-elem">
       Nos engagements
-    </div>
-    <div class="ft-block-elem">
+      </div>
+      <div class="ft-block-elem">
       Paiement 100% sécurisé
-    </div>
-    <div class="ft-block-elem">
+      </div>
+      <div class="ft-block-elem">
       On parle de nous
-    </div>
-    <div class="ft-block-elem">
+      </div>
+      <div class="ft-block-elem">
       Conditions génerales de vente
-    </div>
-    <div class="ft-block-elem">
+      </div>
+      <div class="ft-block-elem">
       Mentions légales
+      </div>
+      </div>
+    {%- endcomment -%}
+    <div class="ft-block br">
+      <div class="ft-block-title ft-all">
+        Avec le soutien de:
+      </div>
+      <img loading='lazy' width="inherit" height="70" class="mt-logo-pql" src={{ 'hdf-logo.png' | asset_url }}/>
+    </div>
+
+    <div class="ft-block">
+      <div class="ft-block-title">
+        Besoin d'aide
+      </div>
+      <div class="ft-block-elem">
+        <a class="link" href="/pages/contact">
+          Contact
+        </a>
+      </div>
+    </div>
+    <div class="ft-block bl">
+      <div class="ft-block-title">
+        Suivez nous !
+      </div>
+      <div class="ft-block-elem ft-mb">
+        <a class="link" target="_blank" href="https://www.instagram.com/epicerie.pierrequiroule/?hl=fr">
+          <img loading='lazy' width="inherit" height="30" class="mt-logo-pql" src={{ 'insta.png' | asset_url }}/>
+        </a>
+      </div>
+      <div class="ft-block-elem">
+        <a class="link" target="_blank" href="https://www.facebook.com/epicerie.pierrequiroule">
+          <img loading='lazy' width="inherit" height="30" class="mt-logo-pql" src={{ 'fb.png' | asset_url }}/>
+        </a>
+      </div>
     </div>
   </div>
-  <div class="ft-block bl">
-    <div class="ft-block-title">
-      Besoin d'aide
+
+  <div class="footer-lower-row">
+    {%- comment -%}
+      <div class="ft-block">
+      <div class="ft-block-title ft-all">
+      Avec le soutien de:
+      </div>
+      <img loading='lazy' width="inherit" height="70" class="mt-logo-pql" src={{ 'hdf-logo.png' | asset_url }}/>
+      </div>
+    {%- endcomment -%}
+    <div class="ft-block ft-all">
+      <img loading='lazy' width="inherit" height="70" class="mt-logo-pql" src={{ 'alcool.jpg' | asset_url }}/>
     </div>
-    <div class="ft-block-elem">
-      FAQ
-    </div>
-    <div class="ft-block-elem">
-      Contact
-    </div>
+
   </div>
-  <div class="ft-block bl">
-    <div class="ft-block-title">
-      Suivez nous !
-    </div>
-    <div class="ft-block-elem">
-      Instagram
-    </div>
-    <div class="ft-block-elem">
-      Facebook
-    </div>
-  </div>
+
 </div>
 
 {% style %}
-  /* .ft-main {
+  .footer-row {
     display: flex;
-    margin-top: 2rem;
-    height: 6rem;
-    background-color: var(--black);
-    position: fixed;
     width: 100%;
-    bottom: 0;
-    color: white;
   }
-  */
+
+  .footer-lower-row {
+    display: flex;
+    width: 100%;
+    margin-top: 1rem;
+  }
 
   .ft-main {
     display: flex;
-    height: 100%;
+    margin-top: 2rem;
     background-color: var(--black);
     width: 100%;
     bottom: 0;
     color: white;
-    max-height: 6rem;
-    padding: 1rem;
+    max-height: 15rem;
+    padding: 1rem 0;
+    flex-direction: column;
+  }
+
+  .ft-all {
+    align-items: left;
   }
 
   .ft-block {
@@ -81,6 +118,13 @@
     border-left-width: 1px;
   }
 
+  .br {
+    border-right-style: solid;
+    border-right-color: white;
+    border-right-width: 1px;
+  }
+
+
   .ft-block-title {
     font-size: 1.1rem;
     margin-bottom: 0.2rem;
@@ -94,7 +138,10 @@
 
   .ft-block-elem:hover {
     text-decoration: underline;
-    margin-bottom: 0.1rem;
+  }
+
+  .ft-mb {
+    margin-bottom: 0.5rem;
   }
 {% endstyle %}
 

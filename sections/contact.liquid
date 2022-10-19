@@ -2,7 +2,7 @@
   <div class="main-column">
     <div class="ct-main">
       <div>
-        <img loading='lazy' width="inherit" height="150" class="ct-logo-pql" src={{ 'logo-png.png' | file_img_url: 'large' }}/>
+        <img loading='lazy' width="inherit" height="150" class="ct-logo-pql" src={{ 'logo-png.png' | asset_url }}/>
       </div>
       <div class="ct-contact">
         06 46 71 14 32
@@ -25,6 +25,7 @@
     align-items: center;
     text-align: center;
     flex-direction: column;
+    height: 30rem;
   }
 
   .ct-logo-pql {

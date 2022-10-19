@@ -14,14 +14,37 @@
           </div>
         {%- endcomment -%}
         <div class="cc-text">
-          Pierre Qui Roule est un camion épicerie qui sillone le Nord-Pas-De-Calais et vous propose le meilleur des produits de la région.... à votre porte !
+          <div class="cc-p">
+            Pierre Qui Roule est un camion épicerie qui sillone le Nord-Pas-De-Calais et vous propose le meilleur des produits de la région à votre porte !
+          </div>
+          <div class="cc-p">
+            Fruits et légumes
+          </div>
+          <div class="cc-p">
+            Produits laitiers : fromage, beurre, yaourt, crème fraîche...
+          </div>
+          <div class="cc-p">
+            Vrac : pâtes, muesli, riz, lentilles...
+          </div>
+          <div class="cc-p">
+            Boissons : bière, cidre, jus, soupe, vinaigre, huile...
+          </div>
+          <div class="cc-p">
+            Hygiène et maison : savon, shampooing...
+          </div>
+          <div class="cc-p">
+            Epicerie fine et sèche : farine, moutarde, confiture, gaufre...
+          </div>
         </div>
       </div>
 
       <div class="cc-right-container">
-        <div class="cc-video-wrapper">
+        {%- comment -%}
+          <div class="cc-video-wrapper">
           <iframe class="cc-video" src="https://www.youtube.com/embed/sQfEG4IrNXE"></iframe>
-        </div>
+          </div>
+        {%- endcomment -%}
+        <img loading='lazy' class="cc-photo" src={{ 'photo-camion.JPG' | asset_url }}/>
       </div>
     </div>
 
@@ -29,6 +52,18 @@
 </div>
 
 {%- style -%}
+
+  .cc-photo {
+    width: 60rem;
+  }
+
+  .cc-p {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
 
   .cc-main {
     display: grid;
@@ -56,6 +91,7 @@
 
   .cc-text {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -66,6 +102,7 @@
     display: flex;
     padding: 1rem 0;
     align-items: center;
+    justify-content: center;
   }
 
   .cc-video-wrapper {

@@ -5,7 +5,7 @@
         <div class="title">
           <div class="logo-box">
             <a class="link hd-box" href="/">
-              <img loading='lazy' width="inherit" height="30" class="img" src={{ 'caddie.png' | file_img_url }}/>
+              <img loading='lazy' class="img hd-caddie" src={{ 'caddie.png' | asset_url }}/>
             </a>
           </div>
           <a class="link hd-box " href="/">
@@ -17,11 +17,20 @@
       </div>
 
       <div class="socials">
+        {%- comment -%}
+          <div class="fb-wrapper">
+          <img loading='lazy' width="inherit" height="35" class="img fb" src={{ 'cart-icon.png' | asset_url }}/>
+          </div>
+        {%- endcomment -%}
         <div class="fb-wrapper">
-          <img loading='lazy' width="inherit" height="35" class="img fb" src={{ 'fb.png' | file_img_url }}/>
+          <a class="link" target="_blank" href="https://www.facebook.com/epicerie.pierrequiroule">
+            <img loading='lazy' width="inherit" class="img hd-fb pointer" src={{ 'fb.png' | asset_url }}/>
+          </a>
         </div>
         <div class="insta">
-          <img loading='lazy' width="inherit" height="35" class="img" src={{ 'insta.png' | file_img_url }}/>
+          <a class="link" target="_blank" href="https://www.instagram.com/epicerie.pierrequiroule/?hl=fr">
+            <img loading='lazy' width="inherit" class="img hd-insta pointer" src={{ 'insta.png' | asset_url }}/>
+          </a>
         </div>
       </div>
     </div>
@@ -51,10 +60,6 @@
 
 {% style %}
 
-  .link {
-    all: unset
-  }
-
   .header-column {
     display: flex;
     align-items: center;
@@ -77,9 +82,14 @@
     align-items: center;
     background-color: white;
     justify-content: space-between;
-    /*padding-left: 2rem;
-    padding-right: 2rem;*/
   }
+
+  @media screen and (max-width: 1000px) {
+    .header {
+      height: 7rem;
+    }
+  }
+
 
   .socials {
     display: flex;
@@ -88,12 +98,40 @@
     margin-right: 2rem;
   }
 
-  .fb {
+  .hd-fb {
+    height: 35px;
     border-radius: 10px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .hd-fb {
+      height: 60px;
+      margin-right: 1rem;
+    }
+  }
+
+  .hd-insta {
+    height: 35px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .hd-insta {
+      height: 60px
+    }
   }
 
   .fb-wrapper {
     margin-right: 1rem;
+  }
+
+  .hd-caddie {
+    height: 30px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .hd-caddie {
+      height: 60px;
+    }
   }
 
   .title {
@@ -101,10 +139,19 @@
   }
 
   .pql {
+    display: flex;
+    align-items: center;
     font-family: whimsy;
     font-size: 2rem;
     color: var(--duck-blue);
     margin-right: 0.5rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .pql {
+      height: 7rem;
+      font-size: 4rem;
+      margin-right: 1rem;
+    }
   }
 
   .slogan {
@@ -115,7 +162,6 @@
   .orange {
     color: var(--orange)
   }
-
   .hd-main {
     height: 6rem;
     display: flex;
@@ -126,12 +172,15 @@
     border-bottom-width: 1px;
     border-bottom-color: var(--black);
   }
-
+  @media screen and (max-width: 1000px) {
+    .hd-main {
+      height: 14rem;
+    }
+  }
   img {
     width: "inherit";
     height: "auto";
   }
-
   .hd-menu {
     height: 3rem;
     width: 100%;
@@ -141,9 +190,14 @@
     display: flex;
     justify-content: space-between;
     font-family: "whimsy";
-    font-size: 2em;
+    font-size: 2rem;
   }
-
+  @media screen and (max-width: 1000px) {
+    .hd-menu {
+      height: 7rem;
+      font-size: 3rem;
+    }
+  }
   .logo-box {
     background-color: white;
     display: flex;
@@ -152,20 +206,22 @@
     justify-content: center;
     align-items: center;
   }
+  @media screen and (max-width: 1000px) {
+    .logo-box {
+      margin: 0 1.5rem;
+    }
+  }
 
   .hd-box {
-    padding: 1rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     cursor: pointer;
   }
-
   .hd-box:hover {
     text-shadow: 1px 1px 2px white;
   }
-
   .border-right {
     border-right-style: solid;
     border-right-color: "#FFFFF";
