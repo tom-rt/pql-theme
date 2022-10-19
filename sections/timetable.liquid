@@ -153,7 +153,7 @@
                 </div>
                 <div class="tt-times">
                   <div class="tt-time">
-                    - Devant la salle Duchaussois de 13h30 à 15h00
+                    - Devant la salle Duchaussois de 13h30 à 15h
                   </div>
                   <div class="tt-time">
                     - Devant la salle du dojo de 15h15 à 16h15
@@ -171,7 +171,7 @@
                 </div>
                 <div class="tt-times">
                   <div class="tt-time">
-                    - A côté de l'école de 17h à 20h00
+                    - A côté de l'école de 17h à 20h
                   </div>
                 </div>
               </div>
@@ -209,7 +209,7 @@
                 </div>
                 <div class="tt-times">
                   <div class="tt-time">
-                    - A côté de l'école de 17h à 20h00
+                    - A côté de l'école de 17h à 20h
                   </div>
                 </div>
               </div>
@@ -399,6 +399,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 0 1rem;
+    column-gap: 1rem;
   }
 
   @media screen and (max-width: 1200px) {
@@ -446,6 +447,12 @@
     display: flex;
   }
 
+  @media screen and (max-width: 1000px) {
+    .tt-title {
+      font-size: 4rem;
+    }
+  }
+  
   .tt-day-box {
     display: flex;
     width: 100%;
