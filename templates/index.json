@@ -14,6 +14,9 @@
     },
     "kpis": {
       "type": "kpis"
+    },
+    "reviews": {
+      "type": "reviews"
     }
   },
   "order": [
@@ -21,6 +24,7 @@
     "concept",
     "kpis",
     "map",
-    "timetable"
+    "timetable",
+    "reviews"
   ]
 }

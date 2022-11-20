@@ -1,0 +1,125 @@
+<div class="main-wrapper">
+  <div class="esp-title-wrapper">
+    <div class="esp-title whimsy orange-underline">Notre ambition</div>
+  </div>
+
+
+  <div class="main-column w-90">
+
+    <div class="esp1-main">
+
+      <div class="esp1-left-container grid-item">
+
+        <div class="title-wrapper">
+          <div class="esp1-title whimsy">
+            Un essentiel : le recours au local
+          </div>
+        </div>
+        <div class="esp1-text">
+          <div class="esp1-p">
+            Pourquoi aller chercher au bout du monde ce que l'on produit à notre porte ?
+          </div>
+          <div class="esp1-p">
+
+            Pierre Qui Roule vous propose des produits 100% locaux. Le producteur le plus éloigné se situe à moins de 80 kilomètres de Saint-Omer, port d'attache du camion.
+          </div>
+          <div class="esp1-p">
+
+            Il est proposé tout de même certains produits que nous consommons tous dans notre quotidien mais qui ne peuvent être produits dans notre région. Afin de vous proposer ces essentiels, tout en respectant la volonté de travailler avec le local, ces quelques aliments produits ailleurs (riz, amandes, noix de cajou, muesli, thé & café) sont revendus par un grossiste local. Ainsi, des emplois régionaux sont préservés.
+          </div>
+          <div class="esp1-p">
+            Pour en savoir plus sur la provenance des produits, accédez à la rubrique "Les producteurs”.
+          </div>
+        </div>
+      </div>
+
+      <div class="esp1-right-container grid-item">
+        <img loading='lazy' class="esp2-photo" src={{ 'esp-carottes.jpg' | asset_url }}/>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+{% style %}
+
+  .esp1-photo {
+    width: 30rem;
+  }
+
+  .esp1-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem 0;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .grid-item:nth-child(1) {
+      order: 1;
+    }
+    .grid-item:nth-child(2) {
+      order: 2;
+    }
+
+    .esp1-main {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .esp1-right-container {
+    padding: 1rem;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .esp1-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--duck-blue)
+  }
+
+  @media screen and (max-width: 1000px) {
+    .esp1-title {
+      font-size: 4rem;
+    }
+  }
+
+  .esp1-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .esp1-text {
+      font-size: 2rem;
+    }
+  }
+
+  .esp1-p {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+
+  .esp1-left-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    display: flex;
+  }
+
+
+  .title-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+{% endstyle %}

@@ -38,7 +38,7 @@
   <div class="hd-menu">
 
     {% for link in linklists.main-menu.links %}
-      <a class="link hd-box border-right" href="{{ link.url }}">
+      <a class="link hd-box hd-pd border-right" href="{{ link.url }}">
         {{link.title}}
       </a>
     {% endfor %}
@@ -210,6 +210,10 @@
     .logo-box {
       margin: 0 1.5rem;
     }
+  }
+
+  .hd-pd {
+    padding: 0.5rem;
   }
 
   .hd-box {

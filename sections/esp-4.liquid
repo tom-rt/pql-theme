@@ -1,0 +1,121 @@
+<div class="main-wrapper">
+
+  <div class="main-column w-90">
+
+    <div class="esp4-main">
+
+      <div class="esp4-left-container esp4-grid-item">
+
+        <div class="title-wrapper">
+          <div class="esp4-title whimsy">
+            Prendre soin de notre environnement en réduisant les déchets
+          </div>
+        </div>
+        <div class="esp4-text">
+          <div class="esp4-p">
+            Convaincu que notre façon de consommer impacte notre planète, Pierre qui Roule met en avant de nouvelles façons de consommer plus respectueuses de l'environnement.
+          </div>
+          <div class="esp4-p">
+            Tout d'abord, nous avons choisi de vous proposer du vrac. Ainsi, en choisissant la quantité exacte dont vous avez besoin, pas de gaspillage !
+          </div>
+          <div class="esp4-p">
+            Mais qui dit vrac, dit contenant ! Vous pourrez ramener les vôtres : bocaux, Tupperware... Si vous les avez oubliés, pas d'inquiétude, nous vous proposerons des sacs en kraft FSC réutilisables et mieux encore, des sacs en coton réalisés par un artisan local, évidemment.
+          </div>
+          <div class="esp4-p">
+            Enfin, vous pouvez également penser à ramener votre propre cabas pour emporter vos achats. Nous limitons ainsi l'utilisation de sacs plastiques ou krafts. Les boîtes d'œufs et les filets réutilisables pour fruits et légumes sont également les bienvenus.
+          </div>
+        </div>
+      </div>
+
+      <div class="esp4-right-container esp4-grid-item">
+        <img loading='lazy' class="esp4-photo" src={{ 'recycle.png' | asset_url }}/>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+{% style %}
+
+  .esp4-photo {
+    width: 20rem;
+  }
+
+  .esp4-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 1rem 0;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .esp4-grid-item:nth-child(1) {
+      order: 1;
+    }
+    .esp4-grid-item:nth-child(2) {
+      order: 2;
+    }
+
+    .esp4-main {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .esp4-right-container {
+    padding: 1rem;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .esp4-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--duck-blue)
+  }
+
+  @media screen and (max-width: 1000px) {
+    .esp4-title {
+      font-size: 4rem;
+    }
+  }
+
+  .esp4-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .esp4-text {
+      font-size: 2rem;
+    }
+  }
+
+  .esp4-p {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+
+  .esp4-left-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    display: flex;
+  }
+
+
+  .title-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+{% endstyle %}

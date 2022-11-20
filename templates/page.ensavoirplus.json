@@ -1,0 +1,35 @@
+{
+    "name": "esp-titles",
+    "sections": {
+        "esp-titles": {
+            "type": "esp-titles"
+        },
+        "esp-1": {
+            "type": "esp-1"
+        },
+        "esp-2": {
+            "type": "esp-2"
+        },
+        "esp-3": {
+            "type": "esp-3"
+        },
+        "esp-4": {
+            "type": "esp-4"
+        },
+        "esp-5": {
+            "type": "esp-5"
+        },
+        "esp-6": {
+            "type": "esp-6"
+        }
+    },
+    "order": [
+        "esp-titles",
+        "esp-1",
+        "esp-2",
+        "esp-3",
+        "esp-4",
+        "esp-5",
+        "esp-6"
+    ]
+}

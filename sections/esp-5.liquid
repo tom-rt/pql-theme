@@ -1,0 +1,122 @@
+<div class="main-wrapper">
+
+  <div class="main-column w-90">
+
+    <div class="esp5-main">
+
+      <div class="esp5-right-container esp5-grid-item">
+        <img loading='lazy' class="esp5-photo" src={{ 'snowflake.png' | asset_url }}/>
+      </div>
+
+
+      <div class="esp5-left-container esp5-grid-item">
+
+        <div class="title-wrapper">
+          <div class="esp5-title whimsy">
+            L'assurance de produits toujours frais
+          </div>
+        </div>
+        <div class="esp5-text">
+          <div class="esp5-p">
+            En choisissant de recourir au local, Pierre Qui Roule utilise les circuits courts caractérisés par l'absence d'intermédiaires entre le producteur et le consommateur.
+          </div>
+          <div class="esp5-p">
+            Moins d'intermédiaire = plus de fraîcheur des produits.
+          </div>
+          <div class="esp5-p">
+            Nous privilégions des réapprovisionnements de petite quantité mais fréquent auprès de nos agriculteurs, fromagers, crémiers, et artisans.
+          </div>
+          <div class="esp5-p">
+            Nous mettons tout notre engagement pour respecter scrupuleusement la chaîne du froid et vous garantir le respect des normes sanitaires.
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+{% style %}
+
+  .esp5-photo {
+    width: 20rem;
+  }
+
+  .esp5-main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 1rem 0;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .esp5-grid-item:nth-child(1) {
+      order: 2;
+    }
+    .esp5-grid-item:nth-child(2) {
+      order: 1;
+    }
+
+    .esp5-main {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .esp5-right-container {
+    padding: 1rem;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .esp5-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--duck-blue)
+  }
+
+  @media screen and (max-width: 1000px) {
+    .esp5-title {
+      font-size: 4rem;
+    }
+  }
+
+  .esp5-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .esp5-text {
+      font-size: 2rem;
+    }
+  }
+
+  .esp5-p {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+
+  .esp5-left-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    display: flex;
+  }
+
+
+  .title-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+{% endstyle %}

@@ -1,0 +1,76 @@
+<div class="main-wrapper">
+  <div class="main-column  w-90">
+    <div class="esp-main">
+
+      <div class="esp-title-wrapper">
+        <div class="esp-title whimsy orange-underline">Dans les grandes lignes...</div>
+      </div>
+
+      <div class="esp-text">
+        <div class="esp-p">Le camion est né de la prise de conscience de proposer des produits de qualité en privilégiant les circuits-courts et le recours au local.</div>
+        <div class="esp-p">Trop de communes voient leurs commerces de proximité disparaitre ou parfois une absence d'offre de magasin de produits locaux. Pierre Qui Roule permet d'apporter sur certains territoires une offre nouvelle de produits de saison et issus totalement de la région.</div>
+        <div class="esp-p">En venant à votre rencontre avec un camion épicerie d'antant, nous limitons également les trajets de chacun. Un gain de temps mais également un gain en émission de carbone, ce qui rend notre monde plus vivable.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{%- style -%}
+
+  .esp-main {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .esp-title-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .esp-title-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .esp-title {
+    display: flex;
+    font-size: 3rem;
+    justify-content: center;
+    display: flex;
+  }
+  @media screen and (max-width: 1000px) {
+    .esp-title {
+      font-size: 4rem;
+    }
+  }
+
+  .esp-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1.5rem;
+    text-align: start;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .esp-text {
+      font-size: 2rem;
+    }
+  }
+
+  .esp-p {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+{% endstyle %}

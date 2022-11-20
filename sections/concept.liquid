@@ -12,25 +12,33 @@
           <div class="cc-p">
             Pierre Qui Roule est un camion épicerie qui sillonne le Nord-Pas-De-Calais et vous propose le meilleur des produits de la région à votre porte !
           </div>
-          <div class="cc-p">
-            Fruits et légumes
-          </div>
-          <div class="cc-p">
-            Produits laitiers : fromage, beurre, yaourt, crème fraîche...
-          </div>
-          <div class="cc-p">
-            Vrac : pâtes, muesli, riz, lentilles...
-          </div>
-          <div class="cc-p">
-            Boissons : bière, cidre, jus, soupe, vinaigre, huile...
-          </div>
-          <div class="cc-p">
-            Hygiène et maison : savon, shampooing...
-          </div>
-          <div class="cc-p">
-            Epicerie fine et sèche : farine, moutarde, confiture, gaufre...
-          </div>
+          <ul style="list-style-type:circle;">
+            <li class="cc-p">
+              Fruits et légumes
+            </li>
+            <li class="cc-p">
+              Produits laitiers : fromage, beurre, yaourt, crème fraîche...
+            </li>
+            <li class="cc-p">
+              Vrac : pâtes, muesli, riz, lentilles...
+            </li>
+            <li class="cc-p">
+              Boissons : bière, cidre, jus, soupe, vinaigre, huile...
+            </li>
+            <li class="cc-p">
+              Hygiène et maison : savon, shampooing...
+            </li>
+            <li class="cc-p">
+              Epicerie fine et sèche : farine, moutarde, confiture, gaufre...
+            </li>
+          </ul>
         </div>
+
+        <a class="link hd-box " href="/pages/en-savoir-plus">
+          <div class="cc-button">
+            En savoir plus
+          </div>
+        </a>
 
       </div>
 
@@ -49,15 +57,29 @@
 
 {%- style -%}
 
+  .cc-button {
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: var(--duck-blue);
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  .cc-button:hover {
+    text-shadow: 1px 1px 2px white;
+  }
+  @media screen and (max-width: 1000px) {
+    .cc-button {
+      padding: 1.2rem;
+      font-size: 2rem;
+    }
+  }
+
   .cc-photo {
     width: 50rem;
   }
 
   .cc-p {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    text-align: center;
     margin-bottom: 0.5rem;
   }
 

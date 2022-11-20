@@ -1,0 +1,114 @@
+<div class="main-wrapper">
+
+  <div class="main-column  w-90">
+
+    <div class="esp2-main">
+
+      <div class="esp2-right-container esp2-grid-item">
+        <img loading='lazy' class="esp2-photo" src={{ 'logoESS.png' | asset_url }}/>
+      </div>
+
+      <div class="esp2-left-container esp2-grid-item">
+        <div class="title-wrapper">
+          <div class="esp2-title whimsy">
+            Développement de l'économie sociale et solidaire
+          </div>
+        </div>
+        <div class="esp2-text">
+          <div class="esp2-p">
+            Le camion épicerie promeut également l'emploi de personnes éloignées du marché du travail. En travaillant conjointement avec certains fournisseurs labelisés Entreprise d'Insertion et Atelier Chantier d'Insertion, vous contribuez à l'emploi de personnes éloignées du marché du travail.
+          </div>
+          <div class="esp2-p">
+            L'objectif étant que les personnes bénéficiant de ce programme d'insertion se forment à certains métiers dans des structures d'accueil et d'accompagnement. Cela renforce leur employabilité en vue d'intégrer le monde du travail.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% style %}
+
+  .esp2-photo {
+    width: 30rem;
+  }
+
+  .esp2-main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 1rem 0;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .esp2-grid-item:nth-child(1) {
+      order: 2;
+    }
+
+    .esp2-grid-item:nth-child(2) {
+      order: 1;
+    }
+
+    .esp2-main {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .esp2-right-container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .esp2-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--duck-blue)
+  }
+
+  @media screen and (max-width: 1000px) {
+    .esp2-title {
+      font-size: 4rem;
+    }
+  }
+
+  .esp2-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .esp2-text {
+      font-size: 2rem;
+    }
+  }
+
+  .esp2-p {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+
+  .esp2-left-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    display: flex;
+  }
+
+
+  .title-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+{% endstyle %}

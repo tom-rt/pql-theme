@@ -44,6 +44,10 @@
     width: 100%;
 }
 
+.mt-1 {
+    margin-top: 1rem;
+}
+
 .main {
     padding-top: 6rem;
     display: flex;
@@ -78,4 +82,8 @@
 
 .pointer {
     cursor: pointer;
+}
+
+.w-90 {
+    width: 90%;
 }

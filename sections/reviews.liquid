@@ -6,23 +6,33 @@
         <div class="rv-title whimsy orange-underline">Vos avis</div>
       </div>
       <div class="rv-wrapper">
+
         <div class="rv-review">
-          <div class="rv-text" ">"It is a long est that it has a more-or-less normal distribution of letters, as opposed to using 'Co"</div>
-          <div class="rv-author">Béatrice, cliente depuis 2022</div>
+          <div class="rv-text" ">"Une variété dans les produits, j'aime le concept d'antan ! Très mimi ce camion, merci pour votre gentillesse... Bonne continuation !"</div>
+          <div class="rv-author">Lynda, cliente depuis 2022</div>
         </div>
 
         <div class="rv-review">
-          <div class="rv-text" ">"It is a long est that it has a more-or-less normal distribution of letters, as opposed to using 'Co"</div>
-          <div class="rv-author">Béatrice, cliente depuis 2022</div>
+          <div class="rv-text" ">"Très accueillant et sympathique. Nous y sommes allés hier sur Arques, les produits sont top et le rapport qualité prix est bon ! (Je m'attendais à en avoir pour plus) je recommande vivement !"</div>
+          <div class="rv-author">ChDow LeViking, client depuis 2022</div>
+        </div>
+
+      </div>
+
+      <div class="rv-wrapper mt-1">
+
+        <div class="rv-review">
+          <div class="rv-text" ">"Ces produits sont super bon, tout comme le rapport qualité prix, on est toujours étonnés par les paniers moyen ! Même si on prend à chaque fois un peu plus, il n'y a pas de surprise au niveau du budget."</div>
+          <div class="rv-author">Donatien, client depuis 2022</div>
         </div>
 
         <div class="rv-review">
-          <div class="rv-text" ">"It is a long est that it has a more-or-less normal distribution of letters, as opposed to using 'Co"</div>
-          <div class="rv-author">Béatrice, cliente depuis 2022</div>
+          <div class="rv-text" ">"Bonjour je suis Camille, venue vous voie hier à la boulangerie de Wittes, acheté les oeufs, amandes et fruits exotiques. Retour sur vos produits: c'est top je suis ravie, le mélange de fruits exotiques a été très apprécié par tout le monde et n'a pas fait long feu lors de l'apéro hier soir ! Même mon mari a apprécié, et ravie de consommer local. Et les amandes aussi très bonnes. Longue route à vous et à bientôt."</div>
+          <div class="rv-author">Camille, cliente depuis 2022</div>
         </div>
+
       </div>
     </div>
-
   </div>
 </div>
 
@@ -51,6 +61,11 @@
     justify-content: center;
     display: flex;
   }
+  @media screen and (max-width: 1000px) {
+    .rv-title {
+      font-size: 4rem;
+    }
+  }
 
   .rv-review {
     display: flex;
@@ -74,6 +89,11 @@
     font-style: italic;
     margin-bottom: 1rem;
   }
+  @media screen and (max-width: 1000px) {
+    .rv-text {
+      font-size: 2rem;
+    }
+  }
 
   .rv-author {
     display: flex;
@@ -84,4 +104,9 @@
     font-weight: bold;
     font-size: 1.2rem;
   }
-{% endstyle %} 
+  @media screen and (max-width: 1000px) {
+    .rv-author {
+      font-size: 2.5rem;
+    }
+  }
+{% endstyle %}
