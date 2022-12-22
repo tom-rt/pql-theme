@@ -3,9 +3,6 @@
     "picture": {
       "type": "picture"
     },
-    "banner": {
-      "type": "banner"
-    },
     "concept": {
       "type": "concept"
     },
@@ -24,7 +21,6 @@
   },
   "order": [
     "picture",
-    "banner",
     "concept",
     "kpis",
     "map",
