@@ -1,11 +1,11 @@
 {
     "name": "list-collections",
     "sections": {
-        "command": {
-            "type": "command"
+        "list-collections": {
+            "type": "list-collections"
         }
     },
     "order": [
-        "command"
+        "list-collections"
     ]
 }

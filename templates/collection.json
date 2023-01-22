@@ -1,10 +1,10 @@
 {
     "sections": {
-        "command-tmp": {
-            "type": "command-tmp"
+        "collection": {
+            "type": "collection"
         }
     },
     "order": [
-        "command-tmp"
+        "collection"
     ]
 }
