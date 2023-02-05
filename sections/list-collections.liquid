@@ -1,37 +1,118 @@
 <div class="main-wrapper">
-  <div class="main-column pt">
+  <div class="main-column pt col">
 
-    <div class="collections">
-      {% for collection in collections %}
-        <!-- collection info -->
-        <a class="link hd-box" href={{collection.url}}>
-          <div class="collection">
-            {{ collection.title }}</div>
-        </a>
-      {% endfor %}
+    <div class="collection-title">
+      Catégories
+    </div>
+
+
+    <div class="collections-container">
+      <div class="collections">
+        {% for collection in collections %}
+          <!-- collection info -->
+          <div class="collection-container">
+            <a class="link collection-link" href={{collection.url}}>
+              <div class="collection">
+                <div class="collection-name whimsy">
+                  {{ collection.title }}
+                </div>
+
+                <img
+                  src="{{ collection | img_url: 'original' }}"
+                  alt="{{ collection.title | escape }}"
+                  display="block"
+                  width="200"
+                  height="200"
+                  loading="lazy" />
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
     </div>
 
   </div>
 </div>
 
 {% style %}
-  .collections {
-    background-color: red;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    gap: 1rem;
+  .collection-title {
+    display: flex;
+    width: 100%;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: start;
+    margin-top: 1rem;
+    margin-left: 1rem;
   }
 
-  @media(min-width: 600px) {
+  .collections-container {}
+
+
+  .collections {
+    margin: 1rem auto 0;
+    display: grid;
+    gap: 1rem;
+
+  }
+
+  .collection-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .collection-link {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .collection {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    /* width: 100%; */
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .collection-name {
+    display: flex;
+    width: 100%;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  @media(min-width: 100px) {
     .collections {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  @media(min-width: 900px) {
+  @media(min-width: 760px) {
     .collections {
       grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media(min-width: 1000px) {
+    .collections {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media(min-width: 1300px) {
+    .collections {
+      grid-template-columns: repeat(5, 1fr);
     }
   }
 {% endstyle %}
