@@ -20,8 +20,8 @@
                 <img
                   src="{{ product | img_url: 'original' }}"
                   display="block"
-                  width="200"
-                  height="200"
+                  width="250"
+                  height="250"
                   loading="lazy" />
               </div>
             </a>
@@ -45,6 +45,12 @@
     margin-top: 1rem;
     margin-left: 1rem;
   }
+  @media screen and (max-width: 1000px) {
+    .collection-title {
+      font-size: 3rem;
+    }
+  }
+
 
   .collections-container {}
 
@@ -72,16 +78,14 @@
   }
 
   .collection {
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px;
     /* width: 100%; */
     width: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 1rem;
+    padding: 0.2rem 1rem 1rem;
+    background-color: var(--light-grey);
   }
 
   .collection-name {
@@ -90,6 +94,11 @@
     font-size: 2rem;
     align-items: center;
     justify-content: center;
+  }
+  @media screen and (max-width: 1000px) {
+    .collection-name {
+      font-size: 3rem;
+    }
   }
 
 
@@ -105,13 +114,13 @@
     }
   }
 
-  @media(min-width: 1000px) {
+  @media(min-width: 1200px) {
     .collections {
       grid-template-columns: repeat(4, 1fr);
     }
   }
 
-  @media(min-width: 1300px) {
+  @media(min-width: 1500px) {
     .collections {
       grid-template-columns: repeat(5, 1fr);
     }
