@@ -1,0 +1,138 @@
+<div class="main-wrapper">
+  <div class="main-column pt col">
+
+
+    <div class="prod-container">
+      <div class="prod">
+        <div class="prod-pic">
+          <img
+            src="{{ product | img_url: 'original' }}"
+            display="block"
+            width="400"
+            height="400"
+            loading="lazy" />
+        </div>
+        <div class="prod-data">
+          <div class="prod-header">
+            <div class="prod-title">
+              {{ product.title }}
+            </div>
+            <div class="prod-return-container">
+              <div class="prod-return">
+                <a class="link hd-box " href="{{product.collections[0].url}}">
+                  {{ product.collections[0].title }}
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {% comment %} <div class="prod-title">
+          {{ product.title }}
+          </div> {% endcomment %}
+          <div class="prod-desc">
+            {{ product.description }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% style %}
+
+
+  .prod-return-container {
+    display: flex;
+    width: 100%;
+    align-items: end;
+    justify-content: end;
+  }
+
+  .prod-return {
+    color: var(--duck-blue);
+    margin-top: 1rem;
+    margin-right: 1rem;
+    text-align: end;
+    width: fit-content;
+    font-size: 2rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .prod-title {
+      font-size: 3rem;
+    }
+  }
+
+  .prod-header {
+    display: flex;
+    width: 100%;
+  }
+
+
+  .prod-title {
+    display: flex;
+    width: 100%;
+    font-size: 2.5rem;
+    align-items: center;
+    justify-content: start;
+  }
+  @media screen and (max-width: 1000px) {
+    .prod-title {
+      font-size: 3rem;
+    }
+  }
+
+  .prod-container {
+    margin-top: 1rem;
+    display: flex;
+  }
+
+  .prod {
+    /* padding-left: 1rem; */
+    display: flex;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    width: 100%;
+  }
+
+  .prod-pic {
+    width: fit-content;
+    height: 100%;
+    margin-right: 1rem;
+  }
+
+
+  .prod-desc {
+    font-size: 1.6rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .prod-desc {
+      font-size: 2.2rem;
+    }
+  }
+
+  .prod-data {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  @media screen and (max-width: 1000px) {
+    table {
+      font-size: 1.5rem;
+    }
+  }
+
+  td {
+    padding: 1rem;
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    vertical-align: middle;
+  }
+{% endstyle %}

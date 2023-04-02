@@ -1,8 +1,17 @@
 <div class="main-wrapper">
   <div class="main-column pt col">
 
-    <div class="collection-title">
-      {{ collection.title }}
+    <div class="collection-header">
+      <div class="collection-title">
+        {{ collection.title }}
+      </div>
+      <div class="collection-return-container">
+        <div class="collection-return">
+          <a class="link hd-box " href="/collections">
+            Catégories
+          </a>
+        </div>
+      </div>
     </div>
 
 
@@ -54,6 +63,31 @@
 
   .collections-container {}
 
+  .collection-return-container {
+    display: flex;
+    width: 100%;
+    align-items: end;
+    justify-content: end;
+  }
+
+  .collection-return {
+    color: var(--duck-blue);
+    margin-top: 1rem;
+    margin-right: 1rem;
+    text-align: end;
+    width: fit-content;
+    font-size: 2rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .collection-title {
+      font-size: 3rem;
+    }
+  }
+
+  .collection-header {
+    display: flex;
+    width: 100%;
+  }
 
   .collections {
     margin: 1rem auto 0;
