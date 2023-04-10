@@ -24,12 +24,17 @@
       <div class="search-bar-container">
         <form action="{{ routes.search_url }}" class="search-form">
           <input
-          class="search-bar"
+            required
+            class="search-bar"
             type="text"
             placeholder="Rechercher un produit"
             name="q"
+            minlength="2"
             value="{{ search.terms | escape }}">
-          {% comment %} <input type="submit" value="Search"> {% endcomment %}
+          <input
+            type="hidden"
+            name="type"
+            value="product" />
           <button class="glass-button">
             <img src={{ 'glass.png' | asset_url }} class="glass-img" />
           </button>

@@ -5,13 +5,26 @@
       <div class="collection-title">
         {{ collection.title }}
       </div>
+
       <div class="collection-return-container">
-        <div class="collection-return">
-          <a class="link hd-box " href="/collections">
-            Catégories
-          </a>
-        </div>
+        <a class="link hd-box back-button-link" href="/collections">
+          <button class="collection-return-button whimsy">
+            <div class="arrow-container">
+              <img
+                class="arrow-img"
+                src="{{ 'left-arrow.png' | asset_url }}"
+                display="block"
+                width="30"
+                height="30"
+                loading="lazy" />
+            </div>
+            <div>
+              Catégories
+            </div>
+          </button>
+        </a>
       </div>
+
     </div>
 
 
@@ -45,6 +58,60 @@
 </div>
 
 {% style %}
+
+  .arrow-img {
+    filter: invert(1);
+  }
+
+  .arrow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+  }
+
+  .back-button-link {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    background-color: red;
+    width: fit-content;
+    margin-top: 1rem;
+    margin-right: 1rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .back-button-link {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .collection-return-container {
+    display: flex;
+    width: 100%;
+    align-items: end;
+    justify-content: end;
+  }
+
+  .collection-return-button {
+    cursor: pointer;
+    background-color: var(--duck-blue);
+    color: white;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: fit-content;
+    font-size: 2rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .collection-return-button {
+      font-size: 3rem;
+    }
+  }
+
+
   .collection-title {
     display: flex;
     width: 100%;
@@ -60,49 +127,21 @@
     }
   }
 
-
-  .collections-container {}
-
-  .collection-return-container {
-    display: flex;
-    width: 100%;
-    align-items: end;
-    justify-content: end;
-  }
-
-  .collection-return {
-    color: var(--duck-blue);
-    margin-top: 1rem;
-    margin-right: 1rem;
-    text-align: end;
-    width: fit-content;
-    font-size: 2rem;
-  }
-  @media screen and (max-width: 1000px) {
-    .collection-title {
-      font-size: 3rem;
-    }
-  }
-
   .collection-header {
     display: flex;
     width: 100%;
   }
-
   .collections {
     margin: 1rem auto 0;
     display: grid;
     gap: 1rem;
-
   }
-
   .collection-container {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
   }
-
   .collection-link {
     display: flex;
     width: fit-content;
@@ -110,7 +149,6 @@
     justify-content: center;
     cursor: pointer;
   }
-
   .collection {
     /* width: 100%; */
     width: fit-content;
@@ -121,7 +159,6 @@
     padding: 0.2rem 1rem 1rem;
     background-color: var(--light-grey);
   }
-
   .collection-name {
     display: flex;
     width: 100%;
@@ -134,26 +171,21 @@
       font-size: 3rem;
     }
   }
-
-
   @media(min-width: 100px) {
     .collections {
       grid-template-columns: repeat(2, 1fr);
     }
   }
-
   @media(min-width: 760px) {
     .collections {
       grid-template-columns: repeat(3, 1fr);
     }
   }
-
   @media(min-width: 1200px) {
     .collections {
       grid-template-columns: repeat(4, 1fr);
     }
   }
-
   @media(min-width: 1500px) {
     .collections {
       grid-template-columns: repeat(5, 1fr);

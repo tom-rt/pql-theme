@@ -1,3 +1,127 @@
-<div>
-  SEARCH  BAR SECTION
+<div class="main-wrapper">
+  <div class="main-column pt col">
+
+    {% if search.results_count == 0 %}
+      <div class="search-title">
+        Aucun résultat pour "{{ search.terms }}"
+      </div>
+    {% endif %}
+
+    {% if search.results_count > 0 %}
+      <div class="search-title">
+        Résultats pour "{{ search.terms }}"
+      </div>
+    {% endif %}
+
+    <div class="results-container">
+      <div class="results">
+        {% for item in search.results %}
+          <div class="result-container">
+            <a class="link search-link" href={{item.url}}>
+              <div class="search">
+                <div class="search-name whimsy">
+                  {{ item.title }}
+                </div>
+
+                <img
+                  src="{{ item | img_url: 'original' }}"
+                  alt="{{ item.title | escape }}"
+                  display="block"
+                  width="250"
+                  height="250"
+                  loading="lazy" />
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
 </div>
+
+{% style %}
+  .search-title {
+    display: flex;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: start;
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .search-title {
+      font-size: 3rem;
+    }
+  }
+
+  .results {
+    margin: 1rem auto 0;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .result-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .search-link {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .search {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0.2rem 1rem 1rem;
+    background-color: var(--light-grey);
+  }
+
+  .search-name {
+    display: flex;
+    width: 100%;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+  @media screen and (max-width: 1000px) {
+    .search-name {
+      font-size: 3rem;
+    }
+  }
+
+
+
+  @media(min-width: 100px) {
+    .results {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media(min-width: 760px) {
+    .results {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media(min-width: 1200px) {
+    .results {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media(min-width: 1500px) {
+    .results {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+{% endstyle %}
