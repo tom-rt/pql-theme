@@ -35,7 +35,7 @@
           <div class="collection-container">
             <a class="link collection-link" href={{product.url}}>
               <div class="collection">
-                <div class="collection-name whimsy">
+                <div class="product-name whimsy">
                   {{ product.title }}
                 </div>
 
@@ -157,18 +157,21 @@
     padding: 0.2rem 1rem 1rem;
     background-color: var(--light-grey);
   }
-  .collection-name {
+
+  .product-name {
+    text-align: center;
     display: flex;
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     align-items: center;
     justify-content: center;
   }
   @media screen and (max-width: 1000px) {
-    .collection-name {
-      font-size: 3rem;
+    .product-name {
+      font-size: 2rem;
     }
   }
+
   @media(min-width: 100px) {
     .collections {
       grid-template-columns: repeat(2, 1fr);
