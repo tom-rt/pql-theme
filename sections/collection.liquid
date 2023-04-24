@@ -27,7 +27,6 @@
 
     </div>
 
-
     <div class="collections-container">
       <div class="products">
         {% for product in collection.products %}
@@ -134,17 +133,18 @@
   }
 
   .products {
-    margin: 1rem auto 0;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     display: grid;
     gap: 1rem;
   }
+
   .products-container {
     display: flex;
     width: 100%;
     justify-content: center;
     margin-bottom: 1rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
   }
 
   .collection-link {
