@@ -8,12 +8,14 @@
     <div class="collections-container">
       <div class="collections">
         {% for collection in collections %}
-          <!-- collection info -->
-          <div class="collection-container">
+          <div class="list-collection-container">
             <a class="link collection-link" href={{collection.url}}>
               <div class="collection">
-                <div class="collection-name whimsy">
-                  {{ collection.title }}
+
+                <div class="collection-title-container">
+                  <div class="collection-name whimsy">
+                    {{ collection.title }}
+                  </div>
                 </div>
 
                 <img
@@ -23,6 +25,7 @@
                   width="250"
                   height="250"
                   loading="lazy" />
+
               </div>
             </a>
           </div>
@@ -54,29 +57,39 @@
     gap: 1rem;
   }
 
-  .collection-container {
+  .list-collection-container {
     display: flex;
     width: 100%;
-    align-items: center;
     justify-content: center;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
 
   .collection-link {
+    height: 100%;
     display: flex;
     width: fit-content;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    background-color: var(--light-grey);
+  }
+
+  .collection-title-container {
+    display: flex;
+    height: 100%;
+    text-align: center;
   }
 
   .collection {
+    height: 100%;
     width: fit-content;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     flex-direction: column;
     padding: 0.2rem 1rem 1rem;
-    background-color: var(--light-grey);
   }
 
   .collection-name {

@@ -29,14 +29,16 @@
 
 
     <div class="collections-container">
-      <div class="collections">
+      <div class="products">
         {% for product in collection.products %}
-
-          <div class="collection-container">
+          <div class="products-container">
             <a class="link collection-link" href={{product.url}}>
-              <div class="collection">
-                <div class="product-name whimsy">
-                  {{ product.title }}
+              <div class="product">
+
+                <div class="product-name-container">
+                  <div class="product-name whimsy">
+                    {{ product.title }}
+                  </div>
                 </div>
 
                 <img
@@ -45,6 +47,8 @@
                   width="250"
                   height="250"
                   loading="lazy" />
+
+
               </div>
             </a>
           </div>
@@ -109,7 +113,6 @@
     }
   }
 
-
   .collection-title {
     display: flex;
     width: 100%;
@@ -129,34 +132,47 @@
     display: flex;
     width: 100%;
   }
-  .collections {
+
+  .products {
     margin: 1rem auto 0;
     display: grid;
     gap: 1rem;
   }
-  .collection-container {
+  .products-container {
     display: flex;
     width: 100%;
-    align-items: center;
     justify-content: center;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
+
   .collection-link {
     display: flex;
     width: fit-content;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    height: 100%;
+    background-color: var(--light-grey);
   }
-  .collection {
-    /* width: 100%; */
+
+  .product {
+    height: 100%;
     width: fit-content;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     flex-direction: column;
     padding: 0.2rem 1rem 1rem;
-    background-color: var(--light-grey);
   }
+
+  .product-name-container {
+    display: flex;
+    height: 100%;
+    text-align: center;
+  }
+
 
   .product-name {
     text-align: center;
@@ -173,22 +189,22 @@
   }
 
   @media(min-width: 100px) {
-    .collections {
+    .products {
       grid-template-columns: repeat(2, 1fr);
     }
   }
   @media(min-width: 760px) {
-    .collections {
+    .products {
       grid-template-columns: repeat(3, 1fr);
     }
   }
   @media(min-width: 1200px) {
-    .collections {
+    .products {
       grid-template-columns: repeat(4, 1fr);
     }
   }
   @media(min-width: 1500px) {
-    .collections {
+    .products {
       grid-template-columns: repeat(5, 1fr);
     }
   }

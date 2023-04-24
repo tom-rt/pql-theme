@@ -19,8 +19,11 @@
           <div class="result-container">
             <a class="link search-link" href={{item.url}}>
               <div class="search">
-                <div class="search-name whimsy">
-                  {{ item.title }}
+
+                <div class="search-name-container">
+                  <div class="search-name whimsy">
+                    {{ item.title }}
+                  </div>
                 </div>
 
                 <img
@@ -30,6 +33,7 @@
                   width="250"
                   height="250"
                   loading="lazy" />
+
               </div>
             </a>
           </div>
@@ -55,6 +59,12 @@
     }
   }
 
+  .search-name-container {
+    display: flex;
+    height: 100%;
+    text-align: center;
+  }
+
   .results {
     margin: 1rem auto 0;
     display: grid;
@@ -62,40 +72,48 @@
   }
 
   .result-container {
-    display: flex;
+    /* display: flex;
     width: 100%;
     align-items: center;
+    justify-content: center; */
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    display: flex;
+    width: 100%;
     justify-content: center;
+    margin-bottom: 1rem;
   }
 
   .search-link {
+    height: 100%;
     display: flex;
     width: fit-content;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    background-color: var(--light-grey);
   }
 
   .search {
+    height: 100%;
     width: fit-content;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     flex-direction: column;
     padding: 0.2rem 1rem 1rem;
-    background-color: var(--light-grey);
   }
 
   .search-name {
     display: flex;
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     align-items: center;
     justify-content: center;
   }
   @media screen and (max-width: 1000px) {
     .search-name {
-      font-size: 3rem;
+      font-size: 2rem;
     }
   }
 
