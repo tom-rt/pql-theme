@@ -7,7 +7,7 @@
       </div>
 
       <div class="collection-return-container">
-        <a class="link hd-box back-button-link" href="/collections">
+        <a class="link hd-box button-link" href="/collections">
           <button class="collection-return-button whimsy">
             <div class="arrow-container">
               <img
@@ -27,40 +27,68 @@
 
     </div>
 
-    <div class="collections-container">
-      <div class="products">
-        {% for product in collection.products %}
-          <div class="products-container">
-            <a class="link collection-link" href={{product.url}}>
-              <div class="product">
+    {% paginate collection.products by 50 %}
+      <div class="collections-container">
+        <div class="products">
+          {% for product in collection.products %}
+            <div class="products-container">
+              <a class="link collection-link" href={{product.url}}>
+                <div class="product">
 
-                <div class="product-name-container">
-                  <div class="product-name whimsy">
-                    {{ product.title }}
+                  <div class="product-name-container">
+                    <div class="product-name whimsy">
+                      {{ product.title }}
+                    </div>
                   </div>
+
+                  <img
+                    src="{{ product | img_url: 'original' }}"
+                    display="block"
+                    width="250"
+                    height="250"
+                    loading="lazy" />
+
                 </div>
-
-                <img
-                  src="{{ product | img_url: 'original' }}"
-                  display="block"
-                  width="250"
-                  height="250"
-                  loading="lazy" />
+              </a>
+            </div>
 
 
-              </div>
-            </a>
-          </div>
+          {% endfor %}
 
-
-        {% endfor %}
+        </div>
       </div>
-    </div>
+
+      <div class="col-pagi-container">
+        {%- if paginate.previous -%}
+          <a class="link button-link" href="{{ paginate.previous.url }}">
+            <button class="pagi-button whimsy">
+              Précédent
+            </button>
+          </a>
+        {%- endif -%}
+
+        {%- if paginate.next -%}
+          <a class="link button-link" href="{{ paginate.next.url }}">
+            <button class="pagi-button whimsy">
+              Suivant
+            </button>
+          </a>
+        {%- endif -%}
+      </div>
+
+    {% endpaginate %}
 
   </div>
 </div>
 
 {% style %}
+
+  .col-pagi-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
 
   .arrow-img {}
 
@@ -71,17 +99,16 @@
     margin-right: 0.5rem;
   }
 
-  .back-button-link {
+  .button-link {
     display: flex;
     align-items: end;
     justify-content: end;
-    background-color: red;
     width: fit-content;
     margin-top: 1rem;
     margin-right: 1rem;
   }
   @media screen and (max-width: 1000px) {
-    .back-button-link {
+    .button-link {
       margin-top: 2rem;
       margin-bottom: 2rem;
     }
@@ -92,6 +119,24 @@
     width: 100%;
     align-items: end;
     justify-content: end;
+  }
+
+  .pagi-button {
+    cursor: pointer;
+    background-color: var(--duck-blue);
+    color: white;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: fit-content;
+    font-size: 1.5rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .pagi-button {
+      font-size: 2.5rem;
+    }
   }
 
   .collection-return-button {
