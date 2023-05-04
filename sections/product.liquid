@@ -45,12 +45,12 @@
           <div class="prod-price">
             {%- if product.price -%}
               {{ product.price | money }}
-            {%- endif -%}
-            {% assign current_variant = product.selected_or_first_available_variant %}
-            {%- if current_variant.unit_price_measurement -%}
-              pour
-              {{ current_variant.unit_price_measurement.quantity_value }}
-              {{ current_variant.unit_price_measurement.quantity_unit }}
+              {% assign current_variant = product.selected_or_first_available_variant %}
+              {%- if current_variant.unit_price_measurement -%}
+                pour
+                {{ current_variant.unit_price_measurement.quantity_value }}
+                {{ current_variant.unit_price_measurement.quantity_unit }}
+              {%- endif -%}
             {%- endif -%}
           </div>
 
