@@ -43,15 +43,19 @@
           </div>
 
           <div class="prod-price">
-            {%- if product.price -%}
+            {% if product.price %}
               {{ product.price | money }}
               {% assign current_variant = product.selected_or_first_available_variant %}
-              {%- if current_variant.unit_price_measurement -%}
-                pour
-                {{ current_variant.unit_price_measurement.quantity_value }}
-                {{ current_variant.unit_price_measurement.quantity_unit }}
-              {%- endif -%}
-            {%- endif -%}
+              {% if current_variant.unit_price_measurement %}
+                {% if current_variant.unit_price_measurement.quantity_value == 1 %}
+                  /{{ current_variant.unit_price_measurement.quantity_unit }}
+                {% else %}
+                  pour
+                  {{ current_variant.unit_price_measurement.quantity_value }}
+                  {{ current_variant.unit_price_measurement.quantity_unit }}
+                {% endif %}
+              {% endif %}
+            {% endif %}
           </div>
 
           <div class="prod-desc">
