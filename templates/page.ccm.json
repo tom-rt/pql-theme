@@ -1,11 +1,11 @@
 {
     "name": "ccm",
     "sections": {
-        "ccm-title": {
-            "type": "ccm-title"
+        "ccm": {
+            "type": "ccm"
         }
     },
     "order": [
-        "ccm-title"
+        "ccm"
     ]
 }

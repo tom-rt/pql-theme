@@ -74,12 +74,54 @@
       </div>
     </div>
   </div>
-  <div class="hd-menu">
+  <div class="hd-menu" id="section-header">
 
     {% for link in linklists.main-menu.links %}
-      <a class="link hd-box hd-pd border-right" href="{{ link.url }}">
-        {{ link.title }}
-      </a>
+
+      <div class="parent-link-container">
+        {% if link.links == blank %}
+          <a class="link hd-box hd-pd border-right" href="{{ link.url }}">
+            {{ link.title }}
+          </a>
+        {% endif %}
+        {% if link.links != blank %}
+          <label for="my_checkbox" class="checkbox-trick">
+            <div class="hd-box hd-pd border-right white-btop min-link-height" href="{{ link.url }}">
+              {{ link.title }}
+            </div>
+          </label>
+        {% endif %}
+      </div>
+
+      {% if link.links != blank %}
+        <input
+          type="checkbox"
+          id="my_checkbox"
+          style="display:none;">
+        <div id="child-link-container-id" class="child-link-container">
+
+          <label for="my_checkbox" class=" width-0 checkbox-trick">
+            <div class="background-overlay"></div>
+          </label>
+          <label for="my_checkbox" class="checkbox-trick">
+            {% for child_link in link.links %}
+              <div class="yy">
+                <div class="xx">
+                  <div class="child-link-filler"></div>
+                  <a class="link child-link hd-box {% if forloop.index != link.links.size %} white-bbottom {% endif %} {% if forloop.index == 1 %} white-btop {% endif %}" href="{{ child_link.url }}">
+                    {{ child_link.title }}
+                  </a>
+                  <div class="child-link-filler"></div>
+                </div>
+              </div>
+
+
+            {% endfor %}
+          </label>
+
+        </div>
+      {% endif %}
+
     {% endfor %}
 
   </div>
@@ -98,6 +140,111 @@
 {% endschema %}
 
 {% style %}
+
+  .child-link {
+    width: 100%;
+    background-color: #28241B;
+    box-sizing: border-box;
+
+    /* border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  border-left: none;
+  border-right: none; */
+
+    min-height: 3rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .child-link {
+      height: 7rem;
+      font-size: 3rem;
+    }
+  }
+
+  .child-link-filler {
+    display: flex;
+    width: 100%;
+    opacity: 0;
+    /* background-color:none */
+  }
+
+  .yy {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .xx {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .background-overlay {
+    position: fixed;
+    z-index: -1;
+    height: 1000rem;
+    width: 1000rem;
+    /* top: 0;
+    bottom: 0; */
+    opacity: 0;
+  }
+
+  .checkbox-trick {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    /* background-color: green; */
+  }
+
+  .width-0 {
+    width: 0 !important;
+  }
+
+  #child-link-container-id {
+    display: none;
+    width: 100%
+  }
+  :checked + #child-link-container-id {
+    display: flex;
+  }
+
+  .parent-link-container {
+    width: 100%;
+    display: flex
+  }
+
+  .child-link-container {
+    position: absolute;
+    bottom: -6rem;
+    width: 50%;
+  }
+  @media screen and (max-width: 1000px) {
+    .child-link-container {
+      bottom: -14rem;
+    }
+  }
+
+  .white-bbottom {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: white;
+  }
+
+  .min-link-height {
+    min-height: 3rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .min-link-height {
+      min-height: 7rem;
+    }
+  }
+
+  .white-btop {
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: white;
+  }
 
   .pql-container {
     display: flex;
@@ -319,6 +466,7 @@
       font-size: 3rem;
     }
   }
+
   .logo-box {
     height: 100%;
     background-color: white;
@@ -335,7 +483,8 @@
   }
 
   .hd-pd {
-    padding: 0.5rem;
+    ;
+    /* padding: 0.5rem; */
   }
 
   .hd-box {
