@@ -1,11 +1,11 @@
 {
-    "name": "faq",
-    "sections": {
-        "faq": {
-            "type": "faq"
-        }
-    },
-    "order": [
-        "faq"
-    ]
+  "name": "faq",
+  "sections": {
+    "faq": {
+      "type": "faq"
+    }
+  },
+  "order": [
+    "faq"
+  ]
 }
