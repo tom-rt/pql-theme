@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "ccm-title": {
+      "type": "ccm-title",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ccm-title"
+  ]
+}
