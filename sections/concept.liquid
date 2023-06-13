@@ -44,11 +44,14 @@
 
       <div class="cc-right-container">
         {%- comment -%}
-          <div class="cc-video-wrapper">
-          <iframe class="cc-video" src="https://www.youtube.com/embed/sQfEG4IrNXE"></iframe>
-          </div>
+        <div class="cc-video-wrapper">
+        <iframe class="cc-video" src="https://www.youtube.com/embed/sQfEG4IrNXE"></iframe>
+        </div>
         {%- endcomment -%}
-        <img loading='lazy' class="cc-photo" src={{ 'photo-camion.JPG' | asset_url }}/>
+        <img
+          loading='lazy'
+          class="cc-photo"
+          src={{ 'photo-camion.JPG' | asset_url }} />
       </div>
     </div>
 
@@ -82,12 +85,16 @@
   .cc-p {
     margin-bottom: 0.5rem;
   }
+  @media screen and (max-width: 1000px) {
+    .cc-p {
+      font-size: 2rem;
+    }
+  }
 
   .cc-main {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-
   @media screen and (max-width: 1400px) {
     .cc-main {
       grid-template-columns: 1fr;
@@ -105,7 +112,6 @@
     font-size: 3rem;
     margin-bottom: 1rem;
   }
-
   @media screen and (max-width: 1000px) {
     .cc-title {
       font-size: 4rem;
@@ -119,12 +125,6 @@
     align-items: center;
     height: 100%;
     font-size: 1.5rem;
-  }
-
-  @media screen and (max-width: 1000px) {
-    .cc-p {
-      font-size: 2rem;
-    }
   }
 
   .cc-right-container {

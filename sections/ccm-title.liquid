@@ -1,3 +1,103 @@
-<div class="main-wrapper">
-  <div class="main-column"></div>
+<div class="ccm-wrapper">
+  <div class="main-column">
+
+    <div class="ccm-main">
+      <div class="ccm-title-wrapper">
+        <div class="ccm-title whimsy orange-underline">Comment ça marche ?</div>
+      </div>
+    </div>
+
+  </div>
 </div>
+
+{%- style -%}
+  .ccm-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .ccm-main {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .ccm-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ccm-main {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .ccm-title-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .ccm-title {
+    display: flex;
+    font-size: 3rem;
+    justify-content: center;
+    display: flex;
+  }
+  @media screen and (max-width: 1000px) {
+    .ccm-title {
+      font-size: 4rem;
+    }
+  }
+
+  .ccm-row-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--duck-blue);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .ccm-row-title {
+      font-size: 4rem;
+    }
+  }
+
+  .ccm-digit {
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    background-color: var(--duck-blue);
+    color: var(--orange);
+    width: 4rem;
+    font-size: 3rem;
+    border-radius: 50%;
+  }
+
+  .blue-link {
+    cursor: pointer;
+    color: blue;
+  }
+
+  .ccm-row-paragraph {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .ccm-row-paragraph {
+      font-size: 1rem;
+      /* font-size: 2rem; */
+    }
+  }
+{% endstyle %}

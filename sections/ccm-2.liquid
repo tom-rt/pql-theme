@@ -1,43 +1,114 @@
 <div class="main-wrapper">
   <div class="main-column">
-    <div class="cs-main">
-      <div class="cs-row">
-        <div class="cs-digit">
+    <div class="ccm-main">
+      <div class="ccm-row">
+        <div class="ccm-digit">
           2
         </div>
         <div class="">
-          logo
+          <img src={{ 'cart-icon.png' | asset_url }} class="black-glass" />
         </div>
       </div>
-      <div class="cs-col">
-        <div class="cs-row-title whimsy">Je compose mon panier</div>
-        <div class="cs-row-paragraph">Je fais ma liste de courses en cliquant sur le lien ci-dessous. Je n'oublie pas de renseigner une adresse mail afin de recevoir le lien de paiement.</div>
-        <div class="cs-center">
-          <div class="cs-command-button">Commander</div>
+      <div class="ccm-col">
+        <div class="ccm-row-title whimsy">
+          Je compose mon panier
         </div>
+        <div class="ccm-row-paragraph">
+          Mon panier doit contenir:
+        </div>
+        <div class="check-cntr ccm-row-paragraph">
+          <div class="checkbox-cntr">
+            <img src={{ 'chckbx.png' | asset_url }} class="black-glass" />
+          </div>
+          <div>
+            Mon adresse, ainsi que d'éventuelles informations nécessaires a la livraison (bâtiment, étage, code portail etc.)
+          </div>
+        </div>
+
+        <div class="check-cntr ccm-row-paragraph">
+          <div class="checkbox-cntr">
+            <img src={{ 'chckbx.png' | asset_url }} class="black-glass" />
+          </div>
+          <div>
+            Mon numéro de téléphone
+          </div>
+        </div>
+
+        <div class="check-cntr ccm-row-paragraph">
+          <div class="checkbox-cntr">
+            <img src={{ 'chckbx.png' | asset_url }} class="black-glass" />
+          </div>
+          <div>
+            Les articles de votre commande, ainsi que leur quantité
+          </div>
+        </div>
+
+        <div class="check-cntr ccm-row-paragraph">
+          <div class="checkbox-cntr">
+            <img src={{ 'chckbx.png' | asset_url }} class="black-glass" />
+          </div>
+          <div>
+            Mon moyen de paiement lors de la remise de la commande: espèce ou carte bancaire
+          </div>
+        </div>
+
+        <div class="ccm-row-paragraph">
+          J'envoie mon panier
+          <b>au plus tard le Mardi à 19h</b>
+          à l'adresse mail suivante:
+        </div>
+
+        <div class="ccm-row-paragraph addr">
+          commande.pierrequiroule@gmail.com
+        </div>
+
+        <div class="ccm-row-paragraph">
+          Ou par SMS au:
+        </div>
+
+        <div class="ccm-row-paragraph addr">
+          06.46.71.14.32
+        </div>
+
+        <div class="ccm-row-paragraph">
+          Sachez que nous prenons soin de respecter la
+          <a
+            class="link blue-link"
+            target="blank"
+            href="https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on">RGPD</a>.
+        </div>
+
       </div>
     </div>
   </div>
 </div>
 
-{%- style -%}
-
-  .cs-command-button {
+{% style %}
+  .check-cntr {
     display: flex;
-    background-color: var(--duck-blue);
-    color: var(--orange);
-    font-size: 2.5rem;
     align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    width: min-content;
-    padding: 0.5rem 2rem;
-    cursor: pointer;
-    margin-top: 1rem;
+    justify-content: flex-start;
   }
 
-  .cs-center {
+  .checkbox-cntr {
     display: flex;
-    justify-content: center;
+    margin-right: 1rem;
+    height: 100%;
+    justify-content: start;
+    align-items: start;
   }
-{% endstyle %} 
+
+
+  .addr {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .addr {
+      font-size: 3rem;
+    }
+  }
+{% endstyle %}
