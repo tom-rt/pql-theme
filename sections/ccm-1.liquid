@@ -2,6 +2,7 @@
   <div class="main-column">
 
     <div class="ccm-main">
+
       <div class="ccm-row">
         <div class="ccm-digit">
           1
@@ -24,7 +25,7 @@
         <div class="ccm-row-paragraph">
           Si votre panier inférieur à 25€, pas de panique ! Nous vous livrons pour la somme de 5€.
         </div>
-        <div class="centered whimsy t2 orange">
+        <div class="centered whimsy t35 orange ccm-mt">
           Communes desservies:
         </div>
         <div class="centered whimsy t1">
@@ -52,8 +53,21 @@
 
 {% style %}
 
+  .ccm-mt {
+    margin-top: 3rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .ccm-mt {
+      margin-top: 4rem;
+    }
+  }
+
   .t1 {
     font-size: 4rem;
+  }
+
+  .t35 {
+    font-size: 3.5rem;
   }
 
   .t2 {
@@ -65,10 +79,6 @@
 
   .centered {
     text-align: center
-  }
-
-  .ccm-col {
-    padding: 1rem;
   }
 
   .ccm-map-container {
@@ -84,7 +94,13 @@
   }
 
   .black-glass {
-    height: 2.3rem;
-    width: 2.3rem;
+    height: 3rem;
+    width: 3rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .black-glass {
+      height: 4.5rem;
+      width: 4.5rem;
+    }
   }
 {% endstyle %}

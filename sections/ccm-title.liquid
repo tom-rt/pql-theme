@@ -1,22 +1,37 @@
-<div class="ccm-wrapper">
+<div class="main-wrapper">
   <div class="main-column">
 
+    <div class="wtfiller">
+      0
+    </div>
+
     <div class="ccm-main">
+
       <div class="ccm-title-wrapper">
         <div class="ccm-title whimsy orange-underline">Comment ça marche ?</div>
       </div>
+
     </div>
+
+    <div class="wtfiller">
+      0
+    </div>
+
 
   </div>
 </div>
 
 {%- style -%}
-  .ccm-wrapper {
+
+  b {
+    font-weight: bolder;
+    color: var(--orange);
+  }
+
+  .wtfiller {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 1rem;
+    width: 10%;
+    color: white;
   }
 
   .ccm-main {
@@ -31,14 +46,13 @@
     justify-content: center;
   }
 
-  .ccm-main {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
+  .ccm-col {
+    padding: 1rem;
   }
 
   .ccm-title-wrapper {
     display: flex;
+    width: 100%;
     justify-content: center;
     margin-bottom: 1rem;
     margin-top: 1rem;
@@ -47,8 +61,7 @@
   .ccm-title {
     display: flex;
     font-size: 3rem;
-    justify-content: center;
-    display: flex;
+    text-align: center
   }
   @media screen and (max-width: 1000px) {
     .ccm-title {
@@ -77,12 +90,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 4rem;
     background-color: var(--duck-blue);
     color: var(--orange);
+    height: 4rem;
     width: 4rem;
     font-size: 3rem;
     border-radius: 50%;
+  }
+  @media screen and (max-width: 1000px) {
+    .ccm-digit {
+      height: 7rem;
+      width: 7rem;
+      font-size: 6rem;
+    }
   }
 
   .blue-link {
@@ -96,7 +116,6 @@
   }
   @media screen and (max-width: 1000px) {
     .ccm-row-paragraph {
-      /* font-size: 1rem; */
       font-size: 2rem;
     }
   }

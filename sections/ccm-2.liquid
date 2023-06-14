@@ -18,7 +18,7 @@
         </div>
         <div class="check-cntr ccm-row-paragraph">
           <div class="checkbox-cntr">
-            <img src={{ 'chckbx.png' | asset_url }} class="black-glass" />
+            <img src={{ 'chckbx.png' | asset_url }} class="green-check" />
           </div>
           <div>
             Mon adresse, ainsi que d'éventuelles informations nécessaires a la livraison (bâtiment, étage, code portail etc.)
@@ -27,7 +27,7 @@
 
         <div class="check-cntr ccm-row-paragraph">
           <div class="checkbox-cntr">
-            <img src={{ 'chckbx.png' | asset_url }} class="black-glass" />
+            <img src={{ 'chckbx.png' | asset_url }} class="green-check" />
           </div>
           <div>
             Mon numéro de téléphone
@@ -36,7 +36,7 @@
 
         <div class="check-cntr ccm-row-paragraph">
           <div class="checkbox-cntr">
-            <img src={{ 'chckbx.png' | asset_url }} class="black-glass" />
+            <img src={{ 'chckbx.png' | asset_url }} class="green-check" />
           </div>
           <div>
             Les articles de votre commande, ainsi que leur quantité
@@ -45,7 +45,7 @@
 
         <div class="check-cntr ccm-row-paragraph">
           <div class="checkbox-cntr">
-            <img src={{ 'chckbx.png' | asset_url }} class="black-glass" />
+            <img src={{ 'chckbx.png' | asset_url }} class="green-check" />
           </div>
           <div>
             Mon moyen de paiement lors de la remise de la commande: espèce ou carte bancaire
@@ -70,14 +70,6 @@
           06.46.71.14.32
         </div>
 
-        <div class="ccm-row-paragraph">
-          Sachez que nous prenons soin de respecter la
-          <a
-            class="link blue-link"
-            target="blank"
-            href="https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on">RGPD</a>.
-        </div>
-
       </div>
     </div>
   </div>
@@ -88,6 +80,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    width: 100%;
   }
 
   .checkbox-cntr {
@@ -109,6 +102,17 @@
   @media screen and (max-width: 1000px) {
     .addr {
       font-size: 3rem;
+    }
+  }
+
+  .green-check {
+    height: 2rem;
+    width: 2rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .green-check {
+      height: 3rem;
+      width: 3rem;
     }
   }
 {% endstyle %}

@@ -6,7 +6,7 @@
           3
         </div>
         <div class="">
-          <img src={{ 'camion-noir-icon.png' | asset_url }} class="black-glass" />
+          <img src={{ 'camion-noir-icon.png' | asset_url }} class="black-truck" />
         </div>
       </div>
       <div class="ccm-col">
@@ -27,12 +27,20 @@
         </div>
 
         <div class="ccm-row-paragraph">
+          Vous avez d'autres questions ?
+          <a class="link blue-link" href="/pages/faq">Rendez-vous sur notre FAQ !</a>.
+        </div>
+
+        <div class="ccm-row-paragraph smaller">
           <a class="link blue-link" href="/pages/cgv">Voir les conditions génerales de vente</a>.
         </div>
 
-        <div class="ccm-row-paragraph">
-          Vous avez d'autres questions ?
-          <a class="link blue-link" href="/pages/faq">Rendez-vous sur notre FAQ !</a>.
+        <div class="ccm-row-paragraph smaller">
+          Sachez que nous prenons soin de respecter la
+          <a
+            class="link blue-link"
+            target="blank"
+            href="https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on">RGPD</a>.
         </div>
 
       </div>
@@ -41,9 +49,26 @@
 </div>
 
 {% style %}
-  b {
-    /* font-size: 3rem; */
-    font-weight: bolder;
-    color: var(--orange);
+
+  .smaller {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .smaller {
+      font-size: 1.3rem;
+    }
+  }
+
+
+  .black-truck {
+    height: 4rem;
+    width: 4rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .black-truck {
+      height: 6rem;
+      width: 6rem;
+    }
   }
 {% endstyle %}
