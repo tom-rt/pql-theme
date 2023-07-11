@@ -41,13 +41,10 @@
         </form>
       </div>
 
-      <div class="socials">
-        {%- comment -%}
-        <div class="fb-wrapper">
-        <img loading='lazy' width="inherit" height="35" class="img fb" src={{ 'cart-icon.png' | asset_url }}/>
-        </div>
-        {%- endcomment -%}
-        <div class="fb-wrapper">
+      <div class="nav-hd-icons">
+
+        {% comment %} FACEBOOK {% endcomment %}
+        <div class="icon-wrapper display-mob">
           <a
             class="link"
             target="_blank"
@@ -59,7 +56,9 @@
               src={{ 'fb.png' | asset_url }} />
           </a>
         </div>
-        <div class="insta">
+
+        {% comment %} INSTA {% endcomment %}
+        <div class="icon-wrapper display-mob">
           <a
             class="link"
             target="_blank"
@@ -71,6 +70,56 @@
               src={{ 'insta.png' | asset_url }} />
           </a>
         </div>
+
+        {% comment %} CART {% endcomment %}
+        <div class="icon-wrapper">
+          <a
+            class="link"
+            target="_blank"
+            href="https://www.facebook.com/epicerie.pierrequiroule">
+            <img
+              loading='lazy'
+              width="inherit"
+              class="img hd-fb pointer"
+              src={{ 'cart-icon.png' | asset_url }} />
+          </a>
+        </div>
+
+        {% comment %} PROFILE {% endcomment %}
+        <label for="profile_checkbox">
+
+          <div class="">
+            <img
+              loading='lazy'
+              width="inherit"
+              class="img hd-fb pointer"
+              src={{ 'profile.png' | asset_url }} />
+          </div>
+
+        </label>
+        <input
+          type="checkbox"
+          id="profile_checkbox"
+          style="display:none;">
+        <div id="profile-dropdown">
+          <label for="profile_checkbox" class="width-0">
+            <div class="profile-background-overlay"></div>
+          </label>
+          <div class="profile-dropdown-container">
+            {% if customer %}
+              <a class="link hd-box " href="{{ routes.account_login_url }}">
+                <div class="profile-dropdown-section">Mon compte</div>
+              </a>
+            {% else %}
+              <a class="link hd-box " href="{{ routes.account_login_url }}">
+                <div class="profile-dropdown-section">Se connecter</div>
+              </a>
+
+            {% endif %}
+          </div>
+        </div>
+
+
       </div>
     </div>
   </div>
@@ -85,8 +134,8 @@
           </a>
         {% endif %}
         {% if link.links != blank %}
-          <label for="my_checkbox" class="checkbox-trick">
-            <div class="hd-box hd-pd border-right white-btop min-link-height" href="{{ link.url }}">
+          <label for="cmd_checkbox" class="cmd-checkbox-trick">
+            <div class="hd-box hd-pd border-right min-link-height" href="{{ link.url }}">
               {{ link.title }}
             </div>
           </label>
@@ -96,14 +145,14 @@
       {% if link.links != blank %}
         <input
           type="checkbox"
-          id="my_checkbox"
+          id="cmd_checkbox"
           style="display:none;">
         <div id="child-link-container-id" class="child-link-container">
 
-          <label for="my_checkbox" class=" width-0 checkbox-trick">
-            <div class="background-overlay"></div>
+          <label for="cmd_checkbox" class=" width-0 cmd-checkbox-trick">
+            <div class="cmd-background-overlay"></div>
           </label>
-          <label for="my_checkbox" class="checkbox-trick">
+          <label for="cmd_checkbox" class="cmd-checkbox-trick">
             {% for child_link in link.links %}
               <div class="yy">
                 <div class="xx">
@@ -141,17 +190,11 @@
 
 {% style %}
 
+  /* COMMAND DROPDOWN */
   .child-link {
     width: 100%;
     background-color: #28241B;
     box-sizing: border-box;
-
-    /* border-style: solid;
-  border-width: 1px;
-  border-color: white;
-  border-left: none;
-  border-right: none; */
-
     min-height: 3rem;
   }
   @media screen and (max-width: 1000px) {
@@ -165,7 +208,6 @@
     display: flex;
     width: 100%;
     opacity: 0;
-    /* background-color:none */
   }
 
   .yy {
@@ -180,22 +222,18 @@
     flex-direction: row;
   }
 
-  .background-overlay {
+  .cmd-background-overlay {
     position: fixed;
     z-index: -1;
     height: 1000rem;
     width: 1000rem;
-    /* top: 0;
-    bottom: 0; */
-    /* background-color: aliceblue; */
     opacity: 0;
   }
 
-  .checkbox-trick {
+  .cmd-checkbox-trick {
     display: flex;
     width: 100%;
     flex-direction: column;
-    /* background-color: green; */
   }
 
   .width-0 {
@@ -246,7 +284,77 @@
     border-top-width: 1px;
     border-top-color: white;
   }
+  /* ############### */
+  /* PROFILE DROPDOWN */
 
+  .profile-background-overlay {
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 0;
+    height: 1000rem;
+    width: 1000rem;
+    /* opacity: 0.5;
+    background-color: red; */
+  }
+
+  #profile-dropdown {
+    display: none;
+    width: 100%
+  }
+  :checked + #profile-dropdown {
+    display: flex;
+  }
+
+  .profile-dropdown-container {
+    position: fixed;
+    top: 3rem;
+    right: 1rem;
+    width: 20rem;
+
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+
+
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--black);
+
+    color: var(--black);
+    font-size: 1.5rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .profile-dropdown-container {
+      font-size: 3rem;
+      width: 30rem;
+    }
+  }
+
+  .profile-dropdown-section {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0.5rem;
+    /* padding-top: 0.5rem;
+    padding-bottom: 0.5rem; */
+    cursor: pointer;
+  }
+  .profile-dropdown-section:hover {
+    text-shadow: 1px 1px 1px lightgrey;
+    /* font-size: 2.2rem; */
+  }
+
+
+  .black-bbottom {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--black);
+  }
+
+  /* ############# */
   .pql-container {
     display: flex;
     flex-direction: row;
@@ -257,11 +365,9 @@
       flex-direction: column;
     }
   }
-
   .pql-subcontainer {
     display: flex;
   }
-
   .search-form {
     display: flex;
     align-items: center;
@@ -320,13 +426,6 @@
     align-items: center;
     justify-content: center;
   }
-  @media screen and (max-width: 1000px) {
-    .search-bar-container {
-      ;
-      /* justify-content: left; */
-    }
-  }
-
   .header-column {
     display: flex;
     align-items: center;
@@ -334,13 +433,12 @@
     width: 100%;
     background: white;
   }
-
   .header-wrapper {
     height: 3.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 100rem;
+    /* max-width: 100rem; */
     width: 100%;
   }
   @media screen and (max-width: 1000px) {
@@ -348,7 +446,6 @@
       height: 7rem;
     }
   }
-
   .header {
     display: flex;
     align-items: center;
@@ -359,17 +456,14 @@
     .header {
       height: 100%;
       align-items: flex-start;
-      /* justify-content: space-between; */
     }
   }
-
-  .socials {
+  .nav-hd-icons {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 2rem;
   }
-
   .hd-fb {
     height: 35px;
     border-radius: 10px;
@@ -380,21 +474,22 @@
       margin-right: 1rem;
     }
   }
-
   .hd-insta {
     height: 35px;
   }
-
   @media screen and (max-width: 1000px) {
     .hd-insta {
       height: 60px
     }
   }
-
-  .fb-wrapper {
+  .icon-wrapper {
     margin-right: 1rem;
   }
-
+  @media screen and (max-width: 1000px) {
+    .display-mob {
+      display: none;
+    }
+  }
   .hd-caddie {
     height: 30px;
   }
@@ -403,11 +498,9 @@
       height: 60px;
     }
   }
-
   .title {
     display: flex;
   }
-
   .pql {
     display: flex;
     align-items: center;
@@ -422,12 +515,10 @@
       margin-right: 1rem;
     }
   }
-
   .slogan {
     display: flex;
     align-items: center;
   }
-
   .orange {
     color: var(--orange)
   }
@@ -467,7 +558,6 @@
       font-size: 3rem;
     }
   }
-
   .logo-box {
     height: 100%;
     background-color: white;
@@ -482,12 +572,6 @@
       margin: 0 0.3rem;
     }
   }
-
-  .hd-pd {
-    ;
-    /* padding: 0.5rem; */
-  }
-
   .hd-box {
     display: flex;
     justify-content: center;

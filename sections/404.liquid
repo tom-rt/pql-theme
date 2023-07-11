@@ -1,0 +1,40 @@
+<div class="main-wrapper">
+  <div class="main-column">
+    <div class="ct-main">
+      <div>
+        <img
+          loading='lazy'
+          width="inherit"
+          height="150"
+          class="ct-logo-pql"
+          src={{ 'logo-png.png' | asset_url }} />
+      </div>
+      <div class="ct-contact">
+        Page inexistante ¯\_(ツ)_/¯
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- style -%}
+
+  .ct-main {
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    height: 30rem;
+  }
+
+  .ct-logo-pql {
+    margin-bottom: 2rem;
+  }
+
+  .ct-contact {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+  }
+{% endstyle %}

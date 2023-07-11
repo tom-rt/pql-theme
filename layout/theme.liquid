@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html class="html">
   <head>
-    <meta name="google-site-verification" content="3m56W__8sDjU5VlhOfmbKKA_bdPaBSHZMOm5JBYpuvA"/>
+    <meta name="google-site-verification" content="3m56W__8sDjU5VlhOfmbKKA_bdPaBSHZMOm5JBYpuvA" />
     <title>Épicerie Pierre qui roule</title>
-    <link rel="icon" type="image/x-icon" href={{ 'caddie.png' | asset_url}}>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href={{ 'caddie.png' | asset_url}}>
 
     {{ content_for_header }}
-    {{ 'custom-fonts.css' | asset_url | stylesheet_tag }}
-    {{ 'base.css' | asset_url | stylesheet_tag }}
+    {% comment %} {{ 'custom-fonts.css' | global_asset_url | stylesheet_tag }} {% endcomment %}
+    {{ "base.css" | asset_url | stylesheet_tag }}
+    {% comment %} {{ 'customer.css' | global_asset_url | stylesheet_tag }} {% endcomment %}
 
   </head>
 

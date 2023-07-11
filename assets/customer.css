@@ -1,0 +1,111 @@
+.forget-pwd {
+    display: flex;
+    align-items: start;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .forget-pwd {
+        margin-top: 1rem;
+        font-size: 1.8rem;
+    }
+}
+
+.create-account {
+    display: flex;
+    align-items: start;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1.4rem;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .create-account {
+        font-size: 2rem;
+        margin-top: 4rem;
+    }
+}
+
+.cust-button {
+    font-size: 1.4rem !important;
+    border-radius: 5px;
+    background-color: var(--duck-blue);
+    color: inherit;
+    padding: 0.5rem;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    color: white;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .cust-button {
+        padding: 1rem;
+        font-size: 3rem !important;
+        margin-top: 4rem;
+    }
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .form-row {
+        font-size: 2.4rem;
+        margin-top: 2rem;
+    }
+}
+
+
+.cust-input {
+    -webkit-appearance: none;
+    height: 1.5rem;
+    padding: 5px;
+    border-radius: 5px;
+    width: 20rem;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .cust-input {
+        height: 3.5rem;
+        font-size: 2.3rem;
+        margin-top: 1rem;
+    }
+}
+
+.cust-main {
+    display: flex;
+    width: 100%;
+    padding: 2rem 1rem 1rem;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+.cust-title {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .cust-title {
+        margin-top: 1rem;
+        font-size: 3rem;
+    }
+}
