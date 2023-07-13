@@ -1,10 +1,10 @@
 [
-    {
-        "name": "theme_info",
-        "theme_name": "PQL theme",
-        "theme_version": "1.0.0",
-        "theme_author": "Thomas Raout",
-        "theme_support_email": "thomraout@gmail.com",
-        "theme_documentation_url": "http://localhost"
-    }
+  {
+    "name": "theme_info",
+    "theme_name": "PQL theme",
+    "theme_version": "1.0.0",
+    "theme_author": "Thomas Raout",
+    "theme_support_email": "thomraout@gmail.com",
+    "theme_documentation_url": "http:\/\/localhost"
+  }
 ]
