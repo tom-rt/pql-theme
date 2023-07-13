@@ -9,9 +9,9 @@
       href={{ 'caddie.png' | asset_url}}>
 
     {{ content_for_header }}
-    {% comment %} {{ 'custom-fonts.css' | global_asset_url | stylesheet_tag }} {% endcomment %}
-    {{ "base.css" | asset_url | stylesheet_tag }}
-    {% comment %} {{ 'customer.css' | global_asset_url | stylesheet_tag }} {% endcomment %}
+    {{ 'custom-fonts.css' | asset_url | stylesheet_tag }}
+    {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'customer.css' | asset_url | stylesheet_tag }}
 
   </head>
 
