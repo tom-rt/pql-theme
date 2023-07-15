@@ -7,8 +7,6 @@
       </div>
 
       {% form 'customer_login' %}
-        {{ form.errors | default_errors }}
-
         <div class="form-row">
           <label for="email">Email</label>
           <input
@@ -26,6 +24,10 @@
         </div>
         <div class="forget-pwd">
           Mot de passe oublié ?
+        </div>
+
+        <div class="cust-form-errors">
+          {{ form.errors | default_errors }}
         </div>
 
         <button type="submit" class="cust-button">

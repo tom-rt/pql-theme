@@ -107,9 +107,12 @@
           </label>
           <div class="profile-dropdown-container">
             {% if customer %}
-              <a class="link hd-box " href="{{ routes.account_login_url }}">
+              <a class="link hd-box black-bbottom logout" href="/account/logout/">
                 <div class="profile-dropdown-section">Mon compte</div>
               </a>
+              {% comment %} <a class="link hd-box" href="{{ routes.account_logout }}">
+              <div class="profile-dropdown-section">Déconnexion</div>
+              </a> {% endcomment %}
             {% else %}
               <a class="link hd-box " href="{{ routes.account_login_url }}">
                 <div class="profile-dropdown-section">Se connecter</div>

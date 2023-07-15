@@ -95,13 +95,16 @@
     text-align: center;
     flex-direction: column;
     height: 100%;
-
 }
 
 .cust-form-errors {
     font-size: 1.4rem;
     color: red;
     font-weight: bold;
+}
+
+.mt-4 {
+    margin-top: 4rem !important;
 }
 
 @media screen and (max-width: 1000px) {

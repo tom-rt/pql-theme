@@ -10,6 +10,10 @@
     font-family: "whimsy";
 }
 
+.w-100 {
+    width: 100%;
+}
+
 .orange-underline {
     border-bottom-style: solid;
     border-bottom-color: var(--orange);
