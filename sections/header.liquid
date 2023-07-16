@@ -4,10 +4,7 @@
       <div class="header">
         <div class="logo-box">
           <a class="link hd-box" href="/">
-            <img
-              loading='lazy'
-              class="img hd-caddie"
-              src={{ 'caddie.png' | asset_url }} />
+            <img loading='lazy' class="img hd-caddie" src={{ 'caddie.png' | asset_url }} />
           </a>
         </div>
         <a class="link hd-box " href="/">
@@ -23,18 +20,9 @@
 
       <div class="search-bar-container">
         <form action="{{ routes.search_url }}" class="search-form">
-          <input
-            required
-            class="search-bar"
-            type="text"
-            placeholder="Rechercher un produit"
-            name="q"
-            minlength="2"
+          <input required class="search-bar" type="text" placeholder="Rechercher un produit" name="q" minlength="2"
             value="{{ search.terms | escape }}">
-          <input
-            type="hidden"
-            name="type"
-            value="product" />
+          <input type="hidden" name="type" value="product" />
           <button class="glass-button">
             <img src={{ 'glass.png' | asset_url }} class="glass-img" />
           </button>
@@ -45,78 +33,52 @@
 
         {% comment %} FACEBOOK {% endcomment %}
         <div class="icon-wrapper display-mob">
-          <a
-            class="link"
-            target="_blank"
-            href="https://www.facebook.com/epicerie.pierrequiroule">
-            <img
-              loading='lazy'
-              width="inherit"
-              class="img hd-fb pointer"
-              src={{ 'fb.png' | asset_url }} />
+          <a class="link" target="_blank" href="https://www.facebook.com/epicerie.pierrequiroule">
+            <img loading='lazy' width="inherit" class="img hd-fb pointer" src={{ 'fb.png' | asset_url }} />
           </a>
         </div>
 
         {% comment %} INSTA {% endcomment %}
         <div class="icon-wrapper display-mob">
-          <a
-            class="link"
-            target="_blank"
-            href="https://www.instagram.com/epicerie.pierrequiroule/?hl=fr">
-            <img
-              loading='lazy'
-              width="inherit"
-              class="img hd-insta pointer"
-              src={{ 'insta.png' | asset_url }} />
+          <a class="link" target="_blank" href="https://www.instagram.com/epicerie.pierrequiroule/?hl=fr">
+            <img loading='lazy' width="inherit" class="img hd-insta pointer" src={{ 'insta.png' | asset_url }} />
           </a>
         </div>
 
         {% comment %} CART {% endcomment %}
         <div class="icon-wrapper">
-          <a
-            class="link"
-            target="_blank"
-            href="https://www.facebook.com/epicerie.pierrequiroule">
-            <img
-              loading='lazy'
-              width="inherit"
-              class="img hd-fb pointer"
-              src={{ 'cart-icon.png' | asset_url }} />
+          <a class="link" target="_blank" href="https://www.facebook.com/epicerie.pierrequiroule">
+            <img loading='lazy' width="inherit" class="img hd-fb pointer" src={{ 'cart-icon.png' | asset_url }} />
           </a>
         </div>
 
         {% comment %} PROFILE {% endcomment %}
         <label for="profile_checkbox">
-
           <div class="">
-            <img
-              loading='lazy'
-              width="inherit"
-              class="img hd-fb pointer"
-              src={{ 'profile.png' | asset_url }} />
+            <img loading='lazy' width="inherit" class="img hd-fb pointer" src={{ 'profile.png' | asset_url }} />
           </div>
-
         </label>
-        <input
-          type="checkbox"
-          id="profile_checkbox"
-          style="display:none;">
+
+        <input type="checkbox" id="profile_checkbox" style="display:none;">
+
         <div id="profile-dropdown">
           <label for="profile_checkbox" class="width-0">
             <div class="profile-background-overlay"></div>
           </label>
           <div class="profile-dropdown-container">
             {% if customer %}
-              <a class="link hd-box black-bbottom logout" href="/account/logout/">
-                <div class="profile-dropdown-section">Mon compte</div>
-              </a>
-              {% comment %} <a class="link hd-box" href="{{ routes.account_logout }}">
+            <a class="link hd-box black-bbottom logout" href="/account/logout/">
+              <div class="profile-dropdown-section">Mon compte</div>
+            </a>
+
+            <a class="link hd-box" href="/account/logout">
               <div class="profile-dropdown-section">Déconnexion</div>
-              </a> {% endcomment %}
+            </a>
+
             {% else %}
-              <a class="link hd-box " href="{{ routes.account_login_url }}">
-                <div class="profile-dropdown-section">Se connecter</div>
-              </a>
+            <a class="link hd-box " href="{{ routes.account_login_url }}">
+              <div class="profile-dropdown-section">Se connecter</div>
+            </a>
 
             {% endif %}
           </div>
@@ -130,49 +92,47 @@
 
     {% for link in linklists.main-menu.links %}
 
-      <div class="parent-link-container">
-        {% if link.links == blank %}
-          <a class="link hd-box hd-pd border-right" href="{{ link.url }}">
-            {{ link.title }}
-          </a>
-        {% endif %}
-        {% if link.links != blank %}
-          <label for="cmd_checkbox" class="cmd-checkbox-trick">
-            <div class="hd-box hd-pd border-right min-link-height" href="{{ link.url }}">
-              {{ link.title }}
-            </div>
-          </label>
-        {% endif %}
-      </div>
-
-      {% if link.links != blank %}
-        <input
-          type="checkbox"
-          id="cmd_checkbox"
-          style="display:none;">
-        <div id="child-link-container-id" class="child-link-container">
-
-          <label for="cmd_checkbox" class=" width-0 cmd-checkbox-trick">
-            <div class="cmd-background-overlay"></div>
-          </label>
-          <label for="cmd_checkbox" class="cmd-checkbox-trick">
-            {% for child_link in link.links %}
-              <div class="yy">
-                <div class="xx">
-                  <div class="child-link-filler"></div>
-                  <a class="link child-link hd-box {% if forloop.index != link.links.size %} white-bbottom {% endif %} {% if forloop.index == 1 %} white-btop {% endif %}" href="{{ child_link.url }}">
-                    {{ child_link.title }}
-                  </a>
-                  <div class="child-link-filler"></div>
-                </div>
-              </div>
-
-
-            {% endfor %}
-          </label>
-
-        </div>
+    <div class="parent-link-container">
+      {% if link.links == blank %}
+      <a class="link hd-box hd-pd border-right" href="{{ link.url }}">
+        {{ link.title }}
+      </a>
       {% endif %}
+      {% if link.links != blank %}
+      <label for="cmd_checkbox" class="cmd-checkbox-trick">
+        <div class="hd-box hd-pd border-right min-link-height" href="{{ link.url }}">
+          {{ link.title }}
+        </div>
+      </label>
+      {% endif %}
+    </div>
+
+    {% if link.links != blank %}
+    <input type="checkbox" id="cmd_checkbox" style="display:none;">
+    <div id="child-link-container-id" class="child-link-container">
+
+      <label for="cmd_checkbox" class=" width-0 cmd-checkbox-trick">
+        <div class="cmd-background-overlay"></div>
+      </label>
+      <label for="cmd_checkbox" class="cmd-checkbox-trick">
+        {% for child_link in link.links %}
+        <div class="yy">
+          <div class="xx">
+            <div class="child-link-filler"></div>
+            <a class="link child-link hd-box {% if forloop.index != link.links.size %} white-bbottom {% endif %} {% if forloop.index == 1 %} white-btop {% endif %}"
+              href="{{ child_link.url }}">
+              {{ child_link.title }}
+            </a>
+            <div class="child-link-filler"></div>
+          </div>
+        </div>
+
+
+        {% endfor %}
+      </label>
+
+    </div>
+    {% endif %}
 
     {% endfor %}
 
@@ -180,414 +140,408 @@
 </div>
 
 {% schema %}
-  {
-    "settings": [
-      {
-        "type": "link_list",
-        "id": "menu",
-        "label": "Menu"
-      }
-    ]
-  }
+{
+"settings": [
+{
+"type": "link_list",
+"id": "menu",
+"label": "Menu"
+}
+]
+}
 {% endschema %}
 
 {% style %}
 
-  /* COMMAND DROPDOWN */
-  .child-link {
-    width: 100%;
-    background-color: #28241B;
-    box-sizing: border-box;
-    min-height: 3rem;
-  }
-  @media screen and (max-width: 1000px) {
-    .child-link {
-      height: 7rem;
-      font-size: 3rem;
-    }
-  }
+/* COMMAND DROPDOWN */
+.child-link {
+width: 100%;
+background-color: #28241B;
+box-sizing: border-box;
+min-height: 3rem;
+}
+@media screen and (max-width: 1000px) {
+.child-link {
+height: 7rem;
+font-size: 3rem;
+}
+}
 
-  .child-link-filler {
-    display: flex;
-    width: 100%;
-    opacity: 0;
-  }
+.child-link-filler {
+display: flex;
+width: 100%;
+opacity: 0;
+}
 
-  .yy {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-  }
+.yy {
+display: flex;
+width: 100%;
+flex-direction: row;
+}
 
-  .xx {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-  }
+.xx {
+display: flex;
+width: 100%;
+flex-direction: row;
+}
 
-  .cmd-background-overlay {
-    position: fixed;
-    z-index: -1;
-    height: 1000rem;
-    width: 1000rem;
-    opacity: 0;
-  }
+.cmd-background-overlay {
+position: fixed;
+z-index: -1;
+height: 1000rem;
+width: 1000rem;
+opacity: 0;
+}
 
-  .cmd-checkbox-trick {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-  }
+.cmd-checkbox-trick {
+display: flex;
+width: 100%;
+flex-direction: column;
+}
 
-  .width-0 {
-    width: 0 !important;
-  }
+.width-0 {
+width: 0 !important;
+}
 
-  #child-link-container-id {
-    display: none;
-    width: 100%
-  }
-  :checked + #child-link-container-id {
-    display: flex;
-  }
+#child-link-container-id {
+display: none;
+width: 100%
+}
+:checked + #child-link-container-id {
+display: flex;
+}
 
-  .parent-link-container {
-    width: 100%;
-    display: flex
-  }
+.parent-link-container {
+width: 100%;
+display: flex
+}
 
-  .child-link-container {
-    position: absolute;
-    bottom: -6rem;
-    width: 50%;
-  }
-  @media screen and (max-width: 1000px) {
-    .child-link-container {
-      bottom: -14rem;
-    }
-  }
+.child-link-container {
+position: absolute;
+bottom: -6rem;
+width: 50%;
+}
+@media screen and (max-width: 1000px) {
+.child-link-container {
+bottom: -14rem;
+}
+}
 
-  .white-bbottom {
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-bottom-color: white;
-  }
+.white-bbottom {
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-bottom-color: white;
+}
 
-  .min-link-height {
-    min-height: 3rem;
-  }
-  @media screen and (max-width: 1000px) {
-    .min-link-height {
-      min-height: 7rem;
-    }
-  }
+.min-link-height {
+min-height: 3rem;
+}
+@media screen and (max-width: 1000px) {
+.min-link-height {
+min-height: 7rem;
+}
+}
 
-  .white-btop {
-    border-top-style: solid;
-    border-top-width: 1px;
-    border-top-color: white;
-  }
-  /* ############### */
-  /* PROFILE DROPDOWN */
+.white-btop {
+border-top-style: solid;
+border-top-width: 1px;
+border-top-color: white;
+}
+/* ############### */
+/* PROFILE DROPDOWN */
 
-  .profile-background-overlay {
-    top: 0;
-    left: 0;
-    position: fixed;
-    z-index: 0;
-    height: 1000rem;
-    width: 1000rem;
-    /* opacity: 0.5;
-    background-color: red; */
-  }
+.profile-background-overlay {
+top: 0;
+left: 0;
+position: fixed;
+z-index: 0;
+height: 1000rem;
+width: 1000rem;
+}
 
-  #profile-dropdown {
-    display: none;
-    width: 100%
-  }
-  :checked + #profile-dropdown {
-    display: flex;
-  }
+#profile-dropdown {
+display: none;
+width: 100%
+}
+:checked + #profile-dropdown {
+display: flex;
+}
 
-  .profile-dropdown-container {
-    position: fixed;
-    top: 3rem;
-    right: 1rem;
-    width: 20rem;
+.profile-dropdown-container {
+position: fixed;
+top: 3rem;
+right: 1rem;
+width: 20rem;
 
-    background-color: white;
+background-color: white;
 
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 
 
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--black);
+border-radius: 5px;
+border-style: solid;
+border-width: 1px;
+border-color: var(--black);
 
-    color: var(--black);
-    font-size: 1.5rem;
-  }
-  @media screen and (max-width: 1000px) {
-    .profile-dropdown-container {
-      font-size: 3rem;
-      width: 30rem;
-    }
-  }
+color: var(--black);
+font-size: 1.5rem;
+}
+@media screen and (max-width: 1000px) {
+.profile-dropdown-container {
+font-size: 3rem;
+width: 30rem;
+}
+}
 
-  .profile-dropdown-section {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    padding: 0.5rem;
-    /* padding-top: 0.5rem;
-    padding-bottom: 0.5rem; */
-    cursor: pointer;
-  }
-  .profile-dropdown-section:hover {
-    text-shadow: 1px 1px 1px lightgrey;
-    /* font-size: 2.2rem; */
-  }
+.profile-dropdown-section {
+display: flex;
+align-items: center;
+justify-content: start;
+padding: 0.5rem;
+cursor: pointer;
+}
+.profile-dropdown-section:hover {
+text-shadow: 1px 1px 1px lightgrey;
+}
 
+.black-bbottom {
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-bottom-color: var(--black);
+}
 
-  .black-bbottom {
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-bottom-color: var(--black);
-  }
+/* ############# */
+.pql-container {
+display: flex;
+flex-direction: row;
+}
+@media screen and (max-width: 1000px) {
+.pql-container {
+height: 3.5rem;
+flex-direction: column;
+}
+}
+.pql-subcontainer {
+display: flex;
+}
+.search-form {
+display: flex;
+align-items: center;
+justify-content: center;
+}
 
-  /* ############# */
-  .pql-container {
-    display: flex;
-    flex-direction: row;
-  }
-  @media screen and (max-width: 1000px) {
-    .pql-container {
-      height: 3.5rem;
-      flex-direction: column;
-    }
-  }
-  .pql-subcontainer {
-    display: flex;
-  }
-  .search-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.glass-img {
+height: 1.7rem;
+}
+@media screen and (max-width: 1000px) {
+.glass-img {
+height: 2.3rem;
+width: 2.3rem;
+}
+}
 
-  .glass-img {
-    height: 1.7rem;
-  }
-  @media screen and (max-width: 1000px) {
-    .glass-img {
-      height: 2.3rem;
-      width: 2.3rem;
-    }
-  }
+.glass-button {
+border-radius: 5px;
+width: 2.5rem;
+height: 2.5rem;
+background-color: var(--duck-blue);
+color: inherit;
+padding: 3px;
+font: inherit;
+cursor: pointer;
+outline: inherit;
+}
+@media screen and (max-width: 1000px) {
+.glass-button {
+height: 4.2rem;
+width: 4.2rem;
+}
+}
 
-  .glass-button {
-    border-radius: 5px;
-    width: 2.5rem;
-    height: 2.5rem;
-    background-color: var(--duck-blue);
-    color: inherit;
-    padding: 3px;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-  }
-  @media screen and (max-width: 1000px) {
-    .glass-button {
-      height: 4.2rem;
-      width: 4.2rem;
-    }
-  }
+.search-bar {
+-webkit-appearance: none;
+height: 1.5rem;
+font-size: 1.4rem;
+padding: 5px;
+border-radius: 5px;
+width: 20rem;
+margin-right: 0.5rem;
+font-family: whimsy;
+}
+@media screen and (max-width: 1000px) {
+.search-bar {
+height: 3.5rem;
+font-size: 2.3rem;
+}
+}
 
-  .search-bar {
-    -webkit-appearance: none;
-    height: 1.5rem;
-    font-size: 1.4rem;
-    padding: 5px;
-    border-radius: 5px;
-    width: 20rem;
-    margin-right: 0.5rem;
-    font-family: whimsy;
-  }
-  @media screen and (max-width: 1000px) {
-    .search-bar {
-      height: 3.5rem;
-      font-size: 2.3rem;
-    }
-  }
-
-  .search-bar-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .header-column {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background: white;
-  }
-  .header-wrapper {
-    height: 3.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* max-width: 100rem; */
-    width: 100%;
-  }
-  @media screen and (max-width: 1000px) {
-    .header-wrapper {
-      height: 7rem;
-    }
-  }
-  .header {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    justify-content: space-between;
-  }
-  @media screen and (max-width: 1000px) {
-    .header {
-      height: 100%;
-      align-items: flex-start;
-    }
-  }
-  .nav-hd-icons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 2rem;
-  }
-  .hd-fb {
-    height: 35px;
-    border-radius: 10px;
-  }
-  @media screen and (max-width: 1000px) {
-    .hd-fb {
-      height: 60px;
-      margin-right: 1rem;
-    }
-  }
-  .hd-insta {
-    height: 35px;
-  }
-  @media screen and (max-width: 1000px) {
-    .hd-insta {
-      height: 60px
-    }
-  }
-  .icon-wrapper {
-    margin-right: 1rem;
-  }
-  @media screen and (max-width: 1000px) {
-    .display-mob {
-      display: none;
-    }
-  }
-  .hd-caddie {
-    height: 30px;
-  }
-  @media screen and (max-width: 1000px) {
-    .hd-caddie {
-      height: 60px;
-    }
-  }
-  .title {
-    display: flex;
-  }
-  .pql {
-    display: flex;
-    align-items: center;
-    font-family: whimsy;
-    font-size: 2rem;
-    color: var(--duck-blue);
-    margin-right: 0.5rem;
-  }
-  @media screen and (max-width: 1000px) {
-    .pql {
-      font-size: 3rem;
-      margin-right: 1rem;
-    }
-  }
-  .slogan {
-    display: flex;
-    align-items: center;
-  }
-  .orange {
-    color: var(--orange)
-  }
-  .hd-main {
-    height: 6.5rem;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    position: fixed;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-bottom-color: var(--black);
-  }
-  @media screen and (max-width: 1000px) {
-    .hd-main {
-      height: 14rem;
-    }
-  }
-  img {
-    width: "inherit";
-    height: "auto";
-  }
-  .hd-menu {
-    height: 3rem;
-    width: 100%;
-    text-align: center;
-    color: white;
-    background-color: #28241B;
-    display: flex;
-    justify-content: space-between;
-    font-family: "whimsy";
-    font-size: 2rem;
-  }
-  @media screen and (max-width: 1000px) {
-    .hd-menu {
-      height: 7rem;
-      font-size: 3rem;
-    }
-  }
-  .logo-box {
-    height: 100%;
-    background-color: white;
-    display: flex;
-    width: 4rem;
-    max-width: 4rem;
-    justify-content: center;
-    align-items: center;
-  }
-  @media screen and (max-width: 1000px) {
-    .logo-box {
-      margin: 0 0.3rem;
-    }
-  }
-  .hd-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    cursor: pointer;
-  }
-  .hd-box:hover {
-    text-shadow: 1px 1px 2px white;
-  }
-  .border-right {
-    border-right-style: solid;
-    border-right-color: "#FFFFF";
-    border-width: 1px;
-  }
+.search-bar-container {
+width: 100%;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.header-column {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+background: white;
+}
+.header-wrapper {
+height: 3.5rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+/* max-width: 100rem; */
+width: 100%;
+}
+@media screen and (max-width: 1000px) {
+.header-wrapper {
+height: 7rem;
+}
+}
+.header {
+display: flex;
+align-items: center;
+background-color: white;
+justify-content: space-between;
+}
+@media screen and (max-width: 1000px) {
+.header {
+height: 100%;
+align-items: flex-start;
+}
+}
+.nav-hd-icons {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-right: 2rem;
+}
+.hd-fb {
+height: 35px;
+border-radius: 10px;
+}
+@media screen and (max-width: 1000px) {
+.hd-fb {
+height: 60px;
+margin-right: 1rem;
+}
+}
+.hd-insta {
+height: 35px;
+}
+@media screen and (max-width: 1000px) {
+.hd-insta {
+height: 60px
+}
+}
+.icon-wrapper {
+margin-right: 1rem;
+}
+@media screen and (max-width: 1000px) {
+.display-mob {
+display: none;
+}
+}
+.hd-caddie {
+height: 30px;
+}
+@media screen and (max-width: 1000px) {
+.hd-caddie {
+height: 60px;
+}
+}
+.title {
+display: flex;
+}
+.pql {
+display: flex;
+align-items: center;
+font-family: whimsy;
+font-size: 2rem;
+color: var(--duck-blue);
+margin-right: 0.5rem;
+}
+@media screen and (max-width: 1000px) {
+.pql {
+font-size: 3rem;
+margin-right: 1rem;
+}
+}
+.slogan {
+display: flex;
+align-items: center;
+}
+.orange {
+color: var(--orange)
+}
+.hd-main {
+height: 6.5rem;
+display: flex;
+flex-direction: column;
+width: 100%;
+position: fixed;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-bottom-color: var(--black);
+}
+@media screen and (max-width: 1000px) {
+.hd-main {
+height: 14rem;
+}
+}
+img {
+width: "inherit";
+height: "auto";
+}
+.hd-menu {
+height: 3rem;
+width: 100%;
+text-align: center;
+color: white;
+background-color: #28241B;
+display: flex;
+justify-content: space-between;
+font-family: "whimsy";
+font-size: 2rem;
+}
+@media screen and (max-width: 1000px) {
+.hd-menu {
+height: 7rem;
+font-size: 3rem;
+}
+}
+.logo-box {
+height: 100%;
+background-color: white;
+display: flex;
+width: 4rem;
+max-width: 4rem;
+justify-content: center;
+align-items: center;
+}
+@media screen and (max-width: 1000px) {
+.logo-box {
+margin: 0 0.3rem;
+}
+}
+.hd-box {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+cursor: pointer;
+}
+.hd-box:hover {
+text-shadow: 1px 1px 2px white;
+}
+.border-right {
+border-right-style: solid;
+border-right-color: "#FFFFF";
+border-width: 1px;
+}
 {% endstyle %}

@@ -14,7 +14,7 @@
     }
 }
 
-.create-account {
+.cust-subtitle {
     display: flex;
     align-items: start;
     text-decoration: underline;
@@ -24,7 +24,7 @@
 }
 
 @media screen and (max-width: 1000px) {
-    .create-account {
+    .cust-subtitle {
         font-size: 2rem;
         margin-top: 4rem;
     }
