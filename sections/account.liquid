@@ -11,73 +11,48 @@
       <div class="form-row">
         <label for="nom">{{ customer.email }}</label>
       </div>
-      <a class="link" href="{{ routes.account_addresses_url }}">
-        <div class="create-account">
-          Modifier mon mot de passe
-        </div>
-      </a>
+
 
       {% if customer.addresses_count == 2 %}
-        <div class="cust-title mt-4">
-          Adresse
+      <div class="cust-title mt-4">
+        Adresse
+      </div>
+      <div class="form-row">
+        <label for="nom">{{ customer.addresses[1].name }}</label>
+      </div>
+      <div class="form-row">
+        <label for="address">{{ customer.addresses[1].address1 }}</label>
+      </div>
+      <div class="form-row">
+        <label for="city">{{ customer.addresses[1].city }}</label>
+      </div>
+      <div class="form-row">
+        <label for="zip">{{ customer.addresses[1].zip }}</label>
+      </div>
+      <div class="form-row">
+        <label for="phone">{{ customer.addresses[1].phone }}</label>
+      </div>
+      <a class="link" href="{{ routes.account_addresses_url }}">
+        <div class="cust-subtitle">
+          Modifier mon adresse
         </div>
-        <div class="form-row">
-          <label for="nom">{{ customer.addresses[1].name }}</label>
-        </div>
-        <div class="form-row">
-          <label for="address">{{ customer.addresses[1].address1 }}</label>
-        </div>
-        <div class="form-row">
-          <label for="city">{{ customer.addresses[1].city }}</label>
-        </div>
-        <div class="form-row">
-          <label for="zip">{{ customer.addresses[1].zip }}</label>
-        </div>
-        <div class="form-row">
-          <label for="phone">{{ customer.addresses[1].phone }}</label>
-        </div>
-        <a class="link" href="{{ routes.account_addresses_url }}">
-          <div class="create-account">
-            Modifier mon adresse
-          </div>
-        </a>
+      </a>
       {% endif %}
-
 
       {% if customer.addresses_count == 1 %}
-        <a class="link" href="{{ routes.account_addresses_url }}">
-          <div class="create-account">
-            Créer une adresse
-          </div>
-        </a>
+      <a class="link" href="{{ routes.account_addresses_url }}">
+        <div class="cust-subtitle">
+          Créer une adresse
+        </div>
+      </a>
       {% endif %}
 
-
-      {% comment %} <form> {% endcomment %}
-      <a class="link hd-box" href="{{ routes.account_logout }}">
+      <a class="link hd-box" href="/account/logout">
         <button type="submit" class="cust-button">
           Déconnexion
         </button>
       </a>
-      {% comment %} <input
-      type="hidden"
-      name="return_to"
-      value="{{ routes.root_url }}">
-      </form> {% endcomment %}
 
     </div>
   </div>
 </div>
-
-<script>
-  $(document).ready(function() {
-    $('a[href^="/account/logout"]').on("click", function() {
-      $.ajax($(this).attr('href')).done(function() {
-
-// Here you will change the url to whatever page you want to redirect to
-        window.location.href = "/collections/all";
-      });
-      return false;
-    });
-  });
-</script>
