@@ -9,45 +9,33 @@
 
       {% form 'create_customer' %}
 
-        <div class="form-row">
-          <label for="first-name">Prénom</label>
-          <input
-            class="cust-input"
-            type="text"
-            name="customer[first_name]">
-        </div>
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input class="cust-input" type="email" name="customer[email]">
+      </div>
 
-        <div class="form-row">
-          <label for="last-name">Nom</label>
-          <input
-            class="cust-input"
-            type="text"
-            name="customer[last_name]">
-        </div>
+      <div class="form-row">
+        <label for="first-name">Prénom</label>
+        <input class="cust-input" type="text" name="customer[first_name]">
+      </div>
 
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input
-            class="cust-input"
-            type="email"
-            name="customer[email]">
-        </div>
+      <div class="form-row">
+        <label for="last-name">Nom</label>
+        <input class="cust-input" type="text" name="customer[last_name]">
+      </div>
 
-        <div class="form-row">
-          <label for="password">Mot de passe</label>
-          <input
-            class="cust-input"
-            type="password"
-            name="customer[password]">
-        </div>
+      <div class="form-row">
+        <label for="password">Mot de passe</label>
+        <input class="cust-input" type="password" name="customer[password]">
+      </div>
 
-        <div class="cust-form-errors">
-          {{ form.errors | default_errors }}
-        </div>
+      <div class="cust-form-errors">
+        {{ form.errors | default_errors }}
+      </div>
 
-        <button type="submit" class="cust-button">
-          Créer compte
-        </button>
+      <button type="submit" class="cust-button">
+        Créer compte
+      </button>
       {% endform %}
 
 
