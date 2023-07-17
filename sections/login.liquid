@@ -18,9 +18,9 @@
       </div>
 
 
-      <!-- <div class="cust-form-errors orange">
+      <div class="cust-form-errors">
         {{ form.errors | default_errors }}
-      </div> -->
+      </div>
 
       <button type="submit" class="cust-button" form="login_form">
         Connexion
@@ -47,7 +47,7 @@
         <div class="forget_pwd_sub">
           Si un compte est lié à cette adresse, vous allez recevoir un mail avec un lien pour réinitialiser votre mot
           de
-          passe.
+          passe
         </div>
         <div class="form_forget_pwd_container">
           {% form 'recover_customer_password', id: "reset_pwd_form" %}
