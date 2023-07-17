@@ -67,7 +67,7 @@
           </label>
           <div class="profile-dropdown-container">
             {% if customer %}
-            <a class="link hd-box black-bbottom logout" href="/account/logout/">
+            <a class="link hd-box black-bbottom logout" href="{{ routes.account_url }}">
               <div class="profile-dropdown-section">Mon compte</div>
             </a>
 
@@ -83,7 +83,6 @@
             {% endif %}
           </div>
         </div>
-
 
       </div>
     </div>
@@ -139,7 +138,7 @@
   </div>
 </div>
 
-{% schema %}
+<!-- {% schema %}
 {
 "settings": [
 {
@@ -149,7 +148,7 @@
 }
 ]
 }
-{% endschema %}
+{% endschema %} -->
 
 {% style %}
 
