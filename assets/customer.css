@@ -1,11 +1,18 @@
-.forget-pwd {
+.forget_pwd_sub {
     display: flex;
     align-items: start;
-    text-decoration: underline;
     cursor: pointer;
     font-size: 1rem;
     margin-top: 0.5rem;
 }
+
+@media screen and (max-width: 1000px) {
+    .forget_pwd_sub {
+        margin-top: 1rem;
+        font-size: 1.8rem;
+    }
+}
+
 
 @media screen and (max-width: 1000px) {
     .forget-pwd {
