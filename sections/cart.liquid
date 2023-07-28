@@ -1,0 +1,173 @@
+<div class="main-wrapper">
+  <div class="main-column">
+    <div class="cust-main">
+      <div class="cart-title">Panier</div>
+      <form action="{{ routes.cart_url }}" class="cart-form" method="post">
+        <div class="cart-items-container">
+          {% for item in cart.items %}
+            <div class="cart-item-row" data-key="{{ item.key }}">
+              <div class="cart-item-data cart-item-title">
+                {{ item.title }}
+              </div>
+              {% comment %} <div class="cart-item-data">x {{ item.quantity }}</div> {% endcomment %}
+              <div class="cart-item-data ">Prix: {{ item.final_line_price }} €</div>
+              <div class="cart-item-data">Quantité: x</div>
+
+              <div class="cart-item-data">
+                <button type="button" class="minus cart-quantity-selector"">MINUS</button>
+                <input
+                  id="quantity-input"
+                  type="text"
+                  name="updates[]"
+                  value="{{ item.quantity }}"
+                  class="qty-input"
+                  readonly
+                >
+                <button type="button" class="plus cart-quantity-selector">ADD2</button>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <input type="submit" value="Update cart" id="update-cart-input" hidden>
+        <input type="submit" name="checkout" value="Checkout">
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    const updateCartInput = document.getElementById('update-cart-input');
+
+    {% comment %} const minusButton = document.getElementById('minus-button');
+    const plusButton = document.getElementById('plus-button'); {% endcomment %}
+
+
+  document.querySelectorAll('.cart-item-data button')
+  .forEach((button) => {
+    button.addEventListener('click', () => {
+      console.log("TRIGGERED")
+      const input = button.parentElement.querySelector('input')
+      const value = parseInt(input.value)
+      const isPlus = button.classList.contains("plus")
+      const key = button.closest(".cart-item-row").getAttribute("data-key")
+      
+      if (isPlus) {
+        console.log("PLUSSENT")
+        const newValue = value + 1
+        input.value = newValue
+        changeItemQuantity(key, newValue.toString())
+      } else if (value > 1) {
+        const newValue = value - 1
+        console.log("MOINSSENT")
+        input.value = newValue
+        changeItemQuantity(key, newValue.toString())
+      }
+
+      {% comment %} updateCartInput.click(); // To reload form {% endcomment %}
+    })
+  })
+
+  function changeItemQuantity(key, quantity) {
+    console.log("KEY", key)
+    console.log("quantity", quantity)
+    axios.post("/cart/change.js", {
+      id: key,
+      quantity: quantity
+    }).then(res => {
+      console.log(res.data)
+    })
+  }
+
+    {% comment %} ##########################3 {% endcomment %}
+    {% comment %} minusButton.addEventListener('click', (event) => {
+      const input = minusButton.parentElement.querySelector('input')
+      input.value = parseInt(input.value) - 1
+      console.log("CLICK MINUS")
+    })
+
+    addButton.addEventListener('click', (event) => {
+      const input = addButton.parentElement.querySelector('input')
+      input.value = parseInt(input.value) + 1
+      console.log("CLICK ADD")
+    }) {% endcomment %}
+
+    {% comment %} ##########################3 {% endcomment %}
+
+     {% comment %} const quantityInput = document.getElementById('quantity-input');
+
+     quantityInput.addEventListener('change', (event) => {
+       const itemQuantity = event.target.attributes.itemQuantity.value;
+       const itemId = event.target.attributes.itemId.value;
+       const itemTitle = event.target.attributes.itemTitle.value;
+
+       console.log("ITEM QUANTITY", itemQuantity)
+       console.log("ITEM ID", itemId)
+       console.log("ITEM TITLE", itemTitle)
+
+       $(function() {
+         var variantId = 6564672929928;
+         $.post('/cart/add.js', {
+             items: [{
+               quantity: 1,
+               id: variantId
+             }]
+           }),
+           function(res) {
+             console.log(res)
+           }
+       });
+    {% endcomment %}
+       {% comment %} document.querySelectorAll("input[value='Update cart']").submit(); {% endcomment %}
+     {% comment %} }); {% endcomment %}
+</script>
+
+{% style %}
+  /* ################### */
+
+  .cart-item-title {
+    font-size: 1.3rem;
+    font-weight: bolder;
+  }
+
+  .qty-input {
+    font-size: medium;
+    padding-left: 0.5rem;
+    width: 3rem;
+    height: 2rem;
+  }
+
+  /* ################## */
+  .cart-title {
+    display: flex;
+    width: 100%;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  .cart-form {
+    width: 100%;
+  }
+
+  .cart-items-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .cart-item-row {
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: var(--light-grey);
+    margin-top: 1rem;
+    display: flex;
+    width: 100%;
+  }
+
+  .cart-item-data {
+    display: flex;
+    width: fit-content;
+    margin-right: 1rem;
+  }
+{% endstyle %}

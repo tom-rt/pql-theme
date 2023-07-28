@@ -9,12 +9,7 @@
         <div class="product-grid">
 
           <div class="prod-pic">
-            <img
-              class="prod-img"
-              src="{{ product | img_url: 'original' }}"
-              display="block"
-              width="400"
-              height="400"
+            <img class="prod-img" src="{{ product | img_url: 'original' }}" display="block" width="400" height="400"
               loading="lazy" />
           </div>
 
@@ -28,16 +23,11 @@
                 <a class="link hd-box back-button-link" href="{{product.collections[0].url}}">
                   <button class="product-return-button whimsy">
                     <div class="arrow-container">
-                      <img
-                        class="arrow-img"
-                        src="{{ 'left-arrow.png' | asset_url }}"
-                        display="block"
-                        width="30"
-                        height="30"
-                        loading="lazy" />
+                      <img class="arrow-img" src="{{ 'left-arrow.png' | asset_url }}" display="block" width="30"
+                        height="30" loading="lazy" />
                     </div>
                     {% comment %} <div>
-                    {{ product.collections[0].title }}
+                      {{ product.collections[0].title }}
                     </div> {% endcomment %}
                     <div>
                       Retour
@@ -50,19 +40,52 @@
 
             <div class="prod-price">
               {% if product.price %}
-                {{ product.price | money }}
-                {% assign current_variant = product.selected_or_first_available_variant %}
-                {% if current_variant.unit_price_measurement %}
-                  {% if current_variant.unit_price_measurement.quantity_value == 1 %}
-                    /{{ current_variant.unit_price_measurement.quantity_unit }}
-                  {% else %}
-                    pour
-                    {{ current_variant.unit_price_measurement.quantity_value }}
-                    {{ current_variant.unit_price_measurement.quantity_unit }}
-                  {% endif %}
-                {% endif %}
+              {{ product.price | money }}
+              {% assign current_variant = product.selected_or_first_available_variant %}
+              {% if current_variant.unit_price_measurement %}
+              {% if current_variant.unit_price_measurement.quantity_value == 1 %}
+              /{{ current_variant.unit_price_measurement.quantity_unit }}
+              {% else %}
+              pour
+              {{ current_variant.unit_price_measurement.quantity_value }}
+              {{ current_variant.unit_price_measurement.quantity_unit }}
+              {% endif %}
+              {% endif %}
               {% endif %}
             </div>
+
+            <!-- ########## PRODUCT FORM ############ -->
+            {% form 'product', product %}
+
+            <div class="form-product-container">
+
+            <select name="id" hidden>
+              {% for variant in product.variants %}
+              <option value="{{ variant.id }}" {% if variant==product.selected_or_first_available_variant %}
+                selected="selected" {% endif %}>
+                {{ variant.title }} - {{ variant.price | money }}
+              </option>
+              {% endfor %}
+            </select>
+            <input type="text" name="quantity" min="1" value="1" hidden>
+            <input type="hidden" name="return_to" value="back" />
+
+            {% assign count = 0 %}
+            {% for item in cart.items %}
+              {% if product.id == item.product.id %}
+                {% assign count = count | plus: item.quantity %}
+              {% endif  %}
+            {% endfor %}
+            
+
+            <div class="cart-button-container">
+              <button type="submit" class="product-return-button whimsy">Ajouter au panier</button>
+              {% if count > 0 %}<div class="count">{{ count }} dans le panier</div>{% endif %}
+            </div>
+
+          </div>
+          {% endform %}
+            <!-- #################################### -->
 
             <div class="prod-desc">
               {{ product.description }}
@@ -77,159 +100,183 @@
 
 {% style %}
 
-  .product-grid {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
+.cart-button-container {
+  display:flex;
+  align-items: end;
+}
+
+.count {
+  margin-left:1rem;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .count {
+  font-size: 2.2rem;
+}
+}
+
+.product-grid {
+display: grid;
+grid-template-columns: 1fr 3fr;
+}
+@media screen and (max-width: 1400px) {
+.product-grid {
+grid-template-columns: 1fr;
+}
+}
+
+.arrow-img {}
+
+.arrow-container {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-right: 0.5rem;
+}
+
+.back-button-link {
+display: flex;
+align-items: end;
+justify-content: end;
+background-color: red;
+width: fit-content;
+/* margin-top: 1rem; */
+margin-right: 1rem;
+}
+@media screen and (max-width: 1000px) {
+.back-button-link {
+margin-top: 2rem;
+margin-bottom: 2rem;
+}
+}
+
+.form-product-container {
+margin-top: 1rem;
+}
+@media screen and (max-width: 1000px) {
+  .form-product-container {
+    margin-top: 2rem;
   }
-  @media screen and (max-width: 1400px) {
-    .product-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+}
+
+.product-return-container {
+display: flex;
+width: 100%;
+align-items: end;
+justify-content: end;
+}
+
+.product-return-button {
+cursor: pointer;
+background-color: var(--duck-blue);
+color: white;
+padding: 0.5rem;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+width: fit-content;
+font-size: 2rem;
+}
+@media screen and (max-width: 1000px) {
+.product-return-button {
+font-size: 3rem;
+}
+}
+
+.prod-header {
+display: flex;
+width: 100%;
+}
+
+.prod-price {
+display: flex;
+width: 100%;
+font-size: 1.6rem;
+}
+@media screen and (max-width: 1000px) {
+.prod-price {
+font-size: 2.2rem;
+}
+}
+
+.prod-title {
+display: flex;
+width: 100%;
+font-size: 2.5rem;
+align-items: center;
+justify-content: start;
+}
+@media screen and (max-width: 1000px) {
+.prod-title {
+font-size: 3rem;
+}
+}
+
+.prod-container {
+margin-top: 1rem;
+display: flex;
+}
+
+.prod {
+/* padding-left: 1rem; */
+display: flex;
+margin-right: 1rem;
+margin-left: 1rem;
+width: 100%;
+}
+
+.prod-pic {
+width: fit-content;
+height: 100%;
+margin-right: 1rem;
+}
+@media screen and (max-width: 1400px) {
+.prod-pic {
+display: flex;
+width: 100%; !important;
+align-items: center;
+justify-content: center;
+}
+.prod-img {
+width: 50rem;
+height: 50rem;
+}
+}
 
 
-  .arrow-img {}
+.prod-desc {
+font-size: 1.6rem;
+}
+@media screen and (max-width: 1000px) {
+.prod-desc {
+font-size: 2.2rem;
+}
+}
 
-  .arrow-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 0.5rem;
-  }
+.prod-data {
+display: flex;
+flex-direction: column;
+width: 100%;
+height: 100%;
+}
 
-  .back-button-link {
-    display: flex;
-    align-items: end;
-    justify-content: end;
-    background-color: red;
-    width: fit-content;
-    /* margin-top: 1rem; */
-    margin-right: 1rem;
-  }
-  @media screen and (max-width: 1000px) {
-    .back-button-link {
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-    }
-  }
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+@media screen and (max-width: 1000px) {
+table {
+font-size: 1.5rem;
+}
+}
 
-  .product-return-container {
-    display: flex;
-    width: 100%;
-    align-items: end;
-    justify-content: end;
-  }
-
-  .product-return-button {
-    cursor: pointer;
-    background-color: var(--duck-blue);
-    color: white;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: fit-content;
-    font-size: 2rem;
-  }
-  @media screen and (max-width: 1000px) {
-    .product-return-button {
-      font-size: 3rem;
-    }
-  }
-
-  .prod-header {
-    display: flex;
-    width: 100%;
-  }
-
-  .prod-price {
-    display: flex;
-    width: 100%;
-    font-size: 1.6rem;
-  }
-  @media screen and (max-width: 1000px) {
-    .prod-price {
-      font-size: 2.2rem;
-    }
-  }
-
-  .prod-title {
-    display: flex;
-    width: 100%;
-    font-size: 2.5rem;
-    align-items: center;
-    justify-content: start;
-  }
-  @media screen and (max-width: 1000px) {
-    .prod-title {
-      font-size: 3rem;
-    }
-  }
-
-  .prod-container {
-    margin-top: 1rem;
-    display: flex;
-  }
-
-  .prod {
-    /* padding-left: 1rem; */
-    display: flex;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    width: 100%;
-  }
-
-  .prod-pic {
-    width: fit-content;
-    height: 100%;
-    margin-right: 1rem;
-  }
-  @media screen and (max-width: 1400px) {
-    .prod-pic {
-      display: flex;
-      width: 100%; !important;
-      align-items: center;
-      justify-content: center;
-    }
-    .prod-img {
-      width: 50rem;
-      height: 50rem;
-    }
-  }
-
-
-  .prod-desc {
-    font-size: 1.6rem;
-  }
-  @media screen and (max-width: 1000px) {
-    .prod-desc {
-      font-size: 2.2rem;
-    }
-  }
-
-  .prod-data {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-  }
-
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  @media screen and (max-width: 1000px) {
-    table {
-      font-size: 1.5rem;
-    }
-  }
-
-  td {
-    padding: 1rem;
-    border-style: solid;
-    border-width: 1px;
-    text-align: center;
-    vertical-align: middle;
-  }
+td {
+padding: 1rem;
+border-style: solid;
+border-width: 1px;
+text-align: center;
+vertical-align: middle;
+}
 {% endstyle %}
