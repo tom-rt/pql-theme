@@ -39,27 +39,20 @@
 <script>
     const updateCartInput = document.getElementById('update-cart-input');
 
-    {% comment %} const minusButton = document.getElementById('minus-button');
-    const plusButton = document.getElementById('plus-button'); {% endcomment %}
-
-
   document.querySelectorAll('.cart-item-data button')
   .forEach((button) => {
     button.addEventListener('click', () => {
-      console.log("TRIGGERED")
       const input = button.parentElement.querySelector('input')
       const value = parseInt(input.value)
       const isPlus = button.classList.contains("plus")
       const key = button.closest(".cart-item-row").getAttribute("data-key")
       
       if (isPlus) {
-        console.log("PLUSSENT")
         const newValue = value + 1
         input.value = newValue
         changeItemQuantity(key, newValue.toString())
       } else if (value > 1) {
         const newValue = value - 1
-        console.log("MOINSSENT")
         input.value = newValue
         changeItemQuantity(key, newValue.toString())
       }
@@ -69,8 +62,6 @@
   })
 
   function changeItemQuantity(key, quantity) {
-    console.log("KEY", key)
-    console.log("quantity", quantity)
     axios.post("/cart/change.js", {
       id: key,
       quantity: quantity
@@ -78,48 +69,6 @@
       console.log(res.data)
     })
   }
-
-    {% comment %} ##########################3 {% endcomment %}
-    {% comment %} minusButton.addEventListener('click', (event) => {
-      const input = minusButton.parentElement.querySelector('input')
-      input.value = parseInt(input.value) - 1
-      console.log("CLICK MINUS")
-    })
-
-    addButton.addEventListener('click', (event) => {
-      const input = addButton.parentElement.querySelector('input')
-      input.value = parseInt(input.value) + 1
-      console.log("CLICK ADD")
-    }) {% endcomment %}
-
-    {% comment %} ##########################3 {% endcomment %}
-
-     {% comment %} const quantityInput = document.getElementById('quantity-input');
-
-     quantityInput.addEventListener('change', (event) => {
-       const itemQuantity = event.target.attributes.itemQuantity.value;
-       const itemId = event.target.attributes.itemId.value;
-       const itemTitle = event.target.attributes.itemTitle.value;
-
-       console.log("ITEM QUANTITY", itemQuantity)
-       console.log("ITEM ID", itemId)
-       console.log("ITEM TITLE", itemTitle)
-
-       $(function() {
-         var variantId = 6564672929928;
-         $.post('/cart/add.js', {
-             items: [{
-               quantity: 1,
-               id: variantId
-             }]
-           }),
-           function(res) {
-             console.log(res)
-           }
-       });
-    {% endcomment %}
-       {% comment %} document.querySelectorAll("input[value='Update cart']").submit(); {% endcomment %}
-     {% comment %} }); {% endcomment %}
 </script>
 
 {% style %}
