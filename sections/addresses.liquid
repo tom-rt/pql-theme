@@ -1,141 +1,152 @@
 <div class="main-wrapper">
   <div class="main-column">
     <div class="cust-main">
-
       {% if customer.addresses_count == 2 %}
-        <div class="cust-title">
-          Modifier votre adresse
-        </div>
+        <div class="cust-title">Modifier votre adresse</div>
         {% form 'customer_address', customer.addresses[1] %}
           <div class="form-row">
-            <label for="name">Prénom</label>
-            <input
-              class="cust-input"
-              type="name"
-              value="{{ customer.addresses[1].first_name }}"
-              name="address[first_name]"
-              required>
+            <div class="input-container">
+              <label for="name">Prénom</label>
+              <input
+                class="cust-input"
+                type="name"
+                value="{{ customer.addresses[1].first_name }}"
+                name="address[first_name]"
+                required
+              >
+            </div>
           </div>
           <div class="form-row">
-            <label for="name">Nom</label>
-            <input
-              class="cust-input"
-              type="name"
-              value="{{ customer.addresses[1].last_name }}"
-              name="address[last_name]"
-              required>
+            <div class="input-container">
+              <label for="name">Nom</label>
+              <input
+                class="cust-input"
+                type="name"
+                value="{{ customer.addresses[1].last_name }}"
+                name="address[last_name]"
+                required
+              >
+            </div>
           </div>
           <div class="form-row">
-            <label for="name">Adresse</label>
-            <input
-              class="cust-input"
-              type="name"
-              value="{{ customer.addresses[1].address1 }}"
-              name="address[address1]"
-              required>
+            <div class="input-container">
+              <label for="name">Adresse</label>
+              <input
+                class="cust-input"
+                type="name"
+                value="{{ customer.addresses[1].address1 }}"
+                name="address[address1]"
+                required
+              >
+            </div>
           </div>
           <div class="form-row">
-            <label for="name">Ville</label>
-            <input
-              class="cust-input"
-              type="name"
-              value="{{ customer.addresses[1].city }}"
-              name="address[city]"
-              required>
+            <div class="input-container">
+              <label for="name">Ville</label>
+              <input
+                class="cust-input"
+                type="name"
+                value="{{ customer.addresses[1].city }}"
+                name="address[city]"
+                required
+              >
+            </div>
           </div>
           <div class="form-row">
-            <label for="name">Code postal</label>
-            <input
-              class="cust-input"
-              type="name"
-              value="{{ customer.addresses[1].zip }}"
-              name="address[zip]"
-              required>
+            <div class="input-container">
+              <label for="name">Code postal</label>
+              <input
+                class="cust-input"
+                type="name"
+                value="{{ customer.addresses[1].zip }}"
+                name="address[zip]"
+                required
+              >
+            </div>
           </div>
           <div class="form-row">
-            <label for="name">Téléphone</label>
-            <input
-              class="cust-input"
-              type="name"
-              value="{{ customer.addresses[1].phone }}"
-              name="address[phone]"
-              required>
+            <div class="input-container">
+              <label for="name">Téléphone</label>
+              <input
+                class="cust-input"
+                type="name"
+                value="{{ customer.addresses[1].phone }}"
+                name="address[phone]"
+                required
+              >
+            </div>
           </div>
           <div class="cust-form-errors">
             {{ form.errors | default_errors }}
           </div>
 
-          <button type="submit" class="cust-button">
-            Enregistrer
-          </button>
+          <button type="submit" class="cust-button">Enregistrer</button>
           <input
             type="hidden"
             name="return_to"
-            value="{{ routes.account_url }}">
-
+            value="{{ routes.account_url }}"
+          >
         {% endform %}
       {% endif %}
 
-
-
       {% if customer.addresses_count == 1 %}
-        <div class="cust-title">
-          Créer une adresse
-        </div>
+        <div class="cust-title">Créer une adresse</div>
         {% form 'customer_address', customer.new_address %}
           <div class="form-row">
             <label for="name">Prénom</label>
             <input
               class="cust-input"
               type="name"
-              name="address[first_name]">
+              name="address[first_name]"
+            >
           </div>
           <div class="form-row">
             <label for="name">Nom</label>
             <input
               class="cust-input"
               type="name"
-              name="address[last_name]">
+              name="address[last_name]"
+            >
           </div>
           <div class="form-row">
             <label for="name">Adresse</label>
             <input
               class="cust-input"
               type="name"
-              name="address[address1]">
+              name="address[address1]"
+            >
           </div>
           <div class="form-row">
             <label for="name">Ville</label>
             <input
               class="cust-input"
               type="name"
-              name="address[city]">
+              name="address[city]"
+            >
           </div>
           <div class="form-row">
             <label for="name">Code postal</label>
             <input
               class="cust-input"
               type="name"
-              name="address[zip]">
+              name="address[zip]"
+            >
           </div>
           <div class="form-row">
             <label for="name">Téléphone</label>
             <input
               class="cust-input"
               type="name"
-              name="address[phone]">
+              name="address[phone]"
+            >
           </div>
           <div class="cust-form-errors">
             {{ form.errors | default_errors }}
           </div>
 
-          <button type="submit" class="cust-button">
-            Créer adresse
-          </button>
-
+          <button type="submit" class="cust-button">Créer adresse</button>
         {% endform %}
       {% endif %}
-
     </div>
   </div>
 </div>

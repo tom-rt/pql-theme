@@ -1,10 +1,7 @@
 <div class="main-wrapper">
   <div class="main-column">
     <div class="cust-main">
-
-      <div class="cust-title">
-        Mon compte
-      </div>
+      <div class="cust-title">Mon compte</div>
       <div class="form-row">
         <label for="nom">{{ customer.name }}</label>
       </div>
@@ -12,47 +9,47 @@
         <label for="nom">{{ customer.email }}</label>
       </div>
 
-
       {% if customer.addresses_count == 2 %}
-      <div class="cust-title mt-4">
-        Adresse
-      </div>
-      <div class="form-row">
-        <label for="nom">{{ customer.addresses[1].name }}</label>
-      </div>
-      <div class="form-row">
-        <label for="address">{{ customer.addresses[1].address1 }}</label>
-      </div>
-      <div class="form-row">
-        <label for="city">{{ customer.addresses[1].city }}</label>
-      </div>
-      <div class="form-row">
-        <label for="zip">{{ customer.addresses[1].zip }}</label>
-      </div>
-      <div class="form-row">
-        <label for="phone">{{ customer.addresses[1].phone }}</label>
-      </div>
-      <a class="link" href="{{ routes.account_addresses_url }}">
-        <div class="cust-subtitle">
-          Modifier mon adresse
+        <div class="cust-title mt-4">Adresse</div>
+        <div class="input-container">
+          <div class="form-row">
+            <label for="nom">{{ customer.addresses[1].name }}</label>
+          </div>
         </div>
-      </a>
+        <div class="input-container">
+          <div class="form-row">
+            <label for="address">{{ customer.addresses[1].address1 }}</label>
+          </div>
+        </div>
+        <div class="input-container">
+          <div class="form-row">
+            <label for="city">{{ customer.addresses[1].city }}</label>
+          </div>
+        </div>
+        <div class="input-container">
+          <div class="form-row">
+            <label for="zip">{{ customer.addresses[1].zip }}</label>
+          </div>
+        </div>
+        <div class="input-container">
+          <div class="form-row">
+            <label for="phone">{{ customer.addresses[1].phone }}</label>
+          </div>
+        </div>
+        <a class="link" href="{{ routes.account_addresses_url }}">
+          <div class="cust-subtitle">Modifier mon adresse</div>
+        </a>
       {% endif %}
 
       {% if customer.addresses_count == 1 %}
-      <a class="link" href="{{ routes.account_addresses_url }}">
-        <div class="cust-subtitle">
-          Créer une adresse
-        </div>
-      </a>
+        <a class="link" href="{{ routes.account_addresses_url }}">
+          <div class="cust-subtitle">Créer une adresse</div>
+        </a>
       {% endif %}
 
       <a class="link hd-box" href="/account/logout">
-        <button type="submit" class="cust-button">
-          Déconnexion
-        </button>
+        <button type="submit" class="cust-button">Déconnexion</button>
       </a>
-
     </div>
   </div>
 </div>

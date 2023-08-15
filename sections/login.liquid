@@ -1,92 +1,79 @@
 <div class="main-wrapper">
   <div class="main-column">
     <div class="cust-main">
+      <div class="cust-title">Connexion</div>
 
-      <div class="cust-title">
-        Connexion
-      </div>
+      {% form 'customer_login', id: 'login_form' %}
+        <div class="form-row">
+          <div class="input-container">
+            <label for="email">Email</label>
+            <input class="cust-input" type="email" name="customer[email]">
+          </div>
+        </div>
 
-      {% form 'customer_login', id: "login_form" %}
-      <div class="form-row">
-        <label for="email">Email</label>
-        <input class="cust-input" type="email" name="customer[email]">
-      </div>
+        <div class="form-row">
+          <div class="input-container">
+            <label for="password">Mot de passe</label>
+            <input class="cust-input" type="password" name="customer[password]">
+          </div>
+        </div>
 
-      <div class="form-row">
-        <label for="password">Mot de passe</label>
-        <input class="cust-input" type="password" name="customer[password]">
-      </div>
+        <div class="cust-form-errors">
+          {{ form.errors | default_errors }}
+        </div>
 
-
-      <div class="cust-form-errors">
-        {{ form.errors | default_errors }}
-      </div>
-
-      <button type="submit" class="cust-button" form="login_form">
-        Connexion
-      </button>
-
+        <button type="submit" class="cust-button" form="login_form">Connexion</button>
       {% endform %}
 
       <a class="link" href="{{ routes.account_register_url }}">
-        <div class="cust-subtitle">
-          Créer un compte
-        </div>
+        <div class="cust-subtitle">Créer un compte</div>
       </a>
 
       <label for="forget_pwd_checkbox">
         <!-- <div class="forget-pwd"> -->
-        <div class="cust-subtitle">
-          Mot de passe oublié ?
-        </div>
+        <div class="cust-subtitle">Mot de passe oublié ?</div>
       </label>
       <input type="checkbox" id="forget_pwd_checkbox" style="display:none;">
 
-
       <div id="forget_password_section">
         <div class="forget_pwd_sub">
-          Si un compte est lié à cette adresse, vous allez recevoir un mail avec un lien pour réinitialiser votre mot
-          de
+          Si un compte est lié à cette adresse, vous allez recevoir un mail avec un lien pour réinitialiser votre mot de
           passe
         </div>
         <div class="form_forget_pwd_container">
-          {% form 'recover_customer_password', id: "reset_pwd_form" %}
+          {% form 'recover_customer_password', id: 'reset_pwd_form' %}
+            <div class="form-row">
+              <div class="input-container">
+                <label for="email">Email</label>
+                <input class="cust-input" type="email" name="email">
+              </div>
+            </div>
 
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input class="cust-input" type="email" name="email">
-          </div>
+            <div class="cust-form-errors">
+              {{ form.errors | default_errors }}
+            </div>
 
-          <div class="cust-form-errors">
-            {{ form.errors | default_errors }}
-          </div>
-
-          <button type="submit" class="cust-button" form="reset_pwd_form">
-            Envoyer
-          </button>
+            <button type="submit" class="cust-button" form="reset_pwd_form">Envoyer</button>
           {% endform %}
-
         </div>
       </div>
-
-
     </div>
   </div>
 </div>
 
 {% style %}
-#forget_password_section {
-display: none;
-}
-:checked + #forget_password_section {
-display: flex;
-flex-direction: column;
-}
+  #forget_password_section {
+    display: none;
+  }
+  :checked + #forget_password_section {
+    display: flex;
+    flex-direction: column;
+  }
 
-.form_forget_pwd_container {
-align-items: center;
-justify-content: center;
-display: flex;
-width: 100%
-}
+  .form_forget_pwd_container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+  }
 {% endstyle %}

@@ -57,10 +57,44 @@
     }
 }
 
-.form-row {
+#reset_pwd_form {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
     display: flex;
     flex-direction: column;
-    align-items: start;
+}
+
+*[id^='address_form_'] {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#login_form {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#create_customer {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-size: 1.4rem;
     margin-top: 1rem;
 }
@@ -72,13 +106,25 @@
     }
 }
 
+.input-container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: flex-start;
+}
+
+@media screen and (max-width: 1000px) {
+    .input-container {
+        width: 80%;
+    }
+}
 
 .cust-input {
     -webkit-appearance: none;
     height: 1.5rem;
     padding: 5px;
     border-radius: 5px;
-    width: 20rem;
+    width: 100%;
     margin-right: 0.5rem;
     font-size: 1.2rem;
     margin-top: 0.5rem;
