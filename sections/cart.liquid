@@ -153,6 +153,7 @@
     totalPriceSpinner.style.display = 'block';
     totalPrice.style.display = 'none';
 
+    console.log('plus', key, quantity);
     axios
       .post('/cart/change.js', {
         id: key,
