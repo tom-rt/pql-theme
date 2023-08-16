@@ -1,4 +1,3 @@
-  /* ################### */
   .cart-empty {
       font-size: 2rem;
   }
@@ -41,8 +40,8 @@
   @media screen and (max-width: 1000px) {
       .qty-input {
           font-size: 2rem;
-          width: 3rem;
-          height: 3rem;
+          width: 5rem;
+          height: 5rem;
       }
   }
 
@@ -64,7 +63,8 @@
 
   @media screen and (max-width: 1000px) {
       .minus {
-          width: 3rem;
+          height: 5rem;
+          width: 5rem;
       }
   }
 
@@ -75,8 +75,8 @@
 
   @media screen and (max-width: 1000px) {
       .white-minus {
-          height: 8px;
-          width: 16px;
+          height: 10px;
+          width: 30px;
       }
   }
 
@@ -93,7 +93,8 @@
 
   @media screen and (max-width: 1000px) {
       .plus {
-          width: 3rem;
+          width: 5rem;
+          height: 5rem;
       }
   }
 
@@ -104,8 +105,8 @@
 
   @media screen and (max-width: 1000px) {
       .white-plus {
-          height: 22px;
-          width: 22px;
+          height: 32px;
+          width: 32px;
       }
   }
 
@@ -146,10 +147,10 @@
   .cart-item-data {
       display: flex;
       width: fit-content;
-      margin-right: 1rem;
   }
 
   .item-title-container {
+      margin-left: 1rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -182,6 +183,8 @@
 
   @media screen and (max-width: 1000px) {
       .remove-item {
+          width: 5rem;
+          height: 5rem;
           padding: 0.7rem;
       }
   }
@@ -239,11 +242,10 @@
 
   @media screen and (max-width: 1000px) {
       .checkout-button {
-          font-size: 2rem;
+          font-size: 2.5rem;
           padding: 1rem;
       }
   }
-
 
   @media screen and (max-width: 1000px) {
       .cart-item__image {

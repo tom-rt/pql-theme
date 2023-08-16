@@ -13,16 +13,18 @@
               <div class="cart-item-row" data-key="{{ item.key }}">
                 <div class="item-left-col">
                   {% if item.image != blank %}
-                    <div class="cart-item-data centered">
-                      <img
-                        src="{{ item.image | image_url: width: 300 }}"
-                        class="cart-item__image"
-                        alt="{{ item.image.alt | escape }}"
-                        loading="lazy"
-                        width="110"
-                        height="{{ 110 | divided_by: item.image.aspect_ratio | ceil }}"
-                      >
-                    </div>
+                    <a href="{{ item.url }}">
+                      <div class="cart-item-data centered">
+                        <img
+                          src="{{ item.image | image_url: width: 300 }}"
+                          class="cart-item__image"
+                          alt="{{ item.image.alt | escape }}"
+                          loading="lazy"
+                          width="110"
+                          height="{{ 110 | divided_by: item.image.aspect_ratio | ceil }}"
+                        >
+                      </div>
+                    </a>
                   {% endif %}
 
                   <div class="item-title-container">
@@ -79,11 +81,8 @@
               </div>
             </div>
 
-            {% comment %} <input type="submit" name="checkout" value="Checkout"> {% endcomment %}
             <button type="submit" name="checkout" class="checkout-button">Commander</button>
           </div>
-
-          {% comment %} <input type="submit" value="Update cart" id="update-cart-input" hidden> {% endcomment %}
         </form>
       {% endif %}
     </div>

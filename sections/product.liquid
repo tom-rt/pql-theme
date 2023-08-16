@@ -34,11 +34,6 @@
                         loading="lazy"
                       >
                     </div>
-                    {% comment %}
-                      <div>
-                        {{ product.collections[0].title }}
-                      </div>
-                    {% endcomment %}
                     <div>Retour</div>
                   </button>
                 </a>
@@ -74,10 +69,6 @@
                   </option>
                 {% endfor %}
               </select>
-              {% comment %}
-                <input type="text" name="quantity" min="1" value="0" hidden>
-                <input type="hidden" name="return_to" value="back">
-              {% endcomment %}
 
               {% assign item-quantity = 0 %}
               {% for item in cart.items %}
@@ -85,15 +76,6 @@
                   {% assign item-quantity = item-quantity | plus: item.quantity %}
                 {% endif %}
               {% endfor %}
-
-              {% comment %}
-                <div class="cart-button-container">
-                  <button id="add-to-cart-button" class="product-return-button whimsy">Ajouter au panier</button>
-                  {% if item-quantity > 0 %}
-                    <div class="item-quantity">{{ item-quantity }} dans le panier</div>
-                  {% endif %}
-                </div>
-              {% endcomment %}
 
               <div class="cart-item-data bg-green mt-1">
                 <button id="minus-button" type="button" class="minus cart-quantity-selector button">
@@ -206,7 +188,7 @@
   }
   @media screen and (max-width: 1000px) {
   .product-return-button {
-  font-size: 3rem;
+  font-size: 4rem;
   }
   }
 
@@ -245,7 +227,6 @@
   }
 
   .prod {
-  /* padding-left: 1rem; */
   display: flex;
   margin-right: 1rem;
   margin-left: 1rem;
@@ -269,7 +250,6 @@
   height: 50rem;
   }
   }
-
 
   .prod-desc {
   font-size: 1.6rem;
@@ -308,44 +288,15 @@
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   plusButton = document.getElementById(`plus-button`);
   minusButton = document.getElementById(`minus-button`);
   qtyInput = document.getElementById(`qty-input`);
-  {% comment %} addToCartButton = document.getElementById(`add-to-cart-button`); {% endcomment %}
   prodId = qtyInput.getAttribute('prodId');
-
-  console.log('PROD ID', prodId);
-
-  {% comment %} addToCartButton.addEventListener('click', (event) => {
-    console.log('event');
-  }); {% endcomment %}
 
   plusButton.addEventListener('click', (event) => {
     const value = parseInt(qtyInput.value);
     const newValue = value + 1;
     qtyInput.value = newValue;
-    console.log('plus', prodId, newValue);
-
 
     if (value == 0) {
       axios
@@ -353,18 +304,14 @@
           id: prodId,
           quantity: 1,
         })
-        .then((res) => {
-          console.log(res);
-        });
-      } else {
-    axios
-      .post('/cart/change.js', {
-        id: prodId,
-        quantity: newValue,
-      })
-      .then((res) => {
-        console.log(res);
-      });
+        .then((res) => {});
+    } else {
+      axios
+        .post('/cart/change.js', {
+          id: prodId,
+          quantity: newValue,
+        })
+        .then((res) => {});
     }
   });
 
@@ -373,32 +320,12 @@
     const newValue = value - 1;
     if (value > 0) {
       qtyInput.value = newValue;
-      console.log('minus', prodId, newValue);
       axios
         .post('/cart/change.js', {
           id: prodId,
           quantity: newValue,
         })
-        .then((res) => {
-          console.log(res);
-        });
-      }
+        .then((res) => {});
+    }
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
