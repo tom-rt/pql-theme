@@ -1,7 +1,7 @@
 <div class="main-wrapper">
   <div class="main-column">
     <div class="cust-main">
-      {% if customer.addresses_count == 2 %}
+      {% if customer.addresses_count > 1 %}
         <div class="cust-title">Modifier votre adresse</div>
         {% form 'customer_address', customer.addresses[1] %}
           <div class="form-row">

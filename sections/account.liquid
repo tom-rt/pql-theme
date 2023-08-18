@@ -9,7 +9,7 @@
         <label for="nom">{{ customer.email }}</label>
       </div>
 
-      {% if customer.addresses_count == 2 %}
+      {% if customer.addresses_count > 1 %}
         <div class="cust-title mt-4">Adresse</div>
         <div class="input-container">
           <div class="form-row">

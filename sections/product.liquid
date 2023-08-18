@@ -299,19 +299,15 @@
     qtyInput.value = newValue;
 
     if (value == 0) {
-      axios
-        .post('/cart/add.js', {
-          id: prodId,
-          quantity: 1,
-        })
-        .then((res) => {});
+      axios.post('/cart/add.js', {
+        id: prodId,
+        quantity: 1,
+      });
     } else {
-      axios
-        .post('/cart/change.js', {
-          id: prodId,
-          quantity: newValue,
-        })
-        .then((res) => {});
+      axios.post('/cart/change.js', {
+        id: prodId,
+        quantity: newValue,
+      });
     }
   });
 
@@ -320,12 +316,10 @@
     const newValue = value - 1;
     if (value > 0) {
       qtyInput.value = newValue;
-      axios
-        .post('/cart/change.js', {
-          id: prodId,
-          quantity: newValue,
-        })
-        .then((res) => {});
+      axios.post('/cart/change.js', {
+        id: prodId,
+        quantity: newValue,
+      });
     }
   });
 </script>
