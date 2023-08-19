@@ -1,55 +1,80 @@
 <div class="main-wrapper">
   <div class="main-column">
     <div class="cust-main">
-      <div class="cust-title">Mon compte</div>
-      <div class="form-row">
-        <label for="nom">{{ customer.name }}</label>
+      <div class="account-data-container">
+        <div class="account-data">
+          <div class="cust-title">Mon compte</div>
+          <div class="form-row">
+            <label for="nom">{{ customer.name }}</label>
+          </div>
+          <div class="form-row">
+            <label for="nom">{{ customer.email }}</label>
+          </div>
+        </div>
+
+        <div class="account-addr">
+          <div class="cust-title">Adresse</div>
+          {% if customer.addresses_count > 1 %}
+            <div class="form-row">
+              <label for="nom">{{ customer.addresses[1].name }}</label>
+            </div>
+            <div class="form-row">
+              <label for="address">{{ customer.addresses[1].address1 }}</label>
+            </div>
+            <div class="form-row">
+              <label for="city">{{ customer.addresses[1].city }}</label>
+            </div>
+            <div class="form-row">
+              <label for="zip">{{ customer.addresses[1].zip }}</label>
+            </div>
+            <div class="form-row">
+              <label for="phone">{{ customer.addresses[1].phone }}</label>
+            </div>
+            <div class="cust-subtitle cust-cntr">
+              <a class="link pointer" href="{{ routes.account_addresses_url }}"> Modifier mon adresse </a>
+            </div>
+          {% endif %}
+
+          {% if customer.addresses_count == 1 %}
+            <div class="form-row">
+              <label for="info">Vous n'avez pas d'adresse.</label>
+            </div>
+            <div class="cust-subtitle cust-cntr">
+              <a class="link pointer" href="{{ routes.account_addresses_url }}"> Créer une adresse </a>
+            </div>
+          {% endif %}
+        </div>
       </div>
-      <div class="form-row">
-        <label for="nom">{{ customer.email }}</label>
+
+      <div class="cust-button-container">
+        <a class="link hd-box" href="/account/logout">
+          <button type="submit" class="cust-button">Déconnexion</button>
+        </a>
       </div>
-
-      {% if customer.addresses_count > 1 %}
-        <div class="cust-title mt-4">Adresse</div>
-        <div class="input-container">
-          <div class="form-row">
-            <label for="nom">{{ customer.addresses[1].name }}</label>
-          </div>
-        </div>
-        <div class="input-container">
-          <div class="form-row">
-            <label for="address">{{ customer.addresses[1].address1 }}</label>
-          </div>
-        </div>
-        <div class="input-container">
-          <div class="form-row">
-            <label for="city">{{ customer.addresses[1].city }}</label>
-          </div>
-        </div>
-        <div class="input-container">
-          <div class="form-row">
-            <label for="zip">{{ customer.addresses[1].zip }}</label>
-          </div>
-        </div>
-        <div class="input-container">
-          <div class="form-row">
-            <label for="phone">{{ customer.addresses[1].phone }}</label>
-          </div>
-        </div>
-        <a class="link" href="{{ routes.account_addresses_url }}">
-          <div class="cust-subtitle">Modifier mon adresse</div>
-        </a>
-      {% endif %}
-
-      {% if customer.addresses_count == 1 %}
-        <a class="link" href="{{ routes.account_addresses_url }}">
-          <div class="cust-subtitle">Créer une adresse</div>
-        </a>
-      {% endif %}
-
-      <a class="link hd-box" href="/account/logout">
-        <button type="submit" class="cust-button">Déconnexion</button>
-      </a>
     </div>
   </div>
 </div>
+
+{% style %}
+  .account-addr {
+    border-left-style: solid;
+  }
+  @media screen and (max-width: 1200px) {
+    .account-addr {
+      border-left-style: none;
+      margin-top: 2rem;
+    }
+  }
+
+  .account-data-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .account-data-container {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstyle %}

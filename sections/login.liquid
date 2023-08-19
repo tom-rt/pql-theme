@@ -22,16 +22,17 @@
           {{ form.errors | default_errors }}
         </div>
 
-        <button type="submit" class="cust-button" form="login_form">Connexion</button>
+        <div class="cust-button-container">
+          <button type="submit" class="cust-button" form="login_form">Connexion</button>
+        </div>
       {% endform %}
 
-      <a class="link" href="{{ routes.account_register_url }}">
-        <div class="cust-subtitle">Créer un compte</div>
-      </a>
+      <div class="cust-subtitle">
+        <a class="link pointer" href="{{ routes.account_register_url }}"> Créer un compte </a>
+      </div>
 
       <label for="forget_pwd_checkbox">
-        <!-- <div class="forget-pwd"> -->
-        <div class="cust-subtitle">Mot de passe oublié ?</div>
+        <div class="cust-subtitle pointer">Mot de passe oublié ?</div>
       </label>
       <input type="checkbox" id="forget_pwd_checkbox" style="display:none;">
 
@@ -53,7 +54,9 @@
               {{ form.errors | default_errors }}
             </div>
 
-            <button type="submit" class="cust-button" form="reset_pwd_form">Envoyer</button>
+            <div class="cust-button-container">
+              <button type="submit" class="cust-button" form="reset_pwd_form">Envoyer email</button>
+            </div>
           {% endform %}
         </div>
       </div>
@@ -68,6 +71,10 @@
   :checked + #forget_password_section {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
   }
 
   .form_forget_pwd_container {

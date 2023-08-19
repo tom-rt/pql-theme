@@ -36,7 +36,9 @@
           {{ form.errors | default_errors }}
         </div>
 
-        <button type="submit" class="cust-button">Créer compte</button>
+        <div class="cust-button-container">
+          <button type="submit" class="cust-button">Créer compte</button>
+        </div>
       {% endform %}
 
       <a class="link" href="{{ routes.account_login_url }}">
