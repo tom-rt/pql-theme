@@ -46,6 +46,23 @@
         </div>
       </div>
 
+      <div class="orders-section">
+        {{ customer.orders_count }}
+        {{ customer.orders }}
+        {% comment %} {{ customer.last_order }} {% endcomment %}
+        <div class="orders-title cust-title">Commandes</div>
+        {% if customer.orders_count == 0 %}
+          <div>Vous n'avez pas encore de commande</div>
+        {% endif %}
+        {% if customer.orders_count != 0 %}
+          {% for order in customer.orders %}
+            <div>
+              {{ order.name }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+
       <div class="cust-button-container">
         <a class="link hd-box" href="/account/logout">
           <button type="submit" class="cust-button">Déconnexion</button>
@@ -56,6 +73,21 @@
 </div>
 
 {% style %}
+  .orders-title {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .orders-section {
+    flex-direction: column;
+    margin-top: 1rem;
+    display: flex;
+    width: 100%;
+    background-color: aliceblue;
+  }
+
   .account-addr {
     border-left-style: solid;
   }

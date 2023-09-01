@@ -77,7 +77,8 @@
                 {% endif %}
               {% endfor %}
 
-              <div class="cart-item-data bg-green mt-1">
+              <div class="add-basket">Ajouter au panier:</div>
+              <div class="cart-item-data bg-green">
                 <button id="minus-button" type="button" class="minus cart-quantity-selector button">
                   <img src="{{ 'white-minus.png' | asset_url }}" class="white-minus">
                 </button>
@@ -110,6 +111,18 @@
   .cart-button-container {
     display:flex;
     align-items: end;
+  }
+
+  .add-basket {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .add-basket {
+    font-size: 2.5rem;
+  }
   }
 
   .count {
@@ -159,11 +172,10 @@
   }
 
   .form-product-container {
-  margin-top: 1rem;
+    display: flex;
   }
   @media screen and (max-width: 1000px) {
     .form-product-container {
-      margin-top: 2rem;
     }
   }
 
@@ -204,7 +216,7 @@
   }
   @media screen and (max-width: 1000px) {
   .prod-price {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   }
   }
 
@@ -217,7 +229,7 @@
   }
   @media screen and (max-width: 1000px) {
   .prod-title {
-  font-size: 3rem;
+  font-size: 4rem;
   }
   }
 
