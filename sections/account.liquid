@@ -47,19 +47,36 @@
       </div>
 
       <div class="orders-section">
-        {{ customer.orders_count }}
-        {{ customer.orders }}
-        {% comment %} {{ customer.last_order }} {% endcomment %}
         <div class="orders-title cust-title">Commandes</div>
-        {% if customer.orders_count == 0 %}
+        {% if customer.orders.size == 0 %}
           <div>Vous n'avez pas encore de commande</div>
         {% endif %}
-        {% if customer.orders_count != 0 %}
-          {% for order in customer.orders %}
-            <div>
-              {{ order.name }}
-            </div>
-          {% endfor %}
+        {% if customer.orders.size != 0 %}
+          <table cellspacing="0">
+            <tr>
+              <th>Numéro</th>
+              <th>Date</th>
+              <th>Prix</th>
+              <th>Articles</th>
+              <th>Statut</th>
+              <th></th>
+            </tr>
+            {% for order in customer.orders %}
+              {% assign check = forloop.index | modulo: 2 %}
+              <tr class="{% if check == 0 %}grey-bg{% endif %}">
+                <td>{{ order.name }}</td>
+                <td>{{ order.created_at | date: '%Y-%d-%m %Hh%M' }}</td>
+                <td>{{ order.total_price | money }}</td>
+                <td>{{ order.item_count }} article(s)</td>
+                <td>{{ order.fulfillment_status_label }}</td>
+                <td>
+                  <a class="link hd-box" href="{{ order.order_status_url }}">
+                    <button type="submit" class="details-button">Détails</button>
+                  </a>
+                </td>
+              </tr>
+            {% endfor %}
+          </table>
         {% endif %}
       </div>
 
@@ -73,11 +90,72 @@
 </div>
 
 {% style %}
+  .details-button {
+    font-size: 1rem !important;
+    border-radius: 5px;
+    background-color: var(--duck-blue);
+    color: inherit;
+    padding: 0.2rem;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    color: white;
+  }
+  @media screen and (max-width: 1000px) {
+    .details-button {
+      padding: 1rem;
+      font-size: 2.5rem !important;
+    }
+  }
+
+  td {
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 1000px) {
+    td {
+      font-size: 2rem;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
+
+  .grey-bg {
+    background-color: var(--light-grey);
+  }
+
+  th {
+    font-style: bold;
+    font-size: 1.3rem;
+    background-color: var(--duck-blue);
+    color: white;
+  }
+  @media screen and (max-width: 1000px) {
+    th {
+      font-size: 2.6rem;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+  .order-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+
   .orders-title {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
+    margin-bottom: 1rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .orders-title {
+      margin-top: 5rem;
+    }
   }
 
   .orders-section {
@@ -85,7 +163,6 @@
     margin-top: 1rem;
     display: flex;
     width: 100%;
-    background-color: aliceblue;
   }
 
   .account-addr {
