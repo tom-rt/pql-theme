@@ -1,67 +1,48 @@
 <div class="main-wrapper">
   <div class="main-column">
-
     <div class="cc-main">
-
       <div class="cc-left-container">
-        <div class="cc-title whimsy orange-underline">
-          Le concept
-        </div>
+        <div class="cc-title whimsy orange-underline">Le concept</div>
 
         <div class="cc-text">
           <div class="cc-p">
-            Pierre Qui Roule est un camion épicerie qui sillonne le Nord-Pas-De-Calais et vous propose le meilleur des produits de la région à votre porte !
+            Pierre Qui Roule est un camion épicerie qui sillonne le Nord-Pas-De-Calais et vous propose le meilleur des
+            produits de la région à votre porte !
           </div>
           <ul style="list-style-type:circle;">
-            <li class="cc-p">
-              Fruits et légumes
-            </li>
-            <li class="cc-p">
-              Produits laitiers : fromage, beurre, yaourt, crème fraîche...
-            </li>
-            <li class="cc-p">
-              Vrac : pâtes, muesli, riz, lentilles...
-            </li>
-            <li class="cc-p">
-              Boissons : bière, cidre, jus, soupe, vinaigre, huile...
-            </li>
-            <li class="cc-p">
-              Hygiène et maison : savon, shampooing...
-            </li>
-            <li class="cc-p">
-              Epicerie fine et sèche : farine, moutarde, confiture, gaufres...
-            </li>
+            <li class="cc-p">Fruits et légumes</li>
+            <li class="cc-p">Produits laitiers : fromage, beurre, yaourt, crème fraîche...</li>
+            <li class="cc-p">Vrac : pâtes, muesli, riz, lentilles...</li>
+            <li class="cc-p">Boissons : bière, cidre, jus, soupe, vinaigre, huile...</li>
+            <li class="cc-p">Hygiène et maison : savon, shampooing...</li>
+            <li class="cc-p">Epicerie fine et sèche : farine, moutarde, confiture, gaufres...</li>
           </ul>
         </div>
 
         <div class="">
           <a class="link hd-box " href="/pages/ensavoirplus">
-            <div class="cc-button">
-              En savoir plus
-            </div>
+            <div class="cc-button">En savoir plus</div>
           </a>
         </div>
-
       </div>
 
       <div class="cc-right-container">
         {%- comment -%}
-        <div class="cc-video-wrapper">
-        <iframe class="cc-video" src="https://www.youtube.com/embed/sQfEG4IrNXE"></iframe>
-        </div>
+          <div class="cc-video-wrapper">
+          <iframe class="cc-video" src="https://www.youtube.com/embed/sQfEG4IrNXE"></iframe>
+          </div>
         {%- endcomment -%}
         <img
-          loading='lazy'
+          loading="lazy"
           class="cc-photo"
-          src={{ 'photo-camion.JPG' | asset_url }} />
+          src="{{ 'cover-camion.jpg' | asset_url }}"
+        >
       </div>
     </div>
-
   </div>
 </div>
 
 {%- style -%}
-
   .cc-button {
     border-radius: 10px;
     padding: 1rem;
@@ -148,4 +129,4 @@
     width: 40rem;
     background-color: #06aa17;
   }
-{% endstyle %}
+{%- endstyle -%}
