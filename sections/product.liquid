@@ -95,6 +95,9 @@
                   <img src="{{ 'white-plus.png' | asset_url }}" class="white-plus">
                 </button>
               </div>
+              <div id="load-quantity-spinner" class="load-quantity-spinner-container">
+                <div class="spinner"></div>
+              </div>
             </div>
 
             <div class="prod-desc">
@@ -108,6 +111,20 @@
 </div>
 
 {% style %}
+  .load-quantity-spinner-container {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      width: 2rem;
+  }
+
+  @media screen and (max-width: 1000px) {
+      .load-quantity-spinner-container {
+          width: 5rem;
+          height: 5rem;
+      }
+  }
+
   .cart-button-container {
     display:flex;
     align-items: end;
@@ -304,6 +321,8 @@
   minusButton = document.getElementById(`minus-button`);
   qtyInput = document.getElementById(`qty-input`);
   prodId = qtyInput.getAttribute('prodId');
+  loadSpinner = document.getElementById('load-quantity-spinner');
+  loading = 0;
 
   plusButton.addEventListener('click', (event) => {
     const value = parseInt(qtyInput.value);
@@ -311,27 +330,55 @@
     qtyInput.value = newValue;
 
     if (value == 0) {
-      axios.post('/cart/add.js', {
-        id: prodId,
-        quantity: 1,
-      });
+      loading += 1;
+      loadSpinner.style.setProperty('display', 'flex');
+      axios
+        .post('/cart/add.js', {
+          id: prodId,
+          quantity: 1,
+        })
+        .then((res) => {
+          loading -= 1;
+          if (loading == 0) {
+            loadSpinner.style.setProperty('display', 'none');
+          }
+        });
     } else {
-      axios.post('/cart/change.js', {
-        id: prodId,
-        quantity: newValue,
-      });
+      loading += 1;
+      loadSpinner.style.setProperty('display', 'flex');
+      axios
+        .post('/cart/change.js', {
+          id: prodId,
+          quantity: newValue,
+        })
+        .then((res) => {
+          loading -= 1;
+          if (loading == 0) {
+            loadSpinner.style.setProperty('display', 'none');
+          }
+        });
     }
   });
 
   minusButton.addEventListener('click', (event) => {
     const value = parseInt(qtyInput.value);
     const newValue = value - 1;
+
     if (value > 0) {
+      loading += 1;
+      loadSpinner.style.setProperty('display', 'flex');
       qtyInput.value = newValue;
-      axios.post('/cart/change.js', {
-        id: prodId,
-        quantity: newValue,
-      });
+      axios
+        .post('/cart/change.js', {
+          id: prodId,
+          quantity: newValue,
+        })
+        .then((res) => {
+          loading -= 1;
+          if (loading == 0) {
+            loadSpinner.style.setProperty('display', 'none');
+          }
+        });
     }
   });
 </script>
