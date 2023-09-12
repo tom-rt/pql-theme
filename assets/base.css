@@ -104,6 +104,10 @@
     width: 90%;
 }
 
+.dnone {
+    display: none !important;
+}
+
 .spinner {
     width: 12px;
     height: 12px;
