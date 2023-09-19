@@ -1,22 +1,53 @@
 <style>
-  #cookies-banner {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    background: #fff;
-    border-top: 1px solid #dcdcdc;
-  }
+    #cookies-banner {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1em;
+      position: fixed;
+      bottom: 0px;
+      width: 100%;
+      height: 3rem;
+      font-size: 2rem;
+      background: #fff;
+      border-top: 1px solid black;
+    }
+    @media screen and (max-width: 1000px) {
+        #cookies-banner {
+            font-size: 3rem;
+            height: 10rem;
+        }
+      }
+
+    .cook-buttons-container {
+        margin-top: 0.5rem;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    @media screen and (max-width: 1000px) {
+        .cook-buttons-container {
+            margin-top: 1.5rem;
+        }
+      }
+ 
+    .cook-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
 </style>
 
 <div id="cookies-banner">
-  <span>This website uses cookies to ensure you get the best experience on our website.</span>
-  <button style="margin-left: 1em;" onclick="handleDecline()">Decline</button>
-  <button style="margin-left: 1em;" onclick="handleAccept()">Accept</button>
-</div>
+  <div class="cook-title">Acceptez vous l'utilisation de cookies ?</div>
+    <div class="cook-buttons-container">
+  <button style="margin-left: 1em;" class="cust-button" onclick="handleDecline()">Refuser</button>
+  <button style="margin-left: 1em;" class="cust-button" onclick="handleAccept()">Accepter</button>
+  <div>
+  </div>
 
 <script>
   function getBannerEl() {
@@ -28,7 +59,7 @@
   }
 
   function showBanner() {
-    getBannerEl().style.display = 'block';
+    getBannerEl().style.display = 'flex';
   }
 
   function handleAccept(e) {
