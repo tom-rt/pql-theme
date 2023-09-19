@@ -73,6 +73,17 @@
     }
 }
 
+.acc-cgu {
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .acc-cgu {
+        font-size: 1.8rem;
+
+    }
+}
+
 #reset_pwd_form {
     width: 100%;
     align-items: center;

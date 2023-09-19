@@ -1,0 +1,106 @@
+<style>
+    #cookies-banner {
+      display: none;
+      {% comment %} display: flex; {% endcomment %}
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      position: fixed;
+      bottom: 0px;
+      width: 100%;
+      height: 3rem;
+      font-size: 2rem;
+      background: #fff;
+      border-top: 1px solid black;
+    }
+    @media screen and (max-width: 1000px) {
+        #cookies-banner {
+            font-size: 3rem;
+            height: 10rem;
+        }
+      }
+
+    .cook-buttons-container {
+        margin-top: 0.5rem;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    @media screen and (max-width: 1000px) {
+        .cook-buttons-container {
+            margin-top: 1.5rem;
+        }
+      }
+ 
+    .cook-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+</style>
+
+<div id="cookies-banner">
+  <div class="cook-title">Acceptez vous l'utilisation de cookies ?</div>
+    <div class="cook-buttons-container">
+  <button style="margin-left: 1em;" class="cust-button" onclick="handleDecline()">Refuser</button>
+  <button style="margin-left: 1em;" class="cust-button" onclick="handleAccept()">Accepter</button>
+  <div>
+  </div>
+
+<script>
+  function getBannerEl() {
+    return document.getElementById('cookies-banner');
+  }
+
+  function hideBanner(res) {
+    getBannerEl().style.display = 'none';
+  }
+
+  function showBanner() {
+    getBannerEl().style.display = 'flex';
+  }
+
+  function handleAccept(e) {
+    window.Shopify.customerPrivacy.setTrackingConsent(true, hideBanner);
+
+    document.addEventListener('trackingConsentAccepted', function () {
+      console.log('trackingConsentAccepted event fired');
+    });
+  }
+
+  function handleDecline() {
+    window.Shopify.customerPrivacy.setTrackingConsent(false, hideBanner);
+  }
+
+  async function initCookieBanner() {
+    console.log('COOKIE BANNER');
+    const userCanBeTracked = await window.Shopify.customerPrivacy.userCanBeTracked();
+    console.log('userCanBeTracked', userCanBeTracked);
+    const userTrackingConsent = await window.Shopify.customerPrivacy.getTrackingConsent();
+    console.log('userTrackingConsent', userTrackingConsent);
+
+    if (!userCanBeTracked && userTrackingConsent === 'no_interaction') {
+      showBanner();
+    }
+  }
+
+  window.Shopify.loadFeatures(
+    [
+      {
+        name: 'consent-tracking-api',
+        version: '0.1',
+      },
+    ],
+    function (error) {
+      if (error) {
+        throw error;
+      }
+
+      initCookieBanner();
+    }
+  );
+</script>
