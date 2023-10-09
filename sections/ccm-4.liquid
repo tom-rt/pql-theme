@@ -1,0 +1,59 @@
+<div class="main-wrapper">
+  <div class="main-column">
+    <div class="ccm-main">
+      <div class="ccm-row">
+        <div class="ccm-digit">4</div>
+        <div class="">
+          <img src="{{ 'camion-noir-icon.png' | asset_url }}" class="black-truck">
+        </div>
+      </div>
+      <div class="ccm-col">
+        <div class="ccm-row-title whimsy">Pierre me livre</div>
+        <div class="ccm-row-paragraph">
+          Après avoir envoyé ma commande, je suis averti(e) la veille du créneau horaire estimé de la livraison.
+        </div>
+        <div class="ccm-row-paragraph">
+          <b>Vous serez livré le samedi entre 15H00 et 19H00 à l'adresse mentionnée.</b>
+        </div>
+        <div class="ccm-row-paragraph">
+          <b>Vous pouvez régler en CB (carte bleue) ou en espèces le livreur au moment de la remise de votre panier.</b>
+        </div>
+        <div class="ccm-row-paragraph">
+          Vous pouvez régler en CB (carte bleue) ou en espèces le livreur au moment de la remise de votre panier.
+        </div>
+        <div class="ccm-row-paragraph">
+          Afin de garantir la fraîcheur des produits, vous vous engagez à être au lieu de livraison au créneau horaire
+          transmis. En cas d'absence et de non réponse au téléphone la commande ne pourra être livrée.
+        </div>
+
+        <div class="ccm-row-paragraph">
+          Vous avez d'autres questions ?
+          <a class="link blue-link" href="/pages/faq">Rendez-vous sur notre FAQ !</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% style %}
+  .smaller {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .smaller {
+      font-size: 1.3rem;
+    }
+  }
+
+  .black-truck {
+    height: 4rem;
+    width: 4rem;
+  }
+  @media screen and (max-width: 1000px) {
+    .black-truck {
+      height: 6rem;
+      width: 6rem;
+    }
+  }
+{% endstyle %}
