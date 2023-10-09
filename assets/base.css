@@ -20,6 +20,7 @@
 }
 
 .html {
+    zoom: 80%;
     height: 100%;
     background-color: var(--black);
     font-size: 16px
