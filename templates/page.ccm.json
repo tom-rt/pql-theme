@@ -12,12 +12,16 @@
     },
     "ccm-3": {
       "type": "ccm-3"
+    },
+    "ccm-4": {
+      "type": "ccm-4"
     }
   },
   "order": [
     "ccm-title",
     "ccm-1",
     "ccm-2",
-    "ccm-3"
+    "ccm-3",
+    "ccm-4"
   ]
 }

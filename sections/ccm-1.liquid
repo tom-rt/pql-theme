@@ -1,22 +1,19 @@
 <div class="main-wrapper">
   <div class="main-column">
-
     <div class="ccm-main">
-
       <div class="ccm-row">
-        <div class="ccm-digit">
-          1
-        </div>
+        <div class="ccm-digit">1</div>
         <div class="">
-          <img src={{ 'black-glass.png' | asset_url }} class="black-glass" />
+          <img src="{{ 'black-glass.png' | asset_url }}" class="black-glass">
         </div>
       </div>
       <div class="ccm-col">
         <div class="ccm-row-title whimsy">
-          Je vérifie que j'habite dans une commune couverte par la livraison
+          Secteur de livraison : je vérifie que j'habite dans une des communes couvertes par la livraison
         </div>
         <div class="ccm-row-paragraph">
-          Pierre qui roule vient jusqu'à votre porte ! Tous les vendredis après-midi, de 15H00 à 20H00 vous avez la possibilité de vous faire livrer vos courses à votre domicile.
+          Pierre qui roule vient jusqu'à votre porte ! Tous les vendredis après-midi, de 15H00 à 20H00 vous avez la
+          possibilité de vous faire livrer vos courses à votre domicile.
         </div>
         <div class="ccm-row-paragraph">
           <b>La livraison à domicile vous est offerte dès 25 € d'achat !</b>
@@ -25,34 +22,23 @@
         <div class="ccm-row-paragraph">
           Si votre panier inférieur à 25€, pas de panique ! Nous vous livrons pour la somme de 5€.
         </div>
-        <div class="centered whimsy t35 orange ccm-mt">
-          Communes desservies:
-        </div>
-        <div class="centered whimsy t1">
-          Saint-Omer - Longuenesse - Arques
-        </div>
-        <div class="centered whimsy t2 ">
-          Saint-Martin-lez-Tatinghem - Wisques - Blendecques - Wizernes - Racquinghem
-        </div>
-        <div class="centered whimsy t3">
-          Wardrecques - Campagne-les-Wardrecques - Esquerdes - Hallines - Helfaut - Heuringhem - Pihem
-        </div>
+        <div class="centered whimsy t35 orange ccm-mt">Communes desservies:</div>
+        <div class="centered whimsy t1">Saint-Omer - Longuenesse - Arques</div>
+        <div class="centered whimsy t2 ">Saint-Martin-lez-Tatinghem - Wisques - Blendecques - Wizernes - Helfaut</div>
+        <div class="centered whimsy t3">Wardrecques - Campagne-les-Wardrecques - Esquerdes - Hallines - Heuringhem</div>
         <div class="ccm-map-container">
           <img
-            loading='lazy'
+            loading="lazy"
             class="ccm-map"
-            src={{ 'ccm-map.jpeg' | asset_url }} />
-
+            src="{{ 'ccm-map.jpeg' | asset_url }}"
+          >
         </div>
-
       </div>
     </div>
-
   </div>
 </div>
 
 {% style %}
-
   .ccm-mt {
     margin-top: 3rem;
   }
@@ -78,7 +64,7 @@
   }
 
   .centered {
-    text-align: center
+    text-align: center;
   }
 
   .ccm-map-container {
