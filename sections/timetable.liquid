@@ -1,7 +1,6 @@
 <div class="main-wrapper">
   <div class="main-column">
     <div class="tt-main">
-
       <div class="tt-title-wrapper">
         <div class="tt-title whimsy orange-underline">Nos tournées</div>
       </div>
@@ -9,221 +8,173 @@
       <div class="tt-legend-wrapper">
         <div class="tt-legend">
           <div class="tt-icon-legend">
-            <img loading='lazy' width="inherit" class="img tt-icon" src={{ 'market-icon.png' | asset_url }}/>
+            <img loading="lazy" width="inherit" class="img tt-icon" src="{{ 'market-icon.png' | asset_url }}/">
           </div>
-          <div class="tt-legend-desc">
-            Marché
-          </div>
+          <div class="tt-legend-desc">Marché</div>
         </div>
 
         <div class="tt-legend">
           <div class="tt-icon-legend">
-            <img loading='lazy' width="inherit" class="img tt-icon" src={{ 'postbox-icon.png' | asset_url }}/>
+            <img loading="lazy" width="inherit" class="img tt-icon" src="{{ 'postbox-icon.png' | asset_url }}/">
           </div>
-          <div class="tt-legend-desc">
-            Livraison à domicile
-          </div>
+          <div class="tt-legend-desc">Livraison à domicile</div>
         </div>
 
         <div class="tt-legend">
           <div class="tt-icon-legend">
-            <img loading='lazy' width="inherit" class="img tt-icon" src={{ 'camion-noir-icon.png' | asset_url }}/>
+            <img loading="lazy" width="inherit" class="img tt-icon" src="{{ 'camion-noir-icon.png' | asset_url }}/">
           </div>
-          <div class="tt-legend-desc">
-            Arrêt dans la commune
-          </div>
+          <div class="tt-legend-desc">Arrêt dans la commune</div>
         </div>
-
       </div>
 
       <div class="tt-wrapper">
         <div class="tt-days-row">
 
-          {%- comment -%} <div class="tt-day-box">
-            <div class="day whimsy">Lundi</div>
-            <div class="tt-half-day">
-              <div class="tt-half-day-title whimsy">
-
-              </div>
-              <div class="tt-half-day-row">
-                <div class="tt-place whimsy">
-                </div>
-              </div>
-            </div>
-          </div> {%- endcomment -%}
-
           <div class="tt-day-box">
             <div class="day whimsy">Mardi</div>
             <div class="tt-half-day bb-orange">
-              <div class="tt-half-day-title whimsy">
-                Matin:
-              </div>
+              <div class="tt-half-day-title whimsy">Matin:</div>
               <div class="tt-half-day-row">
                 <div class="tt-place whimsy">
                   <div class="tt-icon">
-                    <img loading='lazy' width="inherit" class="img tt-icon" src={{ 'market-icon.png' | asset_url }}/>
+                    <img loading="lazy" width="inherit" class="img tt-icon" src="{{ 'market-icon.png' | asset_url }}/">
                   </div>
-                  <div class="tt-city">
-                    Le Portel
-                  </div>
+                  <div class="tt-city">Le Portel</div>
                   <div class="tt-times">
-                    <div class="tt-time">
-                      - Le matin
-                    </div>
+                    <div class="tt-time">- Le matin</div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="tt-half-day-title whimsy">
-              Après-midi:
-            </div>
+            <div class="tt-half-day-title whimsy">Après-midi:</div>
 
             <div class="tt-half-day-row">
               <div class="tt-place whimsy">
                 <div class="tt-icon">
-                  <img loading='lazy' width="inherit" class="img tt-icon" src={{ 'camion-noir-icon.png' | asset_url }}/>
+                  <img
+                    loading="lazy"
+                    width="inherit"
+                    class="img tt-icon"
+                    src="{{ 'camion-noir-icon.png' | asset_url }}/"
+                  >
                 </div>
-                <div class="tt-city">
-                  Longfossé, devant la mairie
-                </div>
+                <div class="tt-city">Longfossé</div>
                 <div class="tt-times">
-                  <div class="tt-time">
-                    - de 15h30 à 17h30
-                  </div>
+                  <div class="tt-time">- Devant la mairie de 15h30 à 17h30</div>
                 </div>
               </div>
             </div>
-
-            <div class="tt-half-day-row">
-              <div class="tt-place whimsy">
-                  <div class="tt-icon">
-                    <img loading='lazy' width="inherit" class="img tt-icon" src={{ 'camion-noir-icon.png' | asset_url }}/>
-                  </div>
-                  <div class="tt-city">
-                    {% comment %} Wavrans sur l'Aa {% endcomment %}
-                    Tournehem-sur-la-Hem
-                  </div>
-                  <div class="tt-times">
-                    <div class="tt-time">
-                      - Place de la mairie 18h à 19h30
-                    </div>
-                  </div>
-              </div>
-            </div>
-
-            </div>
+          </div>
 
           <div class="tt-day-box">
             <div class="day whimsy">Mercredi</div>
             <div class="tt-half-day">
-              {% comment %} <div class="tt-half-day-title whimsy">
-                Matin:
-              </div>
+              <div class="tt-half-day-title whimsy">Matin:</div>
               <div class="tt-half-day-row">
                 <div class="tt-place whimsy">
                   <div class="tt-icon">
-                    <img loading='lazy' width="inherit" class="img tt-icon" src={{ 'camion-noir-icon.png' | asset_url }}/>
+                    <img
+                      loading="lazy"
+                      width="inherit"
+                      class="img tt-icon"
+                      src="{{ 'camion-noir-icon.png' | asset_url }}/"
+                    >
                   </div>
-                  <div class="tt-city">
-                    Warhem
-                  </div>
+                  <div class="tt-city">Les Moëres</div>
                   <div class="tt-times">
-                    <div class="tt-time">
-                      - Devant la mairie de 10h30 à 12h30
-                    </div>
+                    <div class="tt-time">- Grand place 10h30 à 12h30</div>
                   </div>
                 </div>
-              </div>
-            </div> {% endcomment %}
-            <div class="tt-half-day-title whimsy">
-              Après-midi:
             </div>
+            <div class="tt-half-day-title whimsy">Après-midi:</div>
             <div class="tt-half-day-row">
               <div class="tt-place whimsy">
                 <div class="tt-icon">
-                  <img loading='lazy' width="inherit" class="img tt-icon" src={{ 'camion-noir-icon.png' | asset_url }}/>
+                  <img
+                    loading="lazy"
+                    width="inherit"
+                    class="img tt-icon"
+                    src="{{ 'camion-noir-icon.png' | asset_url }}/"
+                  >
                 </div>
-                <div class="tt-city">
-                  Tétéghem Coudekerque Village
-                </div>
+                <div class="tt-city">Tétéghem Coudekerque Village</div>
                 <div class="tt-times">
-                  <div class="tt-time">
-                    - Sur le parking du Bric ada Brac de 14h à 16h30
-                  </div>
+                  <div class="tt-time">- Sur le parking du Bric ada Brac de 14h à 16h30</div>
                 </div>
               </div>
             </div>
             <div class="tt-half-day-row">
               <div class="tt-place whimsy">
                 <div class="tt-icon">
-                  <img loading='lazy' width="inherit" class="img tt-icon" src={{ 'camion-noir-icon.png' | asset_url }}/>
+                  <img
+                    loading="lazy"
+                    width="inherit"
+                    class="img tt-icon"
+                    src="{{ 'camion-noir-icon.png' | asset_url }}/"
+                  >
                 </div>
-                <div class="tt-city">
-                  Eringhem
-                </div>
+                <div class="tt-city">Eringhem</div>
                 <div class="tt-times">
-                  <div class="tt-time">
-                    - A côté de l'école de 17h30 à 19h30
-                  </div>
-                </div>
-              </div>
-            </div>
-            </div>
-          </div>
-
-          <div class="tt-day-box">
-            <div class="day whimsy">Jeudi</div>
-            <div class="tt-half-day-title whimsy">
-              Matin:
-            </div>
-            <div class="tt-half-day-row">
-              <div class="tt-place whimsy">
-                <div class="tt-icon">
-                  <img loading='lazy' width="inherit" class="img tt-icon" src={{ 'camion-noir-icon.png' | asset_url }}/>
-                </div>
-                <div class="tt-city">
-                  Warhem
-                </div>
-                <div class="tt-times">
-                  <div class="tt-time">
-                    - Place de la mairie, avec la poissonerie le Newman de 9h à 12h30
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="tt-half-day-title whimsy">
-              Après-midi:
-            </div>
-            <div class="tt-half-day-row">
-              <div class="tt-place whimsy">
-                <div class="tt-icon">
-                  <img loading='lazy' width="inherit" class="img tt-icon" src={{ 'camion-noir-icon.png' | asset_url }}/>
-                </div>
-                <div class="tt-city">
-                  Crochte
-                </div>
-                <div class="tt-times">
-                  <div class="tt-time">
-                    - Devant la mairie de 16h à 17h45
-                  </div>
-                  <div class="tt-time">
-                    - Devant le collège de 18h à 19h30
-                  </div>
+                  <div class="tt-time">- A côté de l'école de 17h30 à 19h30</div>
                 </div>
               </div>
             </div>
           </div>
-
-
         </div>
 
-        <div class="tt-days-row-bot tt-mt">
 
-          <div class="tt-day-box">
+      </div>
 
-            <div class="day whimsy">Vendredi</div>
+      <div class="tt-days-row-bot tt-mt">
 
-            {% comment %} <div class="tt-half-day bb-orange">
+
+        <div class="tt-day-box">
+          <div class="day whimsy">Jeudi</div>
+          <div class="tt-half-day-title whimsy">Matin:</div>
+          <div class="tt-half-day-row">
+            <div class="tt-place whimsy">
+              <div class="tt-icon">
+                <img loading="lazy" width="inherit" class="img tt-icon" src="{{ 'camion-noir-icon.png' | asset_url }}/">
+              </div>
+              <div class="tt-city">Warhem</div>
+              <div class="tt-times">
+                <div class="tt-time">- Place de la mairie, avec la poissonerie le Newman de 9h à 12h30</div>
+              </div>
+            </div>
+          </div>
+          <div class="tt-half-day-title whimsy">Après-midi:</div>
+          <div class="tt-half-day-row">
+            <div class="tt-place whimsy">
+              <div class="tt-icon">
+                <img loading="lazy" width="inherit" class="img tt-icon" src="{{ 'camion-noir-icon.png' | asset_url }}/">
+              </div>
+              <div class="tt-city">Crochte</div>
+              <div class="tt-times">
+                <div class="tt-time">- Devant la mairie de 16h à 18h00</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tt-half-day-row">
+            <div class="tt-place whimsy">
+              <div class="tt-icon">
+                <img loading="lazy" width="inherit" class="img tt-icon" src="{{ 'camion-noir-icon.png' | asset_url }}/">
+              </div>
+              <div class="tt-city">Steene Grand-Millebrugghe</div>
+              <div class="tt-times">
+                <div class="tt-time">- Devant l'école Émile Zola de 18h15 à 19h30</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        {% comment %} <div class="tt-day-box">
+          <div class="day whimsy">Vendredi</div>
+            <div class="tt-half-day bb-orange">
             <div class="tt-half-day-title whimsy">
                 Matin:
               </div>
@@ -242,77 +193,72 @@
                   </div>
                 </div>
               </div>
-            </div> {% endcomment %}
-
-            <div class="tt-half-day-title whimsy">
-              Après-midi:
             </div>
+
+          <div class="tt-half-day-title whimsy">Après-midi:</div>
+          <div class="tt-half-day-row">
+            <div class="tt-place whimsy">
+              <div class="tt-icon">
+                <img loading="lazy" width="inherit" class="img tt-icon" src="{{ 'postbox-icon.png' | asset_url }}/">
+              </div>
+              <div class="tt-city">Livraison à domicile</div>
+              <div class="tt-times">
+                <div class="tt-time">- 14h à 20h</div>
+              </div>
+            </div>
+          </div>
+        </div>
+          {% endcomment %}
+
+        <div class="tt-day-box">
+          <div class="day whimsy">Samedi</div>
+          <div class="tt-half-day bb-orange">
+            <div class="tt-half-day-title whimsy">Matin:</div>
             <div class="tt-half-day-row">
               <div class="tt-place whimsy">
                 <div class="tt-icon">
-                  <img loading='lazy' width="inherit" class="img tt-icon" src={{ 'postbox-icon.png' | asset_url }}/>
+                  <img
+                    loading="lazy"
+                    width="inherit"
+                    class="img tt-icon"
+                    src="{{ 'camion-noir-icon.png' | asset_url }}/"
+                  >
                 </div>
-                <div class="tt-city">
-                  Livraison à domicile
-                </div>
+                <div class="tt-city">Campagne-lès-Wardrecques</div>
                 <div class="tt-times">
-                  <div class="tt-time">
-                    - 14h à 20h
-                  </div>
+                  <div class="tt-time">- Place de l'église de 9h à 12h</div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="tt-half-day-title whimsy">Après-midi:</div>
 
-          <div class="tt-day-box">
-            <div class="day whimsy">Samedi</div>
-            <div class="tt-half-day bb-orange">
-              <div class="tt-half-day-title whimsy">
-                Matin:
+          <div class="tt-half-day-row">
+            <div class="tt-place whimsy">
+              <div class="tt-icon">
+                <img loading="lazy" width="inherit" class="img tt-icon" src="{{ 'camion-noir-icon.png' | asset_url }}/">
               </div>
-              <div class="tt-half-day-row">
-                <div class="tt-place whimsy">
-                  <div class="tt-icon">
-                    <img loading='lazy' width="inherit" class="img tt-icon" src={{ 'camion-noir-icon.png' | asset_url }}/>
-                  </div>
-                  <div class="tt-city">
-                    Campagne-lès-Wardrecques
-                  </div>
-                  <div class="tt-times">
-                    <div class="tt-time">
-                      - Place de l'église de 9h à 12h
-                    </div>
-                  </div>
-                  </div>
+              <div class="tt-city">Arques</div>
+              <div class="tt-times">
+                <div class="tt-time">- Rue de Reims, à côté du cimetière de l'église Saint-Martin de 12h45 à 14h30</div>
               </div>
             </div>
-            <div class="tt-half-day-title whimsy">
-              Après-midi:
-            </div>
-            <div class="tt-half-day-row">
-              <div class="tt-place whimsy">
-                <div class="tt-icon">
-                  <img loading='lazy' width="inherit" class="img tt-icon" src={{ 'camion-noir-icon.png' | asset_url }}/>
-                </div>
-                <div class="tt-city">
-                  Arques
-                </div>
-                <div class="tt-times">
-                  <div class="tt-time">
-                    - Avenue de la Libération de 12h45 à 14h
-                  </div>
-                  <div class="tt-time">
-                    - Rue Jacques Cartier de 14h15 à 15h15
-                  </div>
-                  <div class="tt-time">
-                    - Cité Beauséjour de 15h30 à 16h30
-                  </div>
-                </div>
+          </div>
+          <div class="tt-half-day-row">
+            <div class="tt-place whimsy">
+              <div class="tt-icon">
+                <img loading="lazy" width="inherit" class="img tt-icon" src="{{ 'postbox-icon.png' | asset_url }}/">
+              </div>
+              <div class="tt-city">Livraison à domicile</div>
+              <div class="tt-times">
+                <div class="tt-time">- 15h à 19h</div>
               </div>
             </div>
+          </div>
+
+
         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -325,204 +271,229 @@
 
   @media screen and (max-width: 1200px) {
     .tt-icon {
-      height: 50px;
+      height: 30px;
     }
-  }
 
-  .tt-main {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-  }
+    @media screen and (max-width: 1200px) {
+      .tt-icon {
+        height: 50px;
+      }
+    }
 
-  .tt-wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 1rem 0;
-    background-color: var(--duck-blue)
-  }
+    .tt-main {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+    }
 
-  .tt-days-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    /* grid-template-columns: 1fr 1fr; */
-    padding: 0 1rem;
-    column-gap: 1rem;
-  }
+    .tt-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 1rem 0;
+      background-color: var(--duck-blue)
+    }
 
-  .tt-days-row-bot {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 1rem;
-    column-gap: 1rem;
-  }
-
-  @media screen and (max-width: 1200px) {
     .tt-days-row {
-      grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      /* grid-template-columns: 1fr 1fr; */
+      padding: 0 1rem;
+      column-gap: 1rem;
     }
 
     .tt-days-row-bot {
-      grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 0 1rem;
+      column-gap: 1rem;
     }
 
-  }
+    @media screen and (max-width: 1200px) {
+      .tt-days-row {
+        grid-template-columns: 1fr;
+      }
 
-  .tt-title-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-  }
+      .tt-days-row-bot {
+        grid-template-columns: 1fr;
+      }
 
-  .tt-legend-wrapper {
-    display: flex;
-    justify-content: flex-start;
-    background-color: var(--duck-blue);
-    padding: 1rem 1rem 0;
-  }
+    }
 
-  .tt-legend {
-    display: flex;
-    margin-right: 1rem;
-  }
+    .tt-title-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
 
-  .tt-legend-desc {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-  }
+    .tt-legend-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      background-color: var(--duck-blue);
+      padding: 1rem 1rem 0;
+    }
 
-  @media screen and (max-width: 1200px) {
+    .tt-legend {
+      display: flex;
+      margin-right: 1rem;
+    }
+
     .tt-legend-desc {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    @media screen and (max-width: 1200px) {
+      .tt-legend-desc {
+        font-size: 1.5rem;
+      }
+    }
+
+    .tt-title {
+      display: flex;
+      font-size: 3rem;
+      justify-content: center;
+      display: flex;
+    }
+
+    @media screen and (max-width: 1000px) {
+      .tt-title {
+        font-size: 4rem;
+      }
+    }
+
+    .tt-day-box {
+      display: flex;
+      width: 100%;
+      height: min-content;
+      flex-direction: column;
+      text-align: center;
+      border-width: 1px;
+      border-style: solid;
+      border-color: var(--duck-blue);
+      border-radius: 10px;
+      background-color: white;
+    }
+
+    @media screen and (max-width: 1200px) {
+      .tt-day-box {
+        margin: 1rem 0;
+      }
+    }
+
+    .tt-mt {
+      margin-top: 1rem;
+    }
+
+    .tt-text {
+      display: flex;
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .tt-half-day {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .tt-half-day-title {
+      display: flex;
+      padding: 0.3rem;
+      width: 100%;
+      font-size: 1.3rem;
+      justify-content: center;
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 1200px) {
+      .tt-half-day-title {
+        font-size: 2.2rem;
+      }
+    }
+
+    .tt-half-day-row {
+      display: flex;
+      width: 100%;
+    }
+
+    .day {
+      background-color: var(--orange);
+      padding: 0.3rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      color: white;
       font-size: 1.5rem;
     }
-  }
 
-  .tt-title {
-    display: flex;
-    font-size: 3rem;
-    justify-content: center;
-    display: flex;
-  }
-
-  @media screen and (max-width: 1000px) {
-    .tt-title {
-      font-size: 4rem;
+    @media screen and (max-width: 1200px) {
+      .day {
+        font-size: 2.5rem;
+      }
     }
-  }
-  
-  .tt-day-box {
-    display: flex;
-    width: 100%;
-    height: min-content;
-    flex-direction: column;
-    text-align: center;
-    border-width: 1px;
-    border-style: solid;
-    border-color: var(--duck-blue);
-    border-radius: 10px;
-    background-color: white;
-  }
 
-  @media screen and (max-width: 1200px) {
-    .tt-day-box {
-      margin: 1rem 0;
+    .bb-orange {
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-bottom-color: var(--orange);
     }
-  }
 
-  .tt-mt {
-    margin-top: 1rem;
-  }
-
-  .tt-text {
-    display: flex;
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    font-style: italic;
-    margin-bottom: 1rem;
-  }
-
-  .tt-half-day {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .tt-half-day-title {
-    display: flex;
-    padding: 0.3rem;
-    width: 100%;
-    font-size: 1.3rem;
-    justify-content: center;
-    text-decoration: underline;
-  }
-
-  @media screen and (max-width: 1200px) {
-    .tt-half-day-title {
-      font-size: 2.2rem;
+    .tt-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-  }
 
-  .tt-half-day-row {
-    display: flex;
-    width: 100%;
-  }
-
-  .day {
-    background-color: var(--orange);
-    padding: 0.3rem;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    color: white;
-    font-size: 1.5rem;
-  }
-
-  @media screen and (max-width: 1200px) {
-    .day {
-      font-size: 2.5rem;
+    .tt-icon-legend {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.5rem;
     }
-  }
 
-  .bb-orange {
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-bottom-color: var(--orange);
-  }
-
-  .tt-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .tt-icon-legend {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 0.5rem;
-  }
-
-  .tt-place {
-    font-size: 1.3rem;
-    display: flex;
-    padding: 0.3rem;
-    width: 100%;
-    align-items: flex-start;
-  }
-
-  @media screen and (max-width: 1200px) {
     .tt-place {
-      font-size: 2.5rem;
+      font-size: 1.3rem;
+      display: flex;
+      padding: 0.3rem;
+      width: 100%;
+      align-items: flex-start;
+    }
+
+    @media screen and (max-width: 1200px) {
+      .tt-place {
+        font-size: 2.5rem;
+      }
+    }
+
+    .tt-city {
+      display: flex;
+      padding-top: 0.4rem;
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
+      text-align: start;
+    }
+
+    .tt-times {
+      display: flex;
+      flex-direction: column;
+      padding-top: 0.4rem;
+    }
+
+    .tt-time {
+      text-align: start;
     }
   }
+<<<<<<< HEAD
 
   .tt-city {
     display: flex;
@@ -543,3 +514,6 @@
   }
 
 {% endstyle %} 
+=======
+{%- endstyle -%}
+>>>>>>> main
