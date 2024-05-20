@@ -108,12 +108,33 @@
             {% endcomment %}
           </div>
 
-          <div class="tt-day-box">
-            {% comment %} - mercredi : 13h30-14h30 Les Moëres, 15h-18h00 marché de Hoymille, 18h30-19h30 Steene (Grand millebrugghe) {% endcomment %}
+          {% comment %} <div class="tt-day-box"> {% endcomment %}
+          {% comment %} - mercredi : 13h30-14h30 Les Moëres, 15h-18h00 marché de Hoymille, 18h30-19h30 Steene (Grand millebrugghe) {% endcomment %}
+          {% comment %}
             <div class="day whimsy">Mercredi</div>
             <div class="tt-half-day">
-              {% comment %}
-                <div class="tt-half-day-title whimsy">Matin:</div>
+          {% endcomment %}
+          {% comment %}
+            <div class="tt-half-day-title whimsy">Matin:</div>
+            <div class="tt-half-day-row">
+              <div class="tt-place whimsy">
+                <div class="tt-icon">
+                  <img
+                    loading="lazy"
+                    width="inherit"
+                    class="img tt-icon"
+                    src="{{ 'camion-noir-icon.png' | asset_url }}/"
+                  >
+                </div>
+                <div class="tt-city">Les Moëres</div>
+                <div class="tt-times">
+                  <div class="tt-time">- Grand place 10h30 à 12h30</div>
+                </div>
+              </div>
+            </div>
+          {% endcomment %}
+          {% comment %}
+            <div class="tt-half-day-title whimsy">Après-midi:</div>
                 <div class="tt-half-day-row">
                   <div class="tt-place whimsy">
                     <div class="tt-icon">
@@ -126,62 +147,45 @@
                     </div>
                     <div class="tt-city">Les Moëres</div>
                     <div class="tt-times">
-                      <div class="tt-time">- Grand place 10h30 à 12h30</div>
+                      <div class="tt-time">- 13h30 à 14h30</div>
                     </div>
                   </div>
                 </div>
-              {% endcomment %}
-              <div class="tt-half-day-title whimsy">Après-midi:</div>
-              <div class="tt-half-day-row">
-                <div class="tt-place whimsy">
-                  <div class="tt-icon">
-                    <img
-                      loading="lazy"
-                      width="inherit"
-                      class="img tt-icon"
-                      src="{{ 'camion-noir-icon.png' | asset_url }}/"
-                    >
-                  </div>
-                  <div class="tt-city">Les Moëres</div>
-                  <div class="tt-times">
-                    <div class="tt-time">- 13h30 à 14h30</div>
-                  </div>
-                </div>
-              </div>
-              <div class="tt-half-day-row">
-                <div class="tt-place whimsy">
-                  <div class="tt-icon">
-                    <img
-                      loading="lazy"
-                      width="inherit"
-                      class="img tt-icon"
-                      src="{{ 'market-icon.png' | asset_url }}/"
-                    >
-                  </div>
-                  <div class="tt-city">Marché de Hoymille</div>
-                  <div class="tt-times">
-                    <div class="tt-time">- 15h00 à 18h00</div>
+                <div class="tt-half-day-row">
+                  <div class="tt-place whimsy">
+                    <div class="tt-icon">
+                      <img
+                        loading="lazy"
+                        width="inherit"
+                        class="img tt-icon"
+                        src="{{ 'market-icon.png' | asset_url }}/"
+                      >
+                    </div>
+                    <div class="tt-city">Marché de Hoymille</div>
+                    <div class="tt-times">
+                      <div class="tt-time">- 15h00 à 18h00</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="tt-half-day-row">
-                <div class="tt-place whimsy">
-                  <div class="tt-icon">
-                    <img
-                      loading="lazy"
-                      width="inherit"
-                      class="img tt-icon"
-                      src="{{ 'camion-noir-icon.png' | asset_url }}/"
-                    >
-                  </div>
-                  <div class="tt-city">Steene (Grand millebrugghe)</div>
-                  <div class="tt-times">
-                    <div class="tt-time">- 18h30 à 19h30</div>
+                <div class="tt-half-day-row">
+                  <div class="tt-place whimsy">
+                    <div class="tt-icon">
+                      <img
+                        loading="lazy"
+                        width="inherit"
+                        class="img tt-icon"
+                        src="{{ 'camion-noir-icon.png' | asset_url }}/"
+                      >
+                    </div>
+                    <div class="tt-city">Steene (Grand millebrugghe)</div>
+                    <div class="tt-times">
+                      <div class="tt-time">- 18h30 à 19h30</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          {% endcomment %}
         </div>
 
         <div class="tt-days-row-bot tt-mt">
@@ -189,7 +193,7 @@
             {% comment %} - jeudi idem matin, 16h00-17h30 Crochte, 17h45-19h30 Eringhem {% endcomment %}
             <div class="day whimsy">Jeudi</div>
             <div class="tt-half-day-title whimsy">Matin:</div>
-            <div class="tt-half-day-row">
+            <div class="tt-half-day-row bb-orange">
               <div class="tt-place whimsy">
                 <div class="tt-icon">
                   <img
@@ -206,6 +210,22 @@
               </div>
             </div>
             <div class="tt-half-day-title whimsy">Après-midi:</div>
+            <div class="tt-half-day-row">
+              <div class="tt-place whimsy">
+                <div class="tt-icon">
+                  <img
+                    loading="lazy"
+                    width="inherit"
+                    class="img tt-icon"
+                    src="{{ 'camion-noir-icon.png' | asset_url }}/"
+                  >
+                </div>
+                <div class="tt-city">Les Moëres</div>
+                <div class="tt-times">
+                  <div class="tt-time">- 13h30 à 15h00</div>
+                </div>
+              </div>
+            </div>
             <div class="tt-half-day-row">
               <div class="tt-place whimsy">
                 <div class="tt-icon">
@@ -245,7 +265,7 @@
             {% comment %} - vendredi 8h-13h marché de Wimereux {% endcomment %}
             <div class="day whimsy">Vendredi</div>
             <div class="tt-half-day-title whimsy">Matin:</div>
-            <div class="tt-half-day-row">
+            <div class="tt-half-day-row bb-orange">
               <div class="tt-place whimsy">
                 <div class="tt-icon">
                   <img
@@ -261,24 +281,24 @@
                 </div>
               </div>
             </div>
-            {% comment %}
-              <div class="tt-half-day-row">
-                <div class="tt-place whimsy">
-                  <div class="tt-icon">
-                    <img
-                      loading="lazy"
-                      width="inherit"
-                      class="img tt-icon"
-                      src="{{ 'camion-noir-icon.png' | asset_url }}/"
-                    >
-                  </div>
-                  <div class="tt-city">Crochte</div>
-                  <div class="tt-times">
-                    <div class="tt-time">- Devant la mairie de 16h à 18h00</div>
-                  </div>
+
+            <div class="tt-half-day-title whimsy">Après-midi:</div>
+            <div class="tt-half-day-row">
+              <div class="tt-place whimsy">
+                <div class="tt-icon">
+                  <img
+                    loading="lazy"
+                    width="inherit"
+                    class="img tt-icon"
+                    src="{{ 'camion-noir-icon.png' | asset_url }}/"
+                  >
+                </div>
+                <div class="tt-city">Rebecques</div>
+                <div class="tt-times">
+                  <div class="tt-time">- Camping du lac de 15h30 à 19h00</div>
                 </div>
               </div>
-            {% endcomment %}
+            </div>
           </div>
 
           <div class="tt-day-box">
@@ -303,8 +323,8 @@
                 </div>
               </div>
             </div>
-            <div class="tt-half-day-title whimsy">Après-midi:</div>
 
+            <div class="tt-half-day-title whimsy">Après-midi:</div>
             <div class="tt-half-day-row">
               <div class="tt-place whimsy">
                 <div class="tt-icon">
@@ -368,7 +388,7 @@
 
   .tt-days-row {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     /* grid-template-columns: 1fr 1fr; */
     padding: 0 1rem;
     column-gap: 1rem;
